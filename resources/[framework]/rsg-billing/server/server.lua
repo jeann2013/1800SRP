@@ -45,18 +45,18 @@ RegisterNetEvent('rsg-billing:server:paybills', function(data)
             PayingPlayer.Functions.RemoveMoney("cash", data.amount, "pay-bill")
             PaidPlayer.Functions.AddMoney("cash", data.amount, "player-pay-bill")
             exports.oxmysql:execute('DELETE FROM player_bills WHERE id = ?', {data.billid})
-            TriggerClientEvent('RSGCore:Notify', src, 'Bill has been paid for '..data.amount..'$', 'success')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t("success.bill_has_been_paid_for")..data.amount..'$', 'success')
         else
-            TriggerClientEvent('RSGCore:Notify', src, 'You not have enough money', 'error')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t("error.you_not_have_enough_money"), 'error')
         end
     else
         if PayingPlayer.PlayerData.money.cash >= data.amount then
             PayingPlayer.Functions.RemoveMoney("cash", data.amount, "pay-bill")
             exports['rsg-management']:AddMoney(data.society, data.amount)
             exports.oxmysql:execute('DELETE FROM player_bills WHERE id = ?', {data.billid})
-            TriggerClientEvent('RSGCore:Notify', src, 'Bill has been paid for '..data.amount..'$', 'success')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t("success.bill_has_been_paid_for")..data.amount..'$', 'success')
         else
-            TriggerClientEvent('RSGCore:Notify', src, 'You not have enough money', 'error')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t("error.you_not_have_enough_money"), 'error')
         end
     end
 end)
@@ -69,7 +69,7 @@ RegisterNetEvent('rsg-billing:server:cancelbill', function(billid)
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     exports.oxmysql:execute('DELETE FROM player_bills WHERE id = ?', {billid})
-    TriggerClientEvent('RSGCore:Notify', src, 'Bill with ID: '..billid..' has been deleted', 'success')
+    TriggerClientEvent('RSGCore:Notify', src, Lang:t("success.bill_with_id")..billid..Lang:t("success.has_been_deleted"), 'success')
 end)
 
 -- send bill as society
@@ -87,10 +87,10 @@ RegisterNetEvent('rsg-billing:server:sendSocietyBill', function(playerid, amount
             SendName, 
             SendPlayer.PlayerData.citizenid
         })
-        TriggerClientEvent('RSGCore:Notify', source, 'Bill Sent', 'success')
-        TriggerClientEvent('RSGCore:Notify', playerid, 'You received a $'..amount..' bill', 'success')
+        TriggerClientEvent('RSGCore:Notify', source, Lang:t("success.bill_sent"), 'success')
+        TriggerClientEvent('RSGCore:Notify', playerid, Lang:t("success.you_received")..amount..Lang:t("success.bill"), 'success')
     else
-        TriggerClientEvent('RSGCore:Notify', source, 'Did not find player', 'error')
+        TriggerClientEvent('RSGCore:Notify', source, Lang:t("error.did_not_find_player"), 'error')
     end
 end)
 
@@ -109,15 +109,15 @@ RegisterNetEvent('rsg-billing:server:sendPlayerBill', function(playerid, amount)
             SendName,
             SendPlayer.PlayerData.citizenid
         })
-        TriggerClientEvent('RSGCore:Notify', source, 'Bill Sent', 'success')
-        TriggerClientEvent('RSGCore:Notify', playerid, 'You received a $'..amount..' bill', 'success')
+        TriggerClientEvent('RSGCore:Notify', source, Lang:t("success.bill_sent"), 'success')
+        TriggerClientEvent('RSGCore:Notify', playerid, Lang:t("success.you_received")..amount..Lang:t("success.bill"), 'success')
     else
-        TriggerClientEvent('RSGCore:Notify', source, 'Did not find player', 'error')
+        TriggerClientEvent('RSGCore:Notify', source, Lang:t("error.did_not_find_player"), 'error')
     end
 end)
 
 -- command to open the billing menu rather than radial
-RSGCore.Commands.Add("billing", "Opens the Billing Menu", {}, false, function(source)
+RSGCore.Commands.Add("billing", Lang:t("commands.opens_the_billing_menu"), {}, false, function(source)
     local src = source
     TriggerClientEvent('rsg-billing:client:billingMenu', src)
 end)

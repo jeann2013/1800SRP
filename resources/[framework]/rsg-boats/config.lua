@@ -1,6 +1,6 @@
 Config = {}
 -- Set Language
-Config.defaultlang = "en_lang"
+Config.defaultlang = "es_lang"
 -- Open Boat Shop Menu
 Config.shopKey = 0x760A9C6F --[G]
 -- Open Boat Options Menu

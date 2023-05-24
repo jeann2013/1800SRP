@@ -6,30 +6,30 @@ RegisterNetEvent('rsg-billing:client:billingMenu', function()
     local PlayerId = GetPlayerServerId(PlayerId())
     local BillsOptions = {
         {
-            header = 'Billing Menu',
+            header = Lang:t("header.billing_menu"),
             isMenuHeader = true,
             icon = 'fas fa-file-invoice-dollar',
         },
         {
-            header = 'Send Bill',
+            header =  Lang:t("header.send_bill"),
             icon = 'fas fa-dollar-sign',
             txt    = '',
             params = { event = 'rsg-billing:client:billplayer' }
         },
         {
-            header = 'View Your Bills',
+            header = Lang:t("header.view_your_bills"),
             icon = 'fas fa-dollar-sign',
             txt    = '',
             params = { event = 'rsg-billing:client:checkbills' }
         },
         {
-            header = 'Cancel Sent Bill',
+            header = Lang:t("header.cancel_sent_bill"),
             icon = 'fas fa-dollar-sign',
             txt    = '',
             params = { event = 'rsg-billing:client:deletebills' }
         },
         {
-            header = 'close',
+            header = Lang:t("header.close"),
             icon   = 'fa-solid fa-circle-xmark',
             txt    = '',
             params = { event = 'rsg-menu:closeMenu', }
@@ -41,28 +41,27 @@ end)
 -- send bill to player (client:billplayer)
 RegisterNetEvent('rsg-billing:client:billplayer', function()
     local dialog = exports['rsg-input']:ShowInput({
-    header = "Create Bill",
-    submitText = "Send Bill",
+    header = Lang:t("header.create_bill"),
+    submitText = Lang:t("header.send_bill"),
         inputs = {
             {
-                text = "PlayerID",
+                text = Lang:t("text.playerid"),
                 name = "playerid",
                 type = "number",
                 isRequired = false,
             },
             {
-                text = "Bill Price ($)",
+                text = Lang:t("text.bill_price"),
                 name = "billprice",
                 type = "number",
                 isRequired = false,
             },
             {
-                text = "Bill Type",
+                text = Lang:t("text.bill_price"),
                 name = "billtype",
                 type = "radio",
-                options = {
-                    { value = "player", text = "Bill as Player" },
-                    { value = "society", text = "Bill as Society" },
+                    { value = "player", text =  Lang:t("text.bill_as_player") },
+                    { value = "society", text =  Lang:t("text.bill_as_society") },
                 },
             },
         }
@@ -82,7 +81,7 @@ RegisterNetEvent('rsg-billing:client:billplayer', function()
         if jobcheck == true then
             TriggerServerEvent('rsg-billing:server:sendSocietyBill', dialog.playerid, dialog.billprice, playerjob)    
         else
-            RSGCore.Functions.Notify('you are not part of a society!', 'error')
+            RSGCore.Functions.Notify(Lang:t("error.you_are_not_part_society"), 'error')
         end
     end
     if dialog.billtype == 'player' then
@@ -96,12 +95,12 @@ RegisterNetEvent('rsg-billing:client:checkbills', function()
     RSGCore.Functions.TriggerCallback('rsg-billing:server:checkbills', function(bills, cid)
         local BillsShow = {
             {
-                header = 'Unpaid Bills | ID: ' .. PlayerId,
+                header = Lang:t("header.unpaid_bills_id") .. PlayerId,
                 isMenuHeader = true,
                 icon = 'fas fa-file-invoice-dollar',
             },
             {
-                header = 'Citizen ID: ' .. cid,
+                header = Lang:t("header.citizen_id") .. cid,
                 isMenuHeader = true,
                 icon = 'fas fa-id-card-clip',
             },
@@ -109,9 +108,9 @@ RegisterNetEvent('rsg-billing:client:checkbills', function()
         
         for _, v in ipairs(bills) do
             BillsShow[#BillsShow + 1] = {
-                header = 'Amount: ' .. v.amount .. '$',
+                header = Lang:t("header.amount") .. v.amount .. '$',
                 icon = 'fas fa-dollar-sign',
-                txt = 'ID : ' ..v.id ..' | From : ' .. v.sender .. ' | ' .. v.society,
+                txt = Lang:t("text.id")  ..v.id ..Lang:t("text.from") .. v.sender .. ' | ' .. v.society,
                 params = { event = 'rsg-billing:server:paybills', 
                     isServer = true,
                     args = {
@@ -127,7 +126,7 @@ RegisterNetEvent('rsg-billing:client:checkbills', function()
         end
 
         BillsShow[#BillsShow + 1] = {
-            header = 'Close',
+            header = Lang:t("header.close"),
             icon   = 'fa-solid fa-circle-xmark',
             txt    = '',
             params = { event = 'rsg-menu:closeMenu', }
@@ -144,12 +143,12 @@ RegisterNetEvent('rsg-billing:client:deletebills', function()
 
         local SentBillsShow = {
             {
-                header = 'Sent Bills',
+                header = Lang:t("header.send_bill"),
                 isMenuHeader = true,
                 icon = 'fas fa-file-invoice-dollar',
             },
             {
-                header = 'Citizen ID: ' .. citizenid,
+                header = Lang:t("header.citizen_id") .. citizenid,
                 isMenuHeader = true,
                 icon = 'fas fa-id-card-clip',
             },
@@ -157,9 +156,9 @@ RegisterNetEvent('rsg-billing:client:deletebills', function()
         
         for _, v in ipairs(sentbills) do
             SentBillsShow[#SentBillsShow + 1] = {
-                header = 'Amount: ' .. v.amount .. '$',
+                header = Lang:t("header.amount") .. v.amount .. '$',
                 icon = 'fas fa-dollar-sign',
-                txt = 'ID : ' .. v.id .. ' | To : ' .. v.citizenid,
+                txt = Lang:t("text.id") .. v.id .. Lang:t("text.to") .. v.citizenid,
                 params = { event = 'rsg-billing:client:cancelbill', 
                     isServer = false,
                     args = {
@@ -170,7 +169,7 @@ RegisterNetEvent('rsg-billing:client:deletebills', function()
         end
 
         SentBillsShow[#SentBillsShow + 1] = {
-            header = 'Close',
+            header =  Lang:t("header.close"),
             icon   = 'fa-solid fa-circle-xmark',
             txt    = '',
             params = { event = 'rsg-menu:closeMenu', }
@@ -184,15 +183,15 @@ end)
 -- cancel bill confirm
 RegisterNetEvent('rsg-billing:client:cancelbill', function(data)
     local dialog = exports['rsg-input']:ShowInput({
-        header = "Cancel Bill",
-        submitText = "Submit",
+        header = Lang:t("header.cancel_bill"),
+        submitText = Lang:t("text.submit"),
         inputs = {
             {
-                text = "Bill ID : "..data.billid,
+                text = Lang:t("header.bill_id")..data.billid,
                 name = "cancelbill",
                 type = "radio",
                 options = {
-                    { value = "yes", text = "Yes" },
+                    { value = "yes", text = Lang:t("text.yes") },
                     { value = "no", text = "No" },
                 },
             },
@@ -206,9 +205,9 @@ RegisterNetEvent('rsg-billing:client:cancelbill', function(data)
         end
         if dialog.cancelbill == 'yes' then
             TriggerServerEvent('rsg-billing:server:cancelbill', tonumber(data.billid))
-            RSGCore.Functions.Notify('Bill Canceled!', 'primary')
+            RSGCore.Functions.Notify(Lang:t("primary.bill_canceled"), 'primary')
         else
-            RSGCore.Functions.Notify('Bill not canceled!', 'primary')
+            RSGCore.Functions.Notify(Lang:t("primary.bill_not_canceled"), 'primary')
             return
         end
     end

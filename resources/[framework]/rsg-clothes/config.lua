@@ -1,8 +1,8 @@
 Config = {}
-Config.Shoptext = 'Press ~INPUT_JUMP~ to open a clothing store' -- Text to open the clothing shop
-Config.Cloakroomtext = 'Press ~INPUT_JUMP~ to open the changing rooms' -- Text to open the clothing shop
-Config.BlipName = 'A clothing store' -- Blip Name Showed on map
-Config.BlipNameCloakRoom = 'Wardrobe' -- Blip Name Showed on map
+Config.Shoptext =  Lang:t('text.press_to_open_clothing_store') -- Text to open the clothing shop
+Config.Cloakroomtext = Lang:t('text.press_to_open_the_changing_rooms') -- Text to open the clothing shop
+Config.BlipName = Lang:t('text.a_clothing_store') -- Blip Name Showed on map
+Config.BlipNameCloakRoom = Lang:t('text.wardrobe') -- Blip Name Showed on map
 Config.BlipSprite = 1195729388	 -- Clothing shop sprite
 Config.BlipSpriteCloakRoom = 1496995379	 -- Clothing shop sprite
 Config.BlipScale = 0.2 -- Blip scale
@@ -26,47 +26,47 @@ Config.Cloakroom = {
 }
 
 Config.Label = {
-    ["boot_accessories"] = "Boot Accessories",
-    ["pants"] = "Pants",
-    ["cloaks"] = "Cloaks",
-    ["hats"] = "Hats",
-    ["vests"] = "Vests",
-    ["chaps"] = "Chaps",
-    ["shirts_full"] = "Shirts Full",
-    ["badges"] = "Badges",
-    ["masks"] = "Masks",
-    ["spats"] = "Spats",
-    ["neckwear"] = "Neck Wear",
-    ["boots"] = "Boots",
-    ["accessories"] = "Accessories",
-    ["jewelry_rings_right"] = "Jewelry Rings Right",
-    ["jewelry_rings_left"]    = "Jewelry Rings Reft",
-    ["jewelry_bracelets"] = "Jewelry Bracelets",
-    ["gauntlets"] = "Gaunt Lets",
-    ["neckties"] = "Neck Ties",
-    ["holsters_knife"] = "Holsters Knife",
-    ["talisman_holster"] = "Talisman Holster",
-    ["loadouts"] = "Load outs",
-    ["suspenders"] = "Suspenders",
-    ["talisman_satchel"] = "Talisman Satchel",
-    ["satchels"] = "Satchels",
-    ["gunbelts"] = "Gun Belts",
-    ["belts"] = "Belts",
-    ["belt_buckles"] = "Belt Buckles",
-    ["holsters_left"] = "Holsters Left",
-    ["holsters_right"] = "Holsters Right",
-    ["talisman_wrist"] = "Talisman Wrist",
-    ["coats"] = "Coats",
-    ["coats_closed"] = "Coats Closed",
-    ["ponchos"] = "Ponchos",
-    ["eyewear"] = "Eyewear",
-    ["gloves"] = "Gloves",
-    ["holsters_crossdraw"] = "Holsters Crossdraw",
-    ["aprons"] = "Aprons",
-    ["skirts"] = "Skirts",
-    ["hair_accessories"] = "Hair Accessories",
-    ["armor"] = "Armor",
-    ["dresses"] = "Dresses",
+    ["boot_accessories"] = Lang:t('label.boot_accessories'),
+    ["pants"] = Lang:t('label.pants'),
+    ["cloaks"] = Lang:t('label.cloaks'),
+    ["hats"] = Lang:t('label.hats'),
+    ["vests"] = Lang:t('label.vests'),
+    ["chaps"] = Lang:t('label.chaps'),
+    ["shirts_full"] =  Lang:t('label.shirts_full'),
+    ["badges"] = Lang:t('label.badges'),
+    ["masks"] = Lang:t('label.masks'),
+    ["spats"] = Lang:t('label.spats'),
+    ["neckwear"] =  Lang:t('label.neckwear'),
+    ["boots"] = Lang:t('label.boots'),
+    ["accessories"] = Lang:t('label.accessories'),
+    ["jewelry_rings_right"] = Lang:t('label.jewelry_rings_right'),
+    ["jewelry_rings_left"]    = Lang:t('label.jewelry_rings_left'),
+    ["jewelry_bracelets"] =  Lang:t('label.jewelry_bracelets'),
+    ["gauntlets"] =  Lang:t('label.gauntlets'),
+    ["neckties"] =  Lang:t('label.neckties'),
+    ["holsters_knife"] =  Lang:t('label.holsters_knife'),
+    ["talisman_holster"] =  Lang:t('label.talisman_holster'),
+    ["loadouts"] =  Lang:t('label.loadouts'),
+    ["suspenders"] = Lang:t('label.suspenders'),
+    ["talisman_satchel"] =  Lang:t('label.talisman_satchel'),
+    ["satchels"] = Lang:t('label.satchels'),
+    ["gunbelts"] =  Lang:t('label.gunbelts'),
+    ["belts"] = Lang:t('label.belts'),
+    ["belt_buckles"] =  Lang:t('label.belt_buckles'),
+    ["holsters_left"] =  Lang:t('label.holsters_left'),
+    ["holsters_right"] =  Lang:t('label.holsters_right'),
+    ["talisman_wrist"] =  Lang:t('label.talisman_wrist'),
+    ["coats"] = Lang:t('label.coats'),
+    ["coats_closed"] =  Lang:t('label.coats_closed'),
+    ["ponchos"] = Lang:t('label.ponchos'),
+    ["eyewear"] = Lang:t('label.eyewear'),
+    ["gloves"] = Lang:t('label.gloves'),
+    ["holsters_crossdraw"] =  Lang:t('label.holsters_crossdraw'),
+    ["aprons"] = Lang:t('label.aprons'),
+    ["skirts"] = Lang:t('label.skirts'),
+    ["hair_accessories"] =  Lang:t('label.hair_accessories'),
+    ["armor"] = Lang:t('label.armor'),
+    ["dresses"] = Lang:t('label.dresses'),
 }
 
 Config.Price = {
@@ -115,7 +115,7 @@ Config.Price = {
 
 Config.MenuElements = {
     ["head"] = {
-        label = "Head",
+        label = Lang:t('label.head'),
         category = {
             "hats",
             "eyewear",
@@ -126,7 +126,7 @@ Config.MenuElements = {
     },
 
     ["torso"] = {
-        label = "Torso",
+        label = Lang:t('label.torso'),
         category = {
             "cloaks",
             "vests",
@@ -145,8 +145,8 @@ Config.MenuElements = {
         }
     },
 
-    ["legs"] = {
-        label = "Legs",
+    [""] = {
+        label = Lang:t('label.legs'),
         category = {
             "pants",
             "chaps",
@@ -154,7 +154,7 @@ Config.MenuElements = {
         }
     },
     ["foot"] = {
-        label = "Foot",
+        label = Lang:t('label.foot'),
         category = {
             "boots",
             "spats",
@@ -163,7 +163,7 @@ Config.MenuElements = {
     },
 
     ["hands"] = {
-        label = "Hands",
+        label = Lang:t('label.hands'),
         category = {
             "jewelry_rings_right",
             "jewelry_rings_left",
@@ -174,7 +174,7 @@ Config.MenuElements = {
     },
 
     ["accessories"] = {
-        label = "Accessories",
+        label = Lang:t('label.accessories'),
         category = {
             "accessories",
             "talisman_wrist",
