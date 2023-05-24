@@ -10,7 +10,12 @@ client_scripts {
     'client/main.lua'
 }
 
-shared_script 'config.lua'
+shared_scripts {
+    '@rsg-core/shared/locale.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+    'config.lua'
+}
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',

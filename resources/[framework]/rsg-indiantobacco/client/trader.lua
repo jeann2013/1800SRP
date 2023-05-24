@@ -4,7 +4,7 @@ local indiantrader
 -- prompts
 Citizen.CreateThread(function()
     for indiantrader, v in pairs(Config.IndianTraderLocations) do
-        exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
+        exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'], Lang:t('menu.open') .. v.name, {
             type = 'client',
             event = 'rsg-indiantrader:client:openMenu',
             args = {},
@@ -35,12 +35,12 @@ end)
 RegisterNetEvent('rsg-indiantrader:client:openMenu', function(data)
     exports['rsg-menu']:openMenu({
         {
-            header = "| Indian Trader Menu |",
+            header = Lang:t('menu.indian_trader_menu'),
             isMenuHeader = true,
         },
         {
-            header = "Trade 10 Indian Tobacco",
-            txt = "trade 10 tobacco for 1 indian cigars",
+            header = Lang:t('header.trade_10_indian_tobacco'),
+            txt = Lang:t('header.trade_10_tobacco_for_1_indian_cigars'),
             params = {
                 event = 'rsg-indiantrader:server:tradetobacco',
                 isServer = true,
@@ -48,8 +48,8 @@ RegisterNetEvent('rsg-indiantrader:client:openMenu', function(data)
             }
         },
         {
-            header = "Trade 50 Indian Tobacco",
-            txt = "trade 50 tobacco for 5 indian cigars",
+            header = Lang:t('header.trade_50_indian_tobacco'),
+            txt = Lang:t('header.trade_50_tobacco_for_5_indian_cigars'),
             params = {
                 event = 'rsg-indiantrader:server:tradetobacco',
                 isServer = true,
@@ -57,8 +57,8 @@ RegisterNetEvent('rsg-indiantrader:client:openMenu', function(data)
             }
         },
         {
-            header = "Trade 100 Indian Tobacco",
-            txt = "trade 10 tobacco for 10 indian cigars",
+            header = Lang:t('header.trade_100_indian_tobacco'),
+            txt = Lang:t('header.trade_10_tobacco_for_10_indian_cigars'),
             params = {
                 event = 'rsg-indiantrader:server:tradetobacco',
                 isServer = true,
@@ -66,8 +66,8 @@ RegisterNetEvent('rsg-indiantrader:client:openMenu', function(data)
             }
         },
         {
-            header = "Open Trader Shop",
-            txt = "buy indian trade items",
+            header = Lang:t('header.open_trader_shop'),
+            txt = Lang:t('header.buy_indian_trade_items'),
             params = {
                 event = 'rsg-indiantrader:client:OpenIndianShop',
                 isServer = false,
@@ -75,7 +75,7 @@ RegisterNetEvent('rsg-indiantrader:client:openMenu', function(data)
             }
         },
         {
-            header = "Close Menu",
+            header = Lang:t('header.close_menu'),
             txt = '',
             params = {
                 event = 'rsg-menu:closeMenu',
@@ -88,7 +88,7 @@ end)
 RegisterNetEvent('rsg-indiantrader:client:OpenIndianShop')
 AddEventHandler('rsg-indiantrader:client:OpenIndianShop', function()
     local ShopItems = {}
-    ShopItems.label = "Indian Trader"
+    ShopItems.label = Lang:t('header.indian_trader')
     ShopItems.items = Config.IndianTraderShop
     ShopItems.slots = #Config.IndianTraderShop
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "IndianTraderShop_"..math.random(1, 99), ShopItems)

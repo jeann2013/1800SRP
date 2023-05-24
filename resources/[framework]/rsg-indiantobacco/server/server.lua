@@ -80,7 +80,7 @@ AddEventHandler('rsg-indiantobacco:server:plantNewSeed', function(type, location
     end
 
     if PlantCount >= Config.MaxPlantCount then
-        TriggerClientEvent('RSGCore:Notify', src, 'You already have ' .. Config.MaxPlantCount .. ' plants down', 'error')
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_already_have') .. Config.MaxPlantCount .. Lang:t('error.plants_down'), 'error')
     else
         table.insert(Config.Plants, SeedData)
         TriggerEvent('rsg-indiantobacco:server:savePlant', SeedData, plantId)
@@ -112,7 +112,7 @@ AddEventHandler('rsg-indiantobacco:server:destroyPlant', function(plantId)
     TriggerClientEvent('rsg-indiantobacco:client:removePlantObject', src, plantId)
     TriggerEvent('rsg-indiantobacco:server:PlantRemoved', plantId)
     TriggerEvent('rsg-indiantobacco:server:updatePlants')
-    TriggerClientEvent('RSGCore:Notify', src, 'you distroyed the plant', 'success')
+    TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.you_distroyed_the_plant'), 'success')
 end)
 
 -- harvest plant
@@ -155,7 +155,7 @@ AddEventHandler('rsg-indiantobacco:server:harvestPlant', function(plantId)
             local pooramount = math.random(1,3)
             Player.Functions.AddItem('indtobacco', pooramount)
             TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indtobacco'], "add")
-            TriggerClientEvent('RSGCore:Notify', src, 'You harvest '.. pooramount ..' Indian Tobacco', 'success')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.you_harvest').. pooramount ..Lang:t('success.indian_tobacco'), 'success')
             Player.Functions.SetMetaData("dealerrep", Player.PlayerData.metadata["dealerrep"] + pooramount)
             Wait(5000)
             TriggerEvent('rsg-indiantobacco:server:dealerrep', src)
@@ -163,7 +163,7 @@ AddEventHandler('rsg-indiantobacco:server:harvestPlant', function(plantId)
             local goodamount = math.random(3,6)
             Player.Functions.AddItem('indtobacco', goodamount)
             TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indtobacco'], "add")
-            TriggerClientEvent('RSGCore:Notify', src, 'You harvest '.. goodamount ..' Indian Tobacco', 'success')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.you_harvest').. goodamount ..Lang:t('success.indian_tobacco'), 'success')
             Player.Functions.SetMetaData("dealerrep", Player.PlayerData.metadata["dealerrep"] + goodamount)
             Wait(5000)
             TriggerEvent('rsg-indiantobacco:server:dealerrep', src)
@@ -173,7 +173,7 @@ AddEventHandler('rsg-indiantobacco:server:harvestPlant', function(plantId)
             TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indtobacco'], "add")
             Player.Functions.AddItem('indtobaccoseed', 1)
             TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indtobaccoseed'], "add")
-            TriggerClientEvent('RSGCore:Notify', src, 'You harvest '.. exellentamount ..' Indian Tobacco', 'success')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.you_harvest').. exellentamount ..Lang:t('success.indian_tobacco'), 'success')
             Player.Functions.SetMetaData("dealerrep", Player.PlayerData.metadata["dealerrep"] + exellentamount)
             Wait(5000)
             TriggerEvent('rsg-indiantobacco:server:dealerrep', src)
@@ -327,11 +327,11 @@ Citizen.CreateThread(function()
 end)
 
 -- check your dealer reputation
-RSGCore.Commands.Add("dealerrep", "check your dealer reputation ", {}, false, function(source)
+RSGCore.Commands.Add("dealerrep", Lang:t('commands.check_your_dealer_reputation'), {}, false, function(source)
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     local curRep = Player.PlayerData.metadata["dealerrep"]
-    TriggerClientEvent('RSGCore:Notify', src, 'Your dealer reputation is '.. curRep, 'primary')
+    TriggerClientEvent('RSGCore:Notify', src, Lang:t('primary.your_dealer_reputation_is').. curRep, 'primary')
 end)
 
 -- used by harvest to show new dealer reputation
@@ -340,7 +340,7 @@ AddEventHandler('rsg-indiantobacco:server:dealerrep', function(source)
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     local curRep = Player.PlayerData.metadata["dealerrep"]
-    TriggerClientEvent('RSGCore:Notify', src, 'Your dealer reputation increased to '.. curRep, 'primary')
+    TriggerClientEvent('RSGCore:Notify', src, Lang:t('primary.your_dealer_reputation_increased_to').. curRep, 'primary')
 end)
 
 -- trade tobacco
@@ -360,7 +360,7 @@ AddEventHandler('rsg-indiantrader:server:tradetobacco', function(data) -- 1 / 5 
                 Player.Functions.AddItem('indiancigar', 1)
                 TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indiancigar'], "remove")
             else
-                TriggerClientEvent('RSGCore:Notify', src, 'You don\'t have enough indian tobacco to do that!', 'error')
+                TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_dont_have_enough_indian_tobacco_to_do_that'), 'error')
             end
         elseif trade == 5 then
             if playerindiantobacco >= 50 then
@@ -369,7 +369,7 @@ AddEventHandler('rsg-indiantrader:server:tradetobacco', function(data) -- 1 / 5 
                 Player.Functions.AddItem('indiancigar', 5)
                 TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indiancigar'], "remove")
             else
-                TriggerClientEvent('RSGCore:Notify', src, 'You don\'t have enough indian tobacco to do that!', 'error')
+                TriggerClientEvent('RSGCore:Notify', src,  Lang:t('error.you_dont_have_enough_indian_tobacco_to_do_that'), 'error')
             end
         elseif trade == 10 then
             if playerindiantobacco >= 100 then
@@ -378,13 +378,13 @@ AddEventHandler('rsg-indiantrader:server:tradetobacco', function(data) -- 1 / 5 
                 Player.Functions.AddItem('indiancigar', 10)
                 TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['indiancigar'], "remove")
             else
-                TriggerClientEvent('RSGCore:Notify', src, 'You don\'t have enough indian tobacco to do that!', 'error')
+                TriggerClientEvent('RSGCore:Notify', src,  Lang:t('error.you_dont_have_enough_indian_tobacco_to_do_that'), 'error')
             end
         else
-            TriggerClientEvent('RSGCore:Notify', src, 'not enough to complete the trade!', 'error')
+            TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.not_enough_to_complete_the_trade'), 'error')
         end
     else
-        TriggerClientEvent('RSGCore:Notify', src, 'You do not have any indian tobacco!', 'error')
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_do_not_have_any_indian_tobacco'), 'error')
     end
 end)
 

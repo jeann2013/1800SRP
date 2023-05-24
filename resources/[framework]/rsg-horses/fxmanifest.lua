@@ -6,10 +6,11 @@ lua54 'yes'
 description 'rsg-horses'
 
 shared_scripts {
+    '@rsg-core/shared/locale.lua',
     'shared/config.lua',
     'shared/horse_comp.lua',
-    '@rsg-core/shared/locale.lua',
-    'locales/en.lua', -- Change this to your preferred language
+    'locales/en.lua',
+    'locales/*.lua',
 }
 
 client_scripts {

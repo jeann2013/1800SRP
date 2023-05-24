@@ -31,8 +31,3 @@ Lang = Locale:new({
     phrases = Translations,
     warnOnMissing = true
 })
-
--- Lang:t('error.var')
--- Lang:t('success.var')
--- Lang:t('primary.var')
--- Lang:t('menu.var')

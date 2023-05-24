@@ -17,11 +17,11 @@ server_scripts
     'server/server.lua'
 }
 
-shared_scripts
-{
+shared_scripts {
     '@rsg-core/shared/locale.lua',
-    'locales/en.lua', -- preferred language
-    'config.lua'
+    'config.lua',
+    'locales/en.lua',
+    'locales/*.lua',
 }
 
 dependencies

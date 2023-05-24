@@ -15,10 +15,12 @@ server_scripts {
     '@oxmysql/lib/MySQL.lua',
 }
 
+
 shared_scripts {
     '@rsg-core/shared/locale.lua',
-    'locale/en.lua',
-    'config.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+    'config.lua'
 }
 
 lua54 'yes'

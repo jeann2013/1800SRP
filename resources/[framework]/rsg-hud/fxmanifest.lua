@@ -6,9 +6,9 @@ description 'rsg-hud'
 
 shared_scripts {
     '@rsg-core/shared/locale.lua',
+    'config.lua',
     'locales/en.lua',
-    'locales/*.lua',
-    'config.lua'
+    'locales/*.lua'
 }
 
 client_scripts {

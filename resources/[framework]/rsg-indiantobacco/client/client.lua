@@ -93,7 +93,7 @@ function DestroyPlant()
         isDoingAction = false
         canHarvest = true
     else
-        RSGCore.Functions.Notify('error', 'error')
+        RSGCore.Functions.Notify(Lang:t('error.error'), 'error')
     end
 end
 
@@ -121,7 +121,7 @@ function HarvestPlant()
         isDoingAction = false
         canHarvest = true
     else
-        RSGCore.Functions.Notify('error', 'error')
+        RSGCore.Functions.Notify(Lang:t('error.error'), 'error')
     end
 end
 
@@ -145,9 +145,9 @@ Citizen.CreateThread(function()
             if GetDistanceBetweenCoords(pos.x, pos.y, pos.z, v.x, v.y, v.z, true) < 1.3 and not isDoingAction and not v.beingHarvested and not IsPedInAnyVehicle(PlayerPedId(), false) then
                 if PlayerJob.name == 'police' then
                     local plant = GetClosestPlant()
-                    DrawText3D(v.x, v.y, v.z, 'Thirst: ' .. v.thirst .. '% - Hunger: ' .. v.hunger .. '%')
-                    DrawText3D(v.x, v.y, v.z - 0.18, 'Growth: ' ..  v.growth .. '% -  Quality: ' .. v.quality.. '%')
-                    DrawText3D(v.x, v.y, v.z - 0.36, 'Destroy Plant [G]')
+                    DrawText3D(v.x, v.y, v.z, Lang:t('text.thirst') .. v.thirst .. Lang:t('text.hunger') .. v.hunger .. '%')
+                    DrawText3D(v.x, v.y, v.z - 0.18, Lang:t('text.growth') ..  v.growth .. Lang:t('text.quality') .. v.quality.. '%')
+                    DrawText3D(v.x, v.y, v.z - 0.36, Lang:t('text.destroy_plant'))
                     if IsControlJustPressed(0, RSGCore.Shared.Keybinds['G']) then
                         if v.id == plant.id then
                             DestroyPlant()
@@ -156,9 +156,9 @@ Citizen.CreateThread(function()
                 else
                     if v.growth < 100 then
                         local plant = GetClosestPlant()
-                        DrawText3D(v.x, v.y, v.z, 'Thirst: ' .. v.thirst .. '% - Hunger: ' .. v.hunger .. '%')
-                        DrawText3D(v.x, v.y, v.z - 0.18, 'Growth: ' ..  v.growth .. '% -  Quality: ' .. v.quality.. '%')
-                        DrawText3D(v.x, v.y, v.z - 0.36, 'Water [G] : Feed [J]')
+                        DrawText3D(v.x, v.y, v.z, Lang:t('text.thirst') .. v.thirst .. Lang:t('text.hunger') .. v.hunger .. '%')
+                        DrawText3D(v.x, v.y, v.z - 0.18, Lang:t('text.growth') ..  v.growth .. Lang:t('text.quality') .. v.quality.. '%')
+                        DrawText3D(v.x, v.y, v.z - 0.36, Lang:t('text.water_feed'))
                         if IsControlJustPressed(0, RSGCore.Shared.Keybinds['G']) then
                             if v.id == plant.id then
                                 TriggerEvent('rsg-indiantobacco:client:waterPlant')
@@ -169,8 +169,8 @@ Citizen.CreateThread(function()
                             end
                         end
                     else
-                        DrawText3D(v.x, v.y, v.z, '[Quality: ' .. v.quality .. ']')
-                        DrawText3D(v.x, v.y, v.z - 0.18, 'Harvest [E]')
+                        DrawText3D(v.x, v.y, v.z, Lang:t('text.quality2') .. v.quality .. ']')
+                        DrawText3D(v.x, v.y, v.z - 0.18, Lang:t('text.harvest'))
                         if IsControlJustReleased(0, RSGCore.Shared.Keybinds['E']) and canHarvest then
                             local plant = GetClosestPlant()
                             local callpolice = math.random(1,100)
@@ -238,7 +238,7 @@ AddEventHandler('rsg-indiantobacco:client:waterPlant', function()
         TriggerServerEvent('rsg-indiantobacco:server:waterPlant', plant.id)
         isDoingAction = false
     else
-        RSGCore.Functions.Notify('You don\'t have any water!', 'error')
+        RSGCore.Functions.Notify(Lang:t('error.you_dont_have_any_water'), 'error')
         Wait(5000)
         isDoingAction = false
     end
@@ -266,7 +266,7 @@ AddEventHandler('rsg-indiantobacco:client:feedPlant', function()
         TriggerServerEvent('rsg-indiantobacco:server:feedPlant', plant.id)
         isDoingAction = false
     else
-        RSGCore.Functions.Notify('You don\'t have any fertilizer!', 'error')
+        RSGCore.Functions.Notify(Lang:t('error.you_dont_have_any_fertilizer'), 'error')
         Wait(5000)
         isDoingAction = false
     end
@@ -292,7 +292,7 @@ AddEventHandler('rsg-indiantobacco:client:plantNewSeed', function(type)
         SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
         TriggerServerEvent('rsg-indiantobacco:server:plantNewSeed', type, pos)
     else
-        RSGCore.Functions.Notify('too close to another plant!', 'error')
+        RSGCore.Functions.Notify(Lang:t('error.too_close_to_another_plant'), 'error')
     end
 end)
 
