@@ -6,7 +6,7 @@ local bossmenu
 
 Citizen.CreateThread(function()
      for bossmenu, v in pairs(Config.BossLocations) do
-         exports['rsg-core']:createPrompt(v.bossname, v.coords, RSGCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
+         exports['rsg-core']:createPrompt(v.bossname, v.coords, RSGCore.Shared.Keybinds['J'], Lang:t('menu.open_menu') .. v.name, {
              type = 'client',
              event = 'rsg-bossmenu:client:OpenMenu',
              args = { },
@@ -72,45 +72,45 @@ RegisterNetEvent('rsg-bossmenu:client:OpenMenu', function()
 
     local bossMenu = {
         {
-            header = "Boss Menu - " .. string.upper(PlayerJob.label),
+            header = Lang:t('menu.boss_menu') .. string.upper(PlayerJob.label),
             icon = "fa-solid fa-circle-info",
             isMenuHeader = true,
         },
         {
-            header = "Manage Employees",
-            txt = "Check your Employees List",
+            header = Lang:t('menu.manage_employees'),
+            txt = Lang:t('menu.check_your_employees_list'),
             icon = "fa-solid fa-list",
             params = {
                 event = "rsg-bossmenu:client:employeelist",
             }
         },
         {
-            header = "Hire Employees",
-            txt = "Hire Nearby Civilians",
+            header = Lang:t('menu.hire_employees'),
+            txt = Lang:t('menu.hire_nearby_civilians'),
             icon = "fa-solid fa-hand-holding",
             params = {
                 event = "rsg-bossmenu:client:HireMenu",
             }
         },
         {
-            header = "Storage Access",
-            txt = "Open Storage",
+            header =  Lang:t('menu.storage_access'),
+            txt = Lang:t('menu.open_storage'),
             icon = "fa-solid fa-box-open",
             params = {
                 event = "rsg-bossmenu:client:Stash",
             }
         },
         {
-            header = "Outfits",
-            txt = "See Saved Outfits",
+            header = Lang:t('menu.outfits'),
+            txt = Lang:t('text.see_saved_outfits'),
             icon = "fa-solid fa-shirt",
             params = {
                 event = "rsg-bossmenu:client:Wardrobe",
             }
         },
         {
-            header = "Money Management",
-            txt = "Check your Company Balance",
+            header = Lang:t('menu.money_management'),
+            txt = Lang:t('text.check_your_company_balance'),
             icon = "fa-solid fa-sack-dollar",
             params = {
                 event = "rsg-bossmenu:client:SocietyMenu",
@@ -123,7 +123,7 @@ RegisterNetEvent('rsg-bossmenu:client:OpenMenu', function()
     end
 
     bossMenu[#bossMenu + 1] = {
-        header = "Exit",
+        header = Lang:t('menu.exit'),
         icon = "fa-solid fa-angle-left",
         params = {
             event = "rsg-menu:closeMenu",
@@ -136,7 +136,7 @@ end)
 RegisterNetEvent('rsg-bossmenu:client:employeelist', function()
     local EmployeesMenu = {
         {
-            header = "Manage Employees - " .. string.upper(PlayerJob.label),
+            header = Lang:t('menu.manage_employees') .. string.upper(PlayerJob.label),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info",
         },
@@ -157,7 +157,7 @@ RegisterNetEvent('rsg-bossmenu:client:employeelist', function()
             }
         end
         EmployeesMenu[#EmployeesMenu + 1] = {
-            header = "Return",
+            header = Lang:t('menu.return_menu'),
             icon = "fa-solid fa-angle-left",
             params = {
                 event = "rsg-bossmenu:client:OpenMenu",
@@ -170,7 +170,7 @@ end)
 RegisterNetEvent('rsg-bossmenu:client:ManageEmployee', function(data)
     local EmployeeMenu = {
         {
-            header = "Manage " .. data.player.name .. " - " .. string.upper(PlayerJob.label),
+            header = Lang:t('menu.return_menu') .. data.player.name .. " - " .. string.upper(PlayerJob.label),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info"
         },
@@ -178,7 +178,7 @@ RegisterNetEvent('rsg-bossmenu:client:ManageEmployee', function(data)
     for k, v in pairs(RSGCore.Shared.Jobs[data.work.name].grades) do
         EmployeeMenu[#EmployeeMenu + 1] = {
             header = v.name,
-            txt = "Grade: " .. k,
+            txt = Lang:t('menu.grade_menu') .. k,
             params = {
                 isServer = true,
                 event = "rsg-bossmenu:server:GradeUpdate",
@@ -192,7 +192,7 @@ RegisterNetEvent('rsg-bossmenu:client:ManageEmployee', function(data)
         }
     end
     EmployeeMenu[#EmployeeMenu + 1] = {
-        header = "Fire Employee",
+        header = Lang:t('menu.fire_employee'),
         icon = "fa-solid fa-user-large-slash",
         params = {
             isServer = true,
@@ -201,7 +201,7 @@ RegisterNetEvent('rsg-bossmenu:client:ManageEmployee', function(data)
         }
     }
     EmployeeMenu[#EmployeeMenu + 1] = {
-        header = "Return",
+        header = Lang:t('menu.return_menu'),
         icon = "fa-solid fa-angle-left",
         params = {
             event = "rsg-bossmenu:client:OpenMenu",
@@ -225,7 +225,7 @@ end)
 RegisterNetEvent('rsg-bossmenu:client:HireMenu', function()
     local HireMenu = {
         {
-            header = "Hire Employees - " .. string.upper(PlayerJob.label),
+            header =  Lang:t('menu.hire_employees_menu'), .. string.upper(PlayerJob.label),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info",
         },
@@ -235,7 +235,7 @@ RegisterNetEvent('rsg-bossmenu:client:HireMenu', function()
             if v and v ~= PlayerId() then
                 HireMenu[#HireMenu + 1] = {
                     header = v.name,
-                    txt = "Citizen ID: " .. v.citizenid .. " - ID: " .. v.sourceplayer,
+                    txt = Lang:t('menu.citizen_id') .. v.citizenid .. " - ID: " .. v.sourceplayer,
                     icon = "fa-solid fa-user-check",
                     params = {
                         isServer = true,
@@ -246,7 +246,7 @@ RegisterNetEvent('rsg-bossmenu:client:HireMenu', function()
             end
         end
         HireMenu[#HireMenu + 1] = {
-            header = "Return",
+            header = Lang:t('menu.return_menu'),
             icon = "fa-solid fa-angle-left",
             params = {
                 event = "rsg-bossmenu:client:OpenMenu",
@@ -260,21 +260,21 @@ RegisterNetEvent('rsg-bossmenu:client:SocietyMenu', function()
     RSGCore.Functions.TriggerCallback('rsg-bossmenu:server:GetAccount', function(cb)
         local SocietyMenu = {
             {
-                header = "Balance: $" .. comma_value(cb) .. " - " .. string.upper(PlayerJob.label),
+                header = Lang:t('menu.balance') .. comma_value(cb) .. " - " .. string.upper(PlayerJob.label),
                 isMenuHeader = true,
                 icon = "fa-solid fa-circle-info",
             },
             {
-                header = "Deposit",
+                header = Lang:t('menu.deposit'),
                 icon = "fa-solid fa-money-bill-transfer",
-                txt = "Deposit Money into account",
+                txt = Lang:t('menu.deposit_money_into_account'),
                 params = {
                     event = "rsg-bossmenu:client:SocetyDeposit",
                     args = comma_value(cb)
                 }
             },
             {
-                header = "Withdraw",
+                header = Lang:t('menu.withdraw_menu'),
                 icon = "fa-solid fa-money-bill-transfer",
                 txt = "Withdraw Money from account",
                 params = {
@@ -283,7 +283,7 @@ RegisterNetEvent('rsg-bossmenu:client:SocietyMenu', function()
                 }
             },
             {
-                header = "Return",
+                header = Lang:t('menu.return'),
                 icon = "fa-solid fa-angle-left",
                 params = {
                     event = "rsg-bossmenu:client:OpenMenu",
@@ -296,14 +296,14 @@ end)
 
 RegisterNetEvent('rsg-bossmenu:client:SocetyDeposit', function(money)
     local deposit = exports['rsg-input']:ShowInput({
-        header = "Deposit Money <br> Available Balance: $" .. money,
-        submitText = "Confirm",
+        header = Lang:t('menu.deposit_money_available_balance') .. money,
+        submitText = Lang:t('text.confirm_menu'),
         inputs = {
             {
                 type = 'number',
                 isRequired = true,
                 name = 'amount',
-                text = 'Amount'
+                text = Lang:t('text.amount_menu')
             }
         }
     })
@@ -315,14 +315,14 @@ end)
 
 RegisterNetEvent('rsg-bossmenu:client:SocetyWithDraw', function(money)
     local withdraw = exports['rsg-input']:ShowInput({
-        header = "Withdraw Money <br> Available Balance: $" .. money,
-        submitText = "Confirm",
+        header = Lang:t('menu.withdraw_money_available_balance') .. money,
+        submitText =Lang:t('text.confirm_menu'),
         inputs = {
             {
                 type = 'number',
                 isRequired = true,
                 name = 'amount',
-                text = 'Amount'
+                text =  Lang:t('text.amount_menu')
             }
         }
     })

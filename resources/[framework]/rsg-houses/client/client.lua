@@ -70,7 +70,7 @@ CreateThread(function()
     for i = 1, #Config.EstateAgents do
         local agent = Config.EstateAgents[i]
 
-        exports['rsg-core']:createPrompt(agent.prompt, agent.coords, RSGCore.Shared.Keybinds['J'], 'Talk to ' .. agent.name,
+        exports['rsg-core']:createPrompt(agent.prompt, agent.coords, RSGCore.Shared.Keybinds['J'], Lang:t('menu.talk_to') .. agent.name,
         {
             type = 'client',
             event = 'rsg-houses:client:agentmenu',
@@ -267,11 +267,11 @@ RegisterNetEvent('rsg-houses:client:agentmenu', function(location)
     exports['rsg-menu']:openMenu(
     {
         {
-            header = 'Estate Agent',
+            header = Lang:t('menu.estate_agent'),
             isMenuHeader = true,
         },
         {
-            header = 'Buy Property',
+            header = Lang:t('menu.buy_property'),
             txt = '',
             icon = "fas fa-home",
             params = {
@@ -281,7 +281,7 @@ RegisterNetEvent('rsg-houses:client:agentmenu', function(location)
             }
         },
         {
-            header = 'Sell Property',
+            header = Lang:t('menu.sell_property'),
             txt = '',
             icon = "fas fa-home",
             params = {
@@ -291,7 +291,7 @@ RegisterNetEvent('rsg-houses:client:agentmenu', function(location)
             }
         },
         {
-            header = 'Close Menu',
+            header = Lang:t('menu.close_menu'),
             txt = '',
             params = {
                 event = 'rsg-menu:closeMenu'
@@ -305,7 +305,7 @@ RegisterNetEvent('rsg-houses:client:buymenu', function(data)
     local GetHouseInfo =
     {
         {
-            header = 'Buy House',
+            header = Lang:t('menu.buy_house'),
             isMenuHeader = true,
             icon = "fas fa-home"
         }
@@ -323,7 +323,7 @@ RegisterNetEvent('rsg-houses:client:buymenu', function(data)
                 GetHouseInfo[#GetHouseInfo + 1] =
                 {
                     header = houseid,
-                    txt = 'Price $'..house.price..' : Land Tax $'..Config.LandTaxPerCycle,
+                    txt = Lang:t('menu.price')..house.price..Lang:t('menu.land_tax')..Config.LandTaxPerCycle,
                     icon = "fas fa-home",
                     params =
                     {
@@ -349,7 +349,7 @@ RegisterNetEvent('rsg-houses:client:sellmenu', function(data)
     local GetOwnedHouseInfo =
     {
         {
-            header = 'Sell House',
+            header = Lang:t('menu.sell_house'),
             isMenuHeader = true,
             icon = "fas fa-home"
         }
@@ -367,7 +367,7 @@ RegisterNetEvent('rsg-houses:client:sellmenu', function(data)
                 GetOwnedHouseInfo[#GetOwnedHouseInfo + 1] =
                 {
                     header = houseid,
-                    txt = 'Sell Price $'..sellprice,
+                    txt = Lang:t('menu.sell_price')..sellprice,
                     icon = "fas fa-home",
                     params =
                     {
@@ -409,7 +409,7 @@ RegisterNetEvent('rsg-houses:client:toggledoor', function(door, house)
 
                         TriggerServerEvent('rsg-houses:server:UpdateDoorState', door, 0)
 
-                        RSGCore.Functions.Notify('Unlocked!', 'success')
+                        RSGCore.Functions.Notify(Lang:t('success.unlocked'), 'success')
 
                         doorStatus = '~t6~Unocked~q~'
                     end
@@ -422,7 +422,7 @@ RegisterNetEvent('rsg-houses:client:toggledoor', function(door, house)
 
                         TriggerServerEvent('rsg-houses:server:UpdateDoorState', door, 1)
 
-                        RSGCore.Functions.Notify('Locked!', 'error')
+                        RSGCore.Functions.Notify(Lang:t('success.locked'), 'error')
 
                         doorStatus = '~e~Locked~q~'
                     end
@@ -448,12 +448,12 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                 exports['rsg-menu']:openMenu(
                 {
                     {
-                        header = 'Owner House Menu',
+                        header = Lang:t('header.owner_house_menu'),
                         isMenuHeader = true,
                         icon = "fas fa-home"
                     },
                     {
-                        header = 'Open Storage',
+                        header = Lang:t('header.open_storage'),
                         txt = '',
                         icon = 'fas fa-box',
                         params = {
@@ -463,7 +463,7 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                         }
                     },
                     {
-                        header = 'Outfits',
+                        header = Lang:t('header.outfits'),
                         txt = '',
                         icon = 'fas fa-hat-cowboy-side',
                         params = {
@@ -473,7 +473,7 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                         }
                     },
                     {
-                        header = 'Land Tax',
+                        header = Lang:t('header.land_tax'),
                         txt = '',
                         icon = 'fas fa-dollar-sign',
                         params = {
@@ -483,7 +483,7 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                         }
                     },
                     {
-                        header = 'House Guests',
+                        header = Lang:t('header.house_guests'),
                         txt = '',
                         icon = 'fa-solid fa-circle-user',
                         params = {
@@ -493,7 +493,7 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                         }
                     },
                     {
-                        header = 'Close Menu',
+                        header = Lang:t('menu.close_menu'),
                         txt = '',
                         icon = "fas fa-times",
                         params = {
@@ -505,12 +505,12 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                 exports['rsg-menu']:openMenu(
                 {
                     {
-                        header = 'Guest House Menu',
+                        header = Lang:t('header.guest_house_menu'),
                         isMenuHeader = true,
                         icon = "fas fa-home"
                     },
                     {
-                        header = 'Open Storage',
+                        header = Lang:t('header.open_storage'),
                         txt = '',
                         icon = 'fas fa-box',
                         params = {
@@ -520,7 +520,7 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                         }
                     },
                     {
-                        header = 'Outfits',
+                        header = Lang:t('header.outfits'),
                         txt = '',
                         icon = 'fas fa-hat-cowboy-side',
                         params = {
@@ -530,7 +530,7 @@ RegisterNetEvent('rsg-houses:client:housemenu', function(houseid)
                         }
                     },
                     {
-                        header = 'Close Menu',
+                        header = Lang:t('menu.close_menu'),
                         txt = '',
                         icon = "fas fa-times",
                         params = {
@@ -560,13 +560,13 @@ RegisterNetEvent('rsg-houses:client:creditmenu', function(data)
             exports['rsg-menu']:openMenu(
             {
                 {
-                    header = 'Land Tax Credit',
+                    header = Lang:t('header.land_tax_credit'),
                     isMenuHeader = true,
                     txt = 'current credit $'..credit,
                     icon = "fas fa-home"
                 },
                 {
-                    header = 'Add Credit',
+                    header = Lang:t('header.add_credit'),
                     txt = '',
                     icon = 'fas fa-dollar-sign',
                     params =
@@ -581,7 +581,7 @@ RegisterNetEvent('rsg-houses:client:creditmenu', function(data)
                     }
                 },
                 {
-                    header = 'Close Menu',
+                    header = Lang:t('menu.close_menu'),
                     txt = '',
                     icon = "fas fa-times",
                     params = {
@@ -597,10 +597,10 @@ end)
 RegisterNetEvent('rsg-houses:client:addcredit', function(data)
     local dialog = exports['rsg-input']:ShowInput({
         header = 'Add Land Tax Credit',
-        submitText = "Add Credit",
+        submitText = Lang:t('text.add_credit'),
         inputs = {
             {
-                text = 'Amount',
+                text = Lang:t('text.amount'),
                 name = "addcredit",
                 type = "number",
                 isRequired = true,
@@ -636,13 +636,13 @@ RegisterNetEvent('rsg-houses:client:guestmenu', function(data)
             exports['rsg-menu']:openMenu(
             {
                 {
-                    header = 'House Guests',
+                    header = Lang:t('text.house_guests'),
                     isMenuHeader = true,
                     txt = '',
                     icon = "fas fa-home"
                 },
                 {
-                    header = 'Add Guest',
+                    header = Lang:t('text.add_guest'),
                     txt = '',
                     icon = 'fa-solid fa-circle-user',
                     params =
@@ -656,7 +656,7 @@ RegisterNetEvent('rsg-houses:client:guestmenu', function(data)
                     }
                 },
                 {
-                    header = 'Remove Guest',
+                    header = Lang:t('text.remove_guest'),
                     txt = '',
                     icon = 'fa-solid fa-circle-user',
                     params =
@@ -670,7 +670,7 @@ RegisterNetEvent('rsg-houses:client:guestmenu', function(data)
                     }
                 },
                 {
-                    header = 'Close Menu',
+                    header = Lang:t('menu.close_menu'),
                     txt = '',
                     icon = "fas fa-times",
                     params = {
@@ -687,12 +687,12 @@ RegisterNetEvent('rsg-houses:client:addguest', function(data)
     local upr = string.upper
     local dialog = exports['rsg-input']:ShowInput(
     {
-        header = 'Add House Guest',
+        header = Lang:t('menu.add_house_guest'),
         submitText = "Add",
         inputs =
         {
             {
-                text = 'Citizen ID',
+                text = Lang:t('menu.citizen_id'),
                 name = "addguest",
                 type = "text",
                 isRequired = true
@@ -720,7 +720,7 @@ RegisterNetEvent('rsg-houses:client:removeguest', function(data)
     local GuestMenu =
     {
         {
-            header = 'Remove Guest',
+            header = Lang:t('text.remove_guest'),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info"
         }
@@ -754,7 +754,7 @@ RegisterNetEvent('rsg-houses:client:removeguest', function(data)
 
         GuestMenu[#GuestMenu + 1] =
         {
-            header = 'Close',
+            header = Lang:t('header.close'),
             icon = "fas fa-times",
             params =
             {

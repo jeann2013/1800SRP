@@ -17,12 +17,12 @@ end)
 
 CreateThread(function()
     for k, v in pairs(Config.PianoLocation) do
-        exports['rsg-core']:createPrompt("rsg-piano:Piano"..k, v.SitPosition, RSGCore.Shared.Keybinds['J'], 'Play Piano', {
+        exports['rsg-core']:createPrompt("rsg-piano:Piano"..k, v.SitPosition, RSGCore.Shared.Keybinds['J'],  Lang:t('menu.play_piano'), {
             type = 'client',
             event = 'rsg-piano:PianoPlay',
             args = {v.SitPosition,v.SitHeading,v.Animation}
         })
-        exports['rsg-core']:createPrompt("rsg-piano:PianoRemove"..k, v.SitPosition, RSGCore.Shared.Keybinds['ENTER'], 'Get Up', {
+        exports['rsg-core']:createPrompt("rsg-piano:PianoRemove"..k, v.SitPosition, RSGCore.Shared.Keybinds['ENTER'], ang:t('menu.get_up'), {
             type = 'client',
             event = 'rsg-piano:PianoPause',
         })

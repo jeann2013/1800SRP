@@ -15,7 +15,7 @@ Config.OwnedHouseBlips  = true -- when set to true, only the owned house will sh
 -- blip settings
 Config.Blip =
 {
-    blipName            = 'Estate Agent', -- Config.Blip.blipName
+    blipName            = Lang:t('menu.estate_agent'), -- Config.Blip.blipName
     blipSprite          = 'blip_robbery_home', -- Config.Blip.blipSprite
     blipScale           = 0.2 -- Config.Blip.blipScale
 }
@@ -24,35 +24,35 @@ Config.Blip =
 Config.EstateAgents =
 {
     {    --valentine
-        name            = 'Estate Agent',
+        name            = Lang:t('menu.estate_agent'),
         prompt          = 'valestateagent',
         coords          = vector3(-250.8893, 743.20239, 118.08129),
         location        = 'newhanover', -- state
         showblip        = true
     },
     {    --blackwater
-        name            = 'Estate Agent',
+        name            = Lang:t('menu.estate_agent'),
         prompt          = 'blkestateagent',
         coords          = vector3(-792.3216, -1203.232, 43.645206),
         location        = 'westelizabeth', -- state
         showblip        = true
     },
     {    --armadillo
-        name            = 'Estate Agent',
+        name            = Lang:t('menu.estate_agent'),
         prompt          = 'armestateagent',
         coords          = vector3(-3658.934, -2620.835, -13.3414),
         location        = 'newaustin', -- state
         showblip        = true
     },
     {    --hagen
-        name            = 'Estate Agent',
+        name            = Lang:t('menu.estate_agent'),
         prompt          = 'hagestateagent',
         coords          = vector3(-1347.746, 2405.7084, 307.06127),
         location        = 'ambarino', -- state
         showblip        = true
     },
     {    --saint denis
-        name            = 'Estate Agent',
+        name            = Lang:t('menu.estate_agent'),
         prompt          = 'stdenisestateagent',
         coords          = vector3(2596.5463, -1299.845, 52.817153),
         location        = 'lemoyne', -- state

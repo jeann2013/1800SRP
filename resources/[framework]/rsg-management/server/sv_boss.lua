@@ -11,7 +11,7 @@ function ExploitBan(id, reason)
 		2147483647,
 		'rsg-management'
 	})
-	TriggerEvent('rsg-log:server:CreateLog', 'bans', 'Player Banned', 'red', string.format('%s was banned by %s for %s', GetPlayerName(id), 'rsg-management', reason), true)
+	TriggerEvent('rsg-log:server:CreateLog', 'bans',  Lang:t('success.player_banned'), 'red', string.format('%s was banned by %s for %s', GetPlayerName(id), 'rsg-management', reason), true)
 	DropPlayer(id, 'You were permanently banned by the server for: Exploiting')
 end
 
@@ -67,11 +67,11 @@ RegisterNetEvent("rsg-bossmenu:server:withdrawMoney", function(amount)
 
 	local job = Player.PlayerData.job.name
 	if RemoveMoney(job, amount) then
-		Player.Functions.AddMoney("cash", amount, 'Boss menu withdraw')
-		TriggerEvent('rsg-log:server:CreateLog', 'bossmenu', 'Withdraw Money', "blue", Player.PlayerData.name.. "Withdrawal $" .. amount .. ' (' .. job .. ')', false)
-		TriggerClientEvent('RSGCore:Notify', src, "You have withdrawn: $" ..amount, "success")
+		Player.Functions.AddMoney("cash", amount, Lang:t('menu.boss_menu_withdraw'))
+		TriggerEvent('rsg-log:server:CreateLog', 'bossmenu', Lang:t('menu.withdraw_money'), "blue", Player.PlayerData.name.. "Withdrawal $" .. amount .. ' (' .. job .. ')', false)
+		TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.you_have_withdrawn') ..amount, "success")
 	else
-		TriggerClientEvent('RSGCore:Notify', src, "You dont have enough money in the account!", "error")
+		TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_dont_have_enough_money_the_account'), "error")
 	end
 
 	TriggerClientEvent('rsg-bossmenu:client:OpenMenu', src)
@@ -86,10 +86,10 @@ RegisterNetEvent("rsg-bossmenu:server:depositMoney", function(amount)
 	if Player.Functions.RemoveMoney("cash", amount) then
 		local job = Player.PlayerData.job.name
 		AddMoney(job, amount)
-		TriggerEvent('rsg-log:server:CreateLog', 'bossmenu', 'Deposit Money', "blue", Player.PlayerData.name.. "Deposit $" .. amount .. ' (' .. job .. ')', false)
-		TriggerClientEvent('RSGCore:Notify', src, "You have deposited: $" ..amount, "success")
+		TriggerEvent('rsg-log:server:CreateLog', 'bossmenu', Lang:t('menu.deposit_money'), "blue", Player.PlayerData.name.. Lang:t('menu.deposit_menu') .. amount .. ' (' .. job .. ')', false)
+		TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.you_have_deposited') ..amount, "success")
 	else
-		TriggerClientEvent('RSGCore:Notify', src, "You dont have enough money to add!", "error")
+		TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_dont_have_enough_money_to_add'), "error")
 	end
 
 	TriggerClientEvent('rsg-bossmenu:client:OpenMenu', src)
@@ -143,17 +143,17 @@ RegisterNetEvent('rsg-bossmenu:server:GradeUpdate', function(data)
 	local Employee = RSGCore.Functions.GetPlayerByCitizenId(data.cid)
 
 	if not Player.PlayerData.job.isboss then ExploitBan(src, 'GradeUpdate Exploiting') return end
-	if data.grade > Player.PlayerData.job.grade.level then TriggerClientEvent('RSGCore:Notify', src, "You cannot promote to this rank!", "error") return end
+	if data.grade > Player.PlayerData.job.grade.level then TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_cannot_promote_this_rank'), "error") return end
 	
 	if Employee then
 		if Employee.Functions.SetJob(Player.PlayerData.job.name, data.grade) then
-			TriggerClientEvent('RSGCore:Notify', src, "Successfully promoted!", "success")
-			TriggerClientEvent('RSGCore:Notify', Employee.PlayerData.source, "You have been promoted to" ..data.gradename..".", "success")
+			TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.successfully_promoted'), "success")
+			TriggerClientEvent('RSGCore:Notify', Employee.PlayerData.source, Lang:t('success.you_have_been_promoted_to') ..data.gradename..".", "success")
 		else
-			TriggerClientEvent('RSGCore:Notify', src, "Grade does not exist.", "error")
+			TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.grade_does_not_exist'), "error")
 		end
 	else
-		TriggerClientEvent('RSGCore:Notify', src, "Civilian not in city.", "error")
+		TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.civilian_is_not_in_city'), "error")
 	end
 	TriggerClientEvent('rsg-bossmenu:client:OpenMenu', src)
 end)
@@ -168,23 +168,23 @@ RegisterNetEvent('rsg-bossmenu:server:FireEmployee', function(target)
 
 	if Employee then
 		if target ~= Player.PlayerData.citizenid then
-			if Employee.PlayerData.job.grade.level > Player.PlayerData.job.grade.level then TriggerClientEvent('RSGCore:Notify', src, "You cannot fire this citizen!", "error") return end
+			if Employee.PlayerData.job.grade.level > Player.PlayerData.job.grade.level then TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_ccannot_fire_this_citizen'), "error") return end
 			if Employee.Functions.SetJob("unemployed", '0') then
-				TriggerEvent("rsg-log:server:CreateLog", "bossmenu", "Job Fire", "red", Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. ' successfully fired ' .. Employee.PlayerData.charinfo.firstname .. " " .. Employee.PlayerData.charinfo.lastname .. " (" .. Player.PlayerData.job.name .. ")", false)
-				TriggerClientEvent('RSGCore:Notify', src, "Employee fired!", "success")
-				TriggerClientEvent('RSGCore:Notify', Employee.PlayerData.source , "You have been fired! Good luck.", "error")
+				TriggerEvent("rsg-log:server:CreateLog", "bossmenu", Lang:t('menu.job_fire'), "red", Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. Lang:t('primary.successfully_fired') .. Employee.PlayerData.charinfo.firstname .. " " .. Employee.PlayerData.charinfo.lastname .. " (" .. Player.PlayerData.job.name .. ")", false)
+				TriggerClientEvent('RSGCore:Notify', src,  Lang:t('success.employee_fired'), "success")
+				TriggerClientEvent('RSGCore:Notify', Employee.PlayerData.source , Lang:t('error.you_have_been_fired_good_luck'), "error")
 			else
 				TriggerClientEvent('RSGCore:Notify', src, "Error..", "error")
 			end
 		else
-			TriggerClientEvent('RSGCore:Notify', src, "You can\'t fire yourself", "error")
+			TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_cant_fire_yourself'), "error")
 		end
 	else
 		local player = MySQL.query.await('SELECT * FROM players WHERE citizenid = ? LIMIT 1', { target })
 		if player[1] ~= nil then
 			Employee = player[1]
 			Employee.job = json.decode(Employee.job)
-			if Employee.job.grade.level > Player.PlayerData.job.grade.level then TriggerClientEvent('RSGCore:Notify', src, "You cannot fire this citizen!", "error") return end
+			if Employee.job.grade.level > Player.PlayerData.job.grade.level then TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.you_cannot_fire_this_citizen'), "error") return end
 			local job = {}
 			job.name = "unemployed"
 			job.label = "Unemployed"
@@ -195,10 +195,10 @@ RegisterNetEvent('rsg-bossmenu:server:FireEmployee', function(target)
 			job.grade.name = nil
 			job.grade.level = 0
 			MySQL.update('UPDATE players SET job = ? WHERE citizenid = ?', { json.encode(job), target })
-			TriggerClientEvent('RSGCore:Notify', src, "Employee fired!", "success")
-			TriggerEvent("rsg-log:server:CreateLog", "bossmenu", "Job Fire", "red", Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. ' successfully fired ' .. Employee.PlayerData.charinfo.firstname .. " " .. Employee.PlayerData.charinfo.lastname .. " (" .. Player.PlayerData.job.name .. ")", false)
+			TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.employee_fired'), "success")
+			TriggerEvent("rsg-log:server:CreateLog", "bossmenu", Lang:t('menu.job_fire'), "red", Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. Lang:t('primary.successfully_fired') .. Employee.PlayerData.charinfo.firstname .. " " .. Employee.PlayerData.charinfo.lastname .. " (" .. Player.PlayerData.job.name .. ")", false)
 		else
-			TriggerClientEvent('RSGCore:Notify', src, "Civilian not in city.", "error")
+			TriggerClientEvent('RSGCore:Notify', src, Lang:t('error.civilian_not_in_city'), "error")
 		end
 	end
 	TriggerClientEvent('rsg-bossmenu:client:OpenMenu', src)
@@ -214,8 +214,8 @@ RegisterNetEvent('rsg-bossmenu:server:HireEmployee', function(recruit)
 
 	if Target and Target.Functions.SetJob(Player.PlayerData.job.name, 0) then
 		TriggerClientEvent('RSGCore:Notify', src, "You hired " .. (Target.PlayerData.charinfo.firstname .. ' ' .. Target.PlayerData.charinfo.lastname) .. " come " .. Player.PlayerData.job.label .. "", "success")
-		TriggerClientEvent('RSGCore:Notify', Target.PlayerData.source , "You were hired as " .. Player.PlayerData.job.label .. "", "success")
-		TriggerEvent('rsg-log:server:CreateLog', 'bossmenu', 'Recruit', "lightgreen", (Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname).. " successfully recruited " .. (Target.PlayerData.charinfo.firstname .. ' ' .. Target.PlayerData.charinfo.lastname) .. ' (' .. Player.PlayerData.job.name .. ')', false)
+		TriggerClientEvent('RSGCore:Notify', Target.PlayerData.source , Lang:t('success.you_were_hired_as') .. Player.PlayerData.job.label .. "", "success")
+		TriggerEvent('rsg-log:server:CreateLog', 'bossmenu', 'Recruit', "lightgreen", (Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname)..  Lang:t('success.successfully_recruited') .. (Target.PlayerData.charinfo.firstname .. ' ' .. Target.PlayerData.charinfo.lastname) .. ' (' .. Player.PlayerData.job.name .. ')', false)
 	end
 	TriggerClientEvent('rsg-bossmenu:client:OpenMenu', src)
 end)

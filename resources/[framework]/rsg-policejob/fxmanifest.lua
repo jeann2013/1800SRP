@@ -6,9 +6,10 @@ description 'rsg-policejob'
 version '1.0.0'
 
 shared_scripts {
-    'config.lua',
     '@rsg-core/shared/locale.lua',
-    'locales/en.lua' -- Change this to your preferred language
+    'locales/en.lua',
+    'locales/*.lua',
+    'config.lua'
 }
 
 client_scripts {
