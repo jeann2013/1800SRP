@@ -11,29 +11,29 @@ RegisterCommand('playernames', function(source, args, raw)
 	ShowPlayerNames = not ShowPlayerNames
 end, false)
 
-RegisterCommand('entids', function(source, args, raw)
-	if ShowPedIds or ShowVehIds or ShowObjIds then
-		ShowPedIds = false
-		ShowVehIds = false
-		ShowObjIds = false
-	else
-		ShowPedIds = true
-		ShowVehIds = true
-		ShowObjIds = true
-	end
-end, false)
+-- RegisterCommand('entids', function(source, args, raw)
+-- 	if ShowPedIds or ShowVehIds or ShowObjIds then
+-- 		ShowPedIds = false
+-- 		ShowVehIds = false
+-- 		ShowObjIds = false
+-- 	else
+-- 		ShowPedIds = true
+-- 		ShowVehIds = true
+-- 		ShowObjIds = true
+-- 	end
+-- end, false)
 
-RegisterCommand('pedids', function(source, args, raw)
-	ShowPedIds = not ShowPedIds
-end, false)
+-- RegisterCommand('pedids', function(source, args, raw)
+-- 	ShowPedIds = not ShowPedIds
+-- end, false)
 
-RegisterCommand('vehids', function(source, args, raw)
-	ShowVehIds = not ShowVehIds
-end, false)
+-- RegisterCommand('vehids', function(source, args, raw)
+-- 	ShowVehIds = not ShowVehIds
+-- end, false)
 
-RegisterCommand('objids', function(source, args, raw)
-	ShowObjIds = not ShowObjIds
-end, false)
+-- RegisterCommand('objids', function(source, args, raw)
+-- 	ShowObjIds = not ShowObjIds
+-- end, false)
 
 local entityEnumerator = {
 	__gc = function(enum)
@@ -158,10 +158,10 @@ end
 
 Citizen.CreateThread(function()
 	TriggerEvent('chat:addSuggestion', '/playernames', 'Show/hide player names')
-	TriggerEvent('chat:addSuggestion', '/entids', 'Show/hide entity IDs')
-	TriggerEvent('chat:addSuggestion', '/pedids', 'Show/hide ped IDs')
-	TriggerEvent('chat:addSuggestion', '/vehids', 'Show/hide vehicle IDs')
-	TriggerEvent('chat:addSuggestion', '/objids', 'Show/hide object IDs')
+	-- TriggerEvent('chat:addSuggestion', '/entids', 'Show/hide entity IDs')
+	-- TriggerEvent('chat:addSuggestion', '/pedids', 'Show/hide ped IDs')
+	-- TriggerEvent('chat:addSuggestion', '/vehids', 'Show/hide vehicle IDs')
+	-- TriggerEvent('chat:addSuggestion', '/objids', 'Show/hide object IDs')
 end)
 
 Citizen.CreateThread(function()
