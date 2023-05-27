@@ -9,7 +9,9 @@
     height: 100%;
     width: 100%;
     left: 0;
-    background-image: url(https://cdn.discordapp.com/attachments/1032260791669375006/1032283276976590978/rdrbg.png);
+    /* background-image: url(https://cdn.discordapp.com/attachments/1032260791669375006/1032283276976590978/rdrbg.png); */
+    background-image: url(https://images4.alphacoders.com/131/1310800.png);
+    
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: 100;
