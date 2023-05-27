@@ -35,7 +35,7 @@ $(document).on('click', '.location', function(evt) {
     var type = $(this).data('type'); //get the text
     var label = $(this).data('label'); //get the text
     if (type !== "lab") {
-        $("#spawn-label").html("Confirm")
+        $("#spawn-label").html("Confirmar")
         $("#submit-spawn").attr("data-location", location);
         $("#submit-spawn").attr("data-type", type);
         $("#submit-spawn").fadeIn(100)
@@ -74,10 +74,10 @@ $(document).on('click', '#submit-spawn', function(evt) {
 function setupLocations(locations, myHouses) {
     var parent = $('.spawn-locations')
     $(parent).html("");
-    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Where would you like to start?"><p><span id="null">Where would you like to start?</span></p></div>')
+    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="¿Por dónde te gustaría empezar?"><p><span id="null">¿Por dónde te gustaría empezar?</span></p></div>')
 
     setTimeout(function() {
-        $(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Last Location"><p><span id="current-location">Last Location</span></p></div>');
+        $(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Última ubicación"><p><span id="current-location">Última ubicación</span></p></div>');
 
         $.each(locations, function(index, location) {
             $(parent).append('<div class="location" id="location" data-location="' + location.location + '" data-type="normal" data-label="' + location.label + '"><p><span id="' + location.location + '">' + location.label + '</span></p></div>')
@@ -97,7 +97,7 @@ function setupLocations(locations, myHouses) {
 function setupnewplayerLocations(locations, myHouses) {
     var parent = $('.spawn-locations')
     $(parent).html("");
-    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Where would you like to start?"><p><span id="null">Where would you like to start?</span></p></div>')
+    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="¿Por dónde te gustaría empezar?"><p><span id="null">¿Por dónde te gustaría empezar?</span></p></div>')
 
     setTimeout(function() {
         $.each(locations, function(index, location) {

@@ -138,8 +138,8 @@ $(document).on('click', '.character', function(e) {
         } else {
             $(selectedChar).addClass("char-selected");
             setupCharInfo($(this).data('cData'))
-            $("#play-text").html("Play");
-            $("#delete-text").html("Delete");
+            $("#play-text").html("Seleccionar");
+            $("#delete-text").html("Borrar");
             $("#play").css({"display":"block"});
             $("#delete").css({"display":"block"});
             $.post('https://rsg-multicharacter/cDataPed', JSON.stringify({
@@ -245,7 +245,7 @@ $(document).on('click', '#cancel-delete', function(e){
 });
 
 function setCharactersList() {
-    var htmlResult = '<div class="character-list-header"><p>My Characters</p></div>'
+    var htmlResult = '<div class="character-list-header"><p>Mis Personajes</p></div>'
     for (let i = 1; i <= NChar; i++) {
         htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
     }

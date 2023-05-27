@@ -1,4 +1,4 @@
-if GetConvar('qb_locale', 'en') == 'es' then
+
     Translations = {
         notifications = {
             ["char_deleted"] = "¡Personaje eliminado!",
@@ -72,6 +72,7 @@ if GetConvar('qb_locale', 'en') == 'es' then
         }
     }
 
+
     if GetConvar('rsg_locale', 'en') == 'es' then
         Lang = Locale:new({
             phrases = Translations,
@@ -79,3 +80,4 @@ if GetConvar('qb_locale', 'en') == 'es' then
             fallbackLang = Lang,
         })
     end
+
