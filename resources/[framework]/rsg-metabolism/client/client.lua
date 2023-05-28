@@ -61,7 +61,7 @@ Citizen.CreateThread(function()
     while true do
         Wait(5)
         if isLoggedIn and incinematic == false and inBathing == false and showUI then
-            DrawTxt("ID : "..tonumber(GetPlayerServerId(PlayerId())).."  - Hora : "..string.format("%0.2d", GetClockHours())..":"..string.format("%0.2d", GetClockMinutes()).." - Efectivo : $"..string.format("%.2f", cashAmount), 0.01, 0.97, 0.4, 0.4, true, 255, 255, 255, 255, true)
+            DrawTxt("ID : "..tonumber(GetPlayerServerId(PlayerId())).."  - Hora : "..string.format("%0.2d", GetClockHours())..":"..string.format("%0.2d", GetClockMinutes()).." - Efectivo : $"..string.format("%.2f", cashAmount), 0.01, 0.97, 0.3, 0.3, true, 255, 255, 255, 255, true)
         end
     end
 end)

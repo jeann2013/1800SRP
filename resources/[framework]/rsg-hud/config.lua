@@ -14,7 +14,7 @@ Config.OnFootCompass = false -- true = have the minimap set to a compass instead
 Config.MounttMinimap = true -- set to false if you want to disable the minimap when on mount
 Config.MountCompass = false -- set to true if you want to have a compass instead of normal minimap while on a mount
 
-Config.Staminaitemplayerincrease = 40 -- Defines how much the energydrink item will refill your stamina core. Values are 0-100 
+Config.Staminaitemplayerincrease = 1 -- Defines how much the energydrink item will refill your stamina core. Values are 0-100 
 
 -- Stress
 Config.Intensity = {

@@ -1,4 +1,4 @@
-local ShowPlayerNames = false
+local ShowPlayerNames = true
 local ShowPedIds = false
 local ShowVehIds = false
 local ShowObjIds = false
@@ -115,7 +115,7 @@ function DrawTags()
 				local text = GetPlayerName(playerId)
 
 				if VoiceChatIsPlayerSpeaking(playerId) then
-					text = "~d~Talking: ~s~" .. text
+					text = "~d~Hablando: ~s~" .. text
 				end
 
 				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, text)

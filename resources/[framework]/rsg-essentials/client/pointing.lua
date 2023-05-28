@@ -4,7 +4,7 @@ CreateThread(function()
     while true do
         Wait(7)
 
-        if IsControlJustPressed(0, RSGCore.Shared.Keybinds['B']) then
+        if IsControlJustPressed(0, RSGCore.Shared.Keybinds['L']) then
             RSGCore.Functions.GetPlayerData(function(PlayerData)
                 local ped = PlayerPedId()
 

@@ -6,6 +6,13 @@ lua54 'yes'
 author 'RexShack#3041'
 description 'rsg-houses'
 
+shared_scripts {
+    '@rsg-core/shared/locale.lua',        
+    'locales/en.lua',
+    'locales/*.lua',    
+    'config.lua',
+}
+
 client_scripts
 {
     'client/client.lua'
@@ -17,12 +24,7 @@ server_scripts
     'server/server.lua'
 }
 
-shared_scripts {
-    '@rsg-core/shared/locale.lua',
-    'config.lua',
-    'locales/en.lua',
-    'locales/*.lua',
-}
+
 
 dependencies
 {

@@ -25,8 +25,7 @@ local Translations = {
         price = 'Price $',
         land_tax = ' : Land Tax $',
         sell_house = 'Sell House',
-        sell_price = 'Sell Price $',
-        estate_agent = 'Estate Agent',
+        sell_price = 'Sell Price $',        
     }, 
     header = {
         owner_house_menu = 'Owner House Menu',

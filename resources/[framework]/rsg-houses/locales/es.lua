@@ -25,8 +25,7 @@ local Translations = {
         price = 'Precio $',
         land_tax = ' : Impuesto sobre la tierra $',
         sell_house = 'Vender Casa',
-        precio_venta = 'Precio de venta $',
-        estate_agent = 'Agente inmobiliario',
+        precio_venta = 'Precio de venta $',        
     }, 
     header = {
         own_house_menu = 'Menú de la Casa del Propietario',
