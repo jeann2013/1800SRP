@@ -106,13 +106,15 @@ function VoiceChatIsPlayerSpeaking(player)
 	return Citizen.InvokeNative(0xEF6F2A35FAAF2ED7, player)
 end
 
-function DrawTags(source)
+function DrawTags()
 	if ShowPlayerNames or HudIsRevealed then
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
 			local pedCoords = GetEntityCoords(ped)
+			local source = Player.PlayerData.source
 			local Player = RSGcore.Functions.GetPlayer(source)
 			local PlayerData = Player.PlayerData
+			
 			local firstname = PlayerData.charinfo.firstname
     		local lastname = PlayerData.charinfo.lastname
 
@@ -169,13 +171,13 @@ Citizen.CreateThread(function()
 	-- TriggerEvent('chat:addSuggestion', '/objids', 'Show/hide object IDs')
 end)
 
-Citizen.CreateThread(function(source)
+Citizen.CreateThread(function()
 	while true do
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
 			OnRevealHud()
 		end
 
-		DrawTags(source)
+		DrawTags()
 
 		Citizen.Wait(0)
 	end
