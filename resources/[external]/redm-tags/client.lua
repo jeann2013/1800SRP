@@ -1,5 +1,5 @@
 local RSGcore = exports['rsg-core']:GetCoreObject()
-local ShowPlayerNames = true
+local ShowPlayerNames = false
 local ShowPedIds = false
 local ShowVehIds = false
 local ShowObjIds = false
