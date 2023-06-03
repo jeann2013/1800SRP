@@ -1,3 +1,4 @@
+local RSGcore = exports['rsg-core']:GetCoreObject()
 local ShowPlayerNames = true
 local ShowPedIds = false
 local ShowVehIds = false
@@ -105,20 +106,24 @@ function VoiceChatIsPlayerSpeaking(player)
 	return Citizen.InvokeNative(0xEF6F2A35FAAF2ED7, player)
 end
 
-function DrawTags()
+function DrawTags(source)
 	if ShowPlayerNames or HudIsRevealed then
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
 			local pedCoords = GetEntityCoords(ped)
+			local Player = RSGcore.Functions.GetPlayer(source)
+			local PlayerData = Player.PlayerData
+			local firstname = PlayerData.charinfo.firstname
+    		local lastname = PlayerData.charinfo.lastname
 
 			if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(ped) then
 				local text = GetPlayerName(playerId)
 
 				if VoiceChatIsPlayerSpeaking(playerId) then
-					text = "~d~Hablando: ~s~" .. text
+					text = "~d~Hablando: ~s~" .. firstname .. ' ' .. lastname
 				end
 
-				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, text)
+				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, firstname .. ' ' .. lastname)
 			end
 		end
 	end
@@ -164,13 +169,13 @@ Citizen.CreateThread(function()
 	-- TriggerEvent('chat:addSuggestion', '/objids', 'Show/hide object IDs')
 end)
 
-Citizen.CreateThread(function()
+Citizen.CreateThread(function(source)
 	while true do
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
 			OnRevealHud()
 		end
 
-		DrawTags()
+		DrawTags(source)
 
 		Citizen.Wait(0)
 	end
