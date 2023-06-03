@@ -2,7 +2,7 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 
 RegisterServerEvent('rsg-butcher:server:reward')
 AddEventHandler('rsg-butcher:server:reward', function(rewardmoney, rewarditem, quality)
-    local src = source
+    local src = source    
     local Player = RSGCore.Functions.GetPlayer(src)
     if Config.Debug == true then
         print("money: "..tostring(rewardmoney))

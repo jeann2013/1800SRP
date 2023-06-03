@@ -1,4 +1,5 @@
-local RSGcore = exports['rsg-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
+
 local ShowPlayerNames = true
 local ShowPedIds = false
 local ShowVehIds = false
@@ -7,11 +8,10 @@ local TagDrawDistance = 50
 local HudIsRevealed = false
 local ActivePlayers = {}
 local MyCoords = vector3(0, 0, 0)
-local src = {}
+
 
 RegisterCommand('playernames', function(source, args, raw)
-	ShowPlayerNames = not ShowPlayerNames
-	src = source
+	ShowPlayerNames = not ShowPlayerNames	
 end, false)
 
 -- RegisterCommand('entids', function(source, args, raw)
@@ -108,25 +108,20 @@ function VoiceChatIsPlayerSpeaking(player)
 	return Citizen.InvokeNative(0xEF6F2A35FAAF2ED7, player)
 end
 
-function DrawTags()
-	if ShowPlayerNames or HudIsRevealed then
+function DrawTags(text)
+	if ShowPlayerNames or HudIsRevealed then		
 		for _, playerId in ipairs(ActivePlayers) do
-			local ped = GetPlayerPed(playerId)
+			local ped = GetPlayerPed(playerId)			
 			local pedCoords = GetEntityCoords(ped)			
-			local Player = RSGcore.Functions.GetPlayer(src)
-			local PlayerData = Player.PlayerData
-			local firstname = PlayerData.charinfo.firstname
-    		local lastname = PlayerData.charinfo.lastname
-    		local playerName = firstname .. ' ' .. lastname
 
 			if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(ped) then
-				local text = GetPlayerName(playerId)
+				--local text = GetPlayerName(playerId)
 
 				if VoiceChatIsPlayerSpeaking(playerId) then
-					text = "~d~Hablando: ~s~" .. playerName
+					text = "~d~Hablando: ~s~" .. text
 				end
 
-				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, playerName)
+				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, text)
 			end
 		end
 	end
@@ -172,13 +167,20 @@ Citizen.CreateThread(function()
 	-- TriggerEvent('chat:addSuggestion', '/objids', 'Show/hide object IDs')
 end)
 
-Citizen.CreateThread(function(source)
+Citizen.CreateThread(function(source)	
+	local src = source	
 	while true do
+
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
 			OnRevealHud()
-		end
-		local src = source
-		DrawTags()
+		end			
+			
+		RSGCore.Functions.GetPlayerData(function(PlayerData)				
+			local firstname = PlayerData.charinfo.firstname
+			local lastname = PlayerData.charinfo.lastname
+			local playerName = firstname .. ' ' .. lastname
+			DrawTags(playerName)
+		end)		
 
 		Citizen.Wait(0)
 	end
