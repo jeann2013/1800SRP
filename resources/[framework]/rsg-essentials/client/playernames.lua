@@ -179,6 +179,7 @@ Citizen.CreateThread(function(source)
 			local firstname = PlayerData.charinfo.firstname
 			local lastname = PlayerData.charinfo.lastname
 			local playerName = firstname .. ' ' .. lastname
+			print("playername",playername);
 			DrawTags(playerName)
 		end)		
 
