@@ -1,5 +1,5 @@
 local RSGcore = exports['rsg-core']:GetCoreObject()
-local ShowPlayerNames = false
+local ShowPlayerNames = true
 local ShowPedIds = false
 local ShowVehIds = false
 local ShowObjIds = false
@@ -113,7 +113,7 @@ function DrawTags()
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
 			local pedCoords = GetEntityCoords(ped)			
-			local Player = RSGcore.Functions.GetPlayer(src)
+			local Player = RSGcore.Functions.GetPlayer(playerId)
 			local PlayerData = Player.PlayerData
 			local firstname = PlayerData.charinfo.firstname
     		local lastname = PlayerData.charinfo.lastname
