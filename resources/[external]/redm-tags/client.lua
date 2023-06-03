@@ -113,7 +113,7 @@ function DrawTags()
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
 			local pedCoords = GetEntityCoords(ped)			
-			local Player = RSGcore.Functions.GetPlayer(playerId)
+			local Player = RSGcore.Functions.GetPlayer(src)
 			local PlayerData = Player.PlayerData
 			local firstname = PlayerData.charinfo.firstname
     		local lastname = PlayerData.charinfo.lastname
@@ -172,12 +172,12 @@ Citizen.CreateThread(function()
 	-- TriggerEvent('chat:addSuggestion', '/objids', 'Show/hide object IDs')
 end)
 
-Citizen.CreateThread(function()
+Citizen.CreateThread(function(source)
 	while true do
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
 			OnRevealHud()
 		end
-
+		local src = source
 		DrawTags()
 
 		Citizen.Wait(0)
