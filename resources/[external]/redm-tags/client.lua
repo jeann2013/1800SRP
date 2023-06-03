@@ -110,9 +110,8 @@ function DrawTags()
 	if ShowPlayerNames or HudIsRevealed then
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
-			local pedCoords = GetEntityCoords(ped)
-			local source = Player.PlayerData.source
-			local Player = RSGcore.Functions.GetPlayer(source)
+			local pedCoords = GetEntityCoords(ped)			
+			local Player = RSGcore.Functions.GetPlayer(ped)
 			local PlayerData = Player.PlayerData
 			
 			local firstname = PlayerData.charinfo.firstname
