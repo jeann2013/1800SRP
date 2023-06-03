@@ -110,21 +110,22 @@ function DrawTags()
 	if ShowPlayerNames or HudIsRevealed then
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
-			local pedCoords = GetEntityCoords(ped)			
-			local Player = RSGcore.Functions.GetPlayer(ped)
+			local pedCoords = GetEntityCoords(ped)
+			local src = source
+			local Player = RSGcore.Functions.GetPlayer(source)
 			local PlayerData = Player.PlayerData
-			
 			local firstname = PlayerData.charinfo.firstname
     		local lastname = PlayerData.charinfo.lastname
+    		local playerName = firstname .. ' ' .. lastname
 
 			if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(ped) then
 				local text = GetPlayerName(playerId)
 
 				if VoiceChatIsPlayerSpeaking(playerId) then
-					text = "~d~Hablando: ~s~" .. firstname .. ' ' .. lastname
+					text = "~d~Hablando: ~s~" .. playerName
 				end
 
-				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, firstname .. ' ' .. lastname)
+				DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1, playerName)
 			end
 		end
 	end
