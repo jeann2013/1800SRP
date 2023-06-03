@@ -173,15 +173,14 @@ Citizen.CreateThread(function(source)
 
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
 			OnRevealHud()
-		end			
-			
-		RSGCore.Functions.GetPlayerData(function(PlayerData)				
-			local firstname = PlayerData.charinfo.firstname
-			local lastname = PlayerData.charinfo.lastname
-			local playerName = firstname .. ' ' .. lastname
-			print("playername",playername);
-			DrawTags(playerName)
-		end)		
+		end	
+	
+		local Player = RSGcore.Functions.GetPlayer(src)					
+		local PlayerData = Player.PlayerData
+		local firstname = PlayerData.charinfo.firstname
+		local lastname = PlayerData.charinfo.lastname
+		local playerName = firstname .. ' ' .. lastname		
+		DrawTags(playerName)		
 
 		Citizen.Wait(0)
 	end
