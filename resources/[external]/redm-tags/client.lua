@@ -7,9 +7,11 @@ local TagDrawDistance = 50
 local HudIsRevealed = false
 local ActivePlayers = {}
 local MyCoords = vector3(0, 0, 0)
+local src = {}
 
 RegisterCommand('playernames', function(source, args, raw)
 	ShowPlayerNames = not ShowPlayerNames
+	src = source
 end, false)
 
 -- RegisterCommand('entids', function(source, args, raw)
@@ -110,8 +112,7 @@ function DrawTags()
 	if ShowPlayerNames or HudIsRevealed then
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)
-			local pedCoords = GetEntityCoords(ped)
-			local src = source
+			local pedCoords = GetEntityCoords(ped)			
 			local Player = RSGcore.Functions.GetPlayer(src)
 			local PlayerData = Player.PlayerData
 			local firstname = PlayerData.charinfo.firstname
