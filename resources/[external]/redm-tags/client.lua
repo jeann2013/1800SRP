@@ -112,7 +112,7 @@ function DrawTags()
 			local ped = GetPlayerPed(playerId)
 			local pedCoords = GetEntityCoords(ped)
 			local src = source
-			local Player = RSGcore.Functions.GetPlayer(source)
+			local Player = RSGcore.Functions.GetPlayer(src)
 			local PlayerData = Player.PlayerData
 			local firstname = PlayerData.charinfo.firstname
     		local lastname = PlayerData.charinfo.lastname
