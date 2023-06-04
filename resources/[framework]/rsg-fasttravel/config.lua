@@ -7,16 +7,16 @@ Config.Blip = {
 }
 
 -- how much to charge travelers
-Config.AnnesburgPrice = 50
-Config.ArmadilloPrice = 40
-Config.BlackwaterPrice = 20
-Config.RhodesPrice = 20
-Config.StrawberryPrice = 10
-Config.StDenisPrice = 30
-Config.TumbleweedPrice = 50
-Config.ValentinePrice = 30
-Config.VanHornPrice = 40
-Config.SisikaPrisonPrice = 10
+Config.AnnesburgPrice = 5
+Config.ArmadilloPrice = 4
+Config.BlackwaterPrice = 2
+Config.RhodesPrice = 2
+Config.StrawberryPrice = 1
+Config.StDenisPrice = 3
+Config.TumbleweedPrice = 5
+Config.ValentinePrice = 3
+Config.VanHornPrice = 4
+Config.SisikaPrisonPrice = 1
 
 Config.TravelTime = 30000 -- 10000 = 10 seconds / 30000 = 30 seconds
 

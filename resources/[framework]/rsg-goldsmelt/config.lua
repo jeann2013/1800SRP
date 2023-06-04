@@ -12,7 +12,7 @@ Config.SmeltOptions = {
 		name = Lang:t('text.gold_bar'),
         smelttime = 20000,
         smeltitems = {
-            [1] = { item = "largenugget", amount = 20 },
+            [1] = { item = "largenugget", amount = 2 },
         },
         receive = "goldbar"
     },
@@ -21,7 +21,7 @@ Config.SmeltOptions = {
 		name = Lang:t('text.gold_bar'),
         smelttime = 20000,
         smeltitems = {
-            [1] = { item = "mediumnugget", amount = 40 },
+            [1] = { item = "mediumnugget", amount = 4 },
         },
         receive = "goldbar"
     },
@@ -30,7 +30,7 @@ Config.SmeltOptions = {
 		name = Lang:t('text.gold_bar'),
         smelttime = 20000,
         smeltitems = {
-            [1] = { item = "smallnugget", amount = 80 },
+            [1] = { item = "smallnugget", amount = 7 },
         },
         receive = "goldbar"
     },
