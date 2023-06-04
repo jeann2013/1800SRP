@@ -39,67 +39,67 @@ Config.Animal = {
     {
         name        = 'Bear',
         model       = -1124266369,
-        rewardmoney = 14,
+        rewardmoney = 3,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Big Horn Ram',
         model       = -15687816381, 
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Boar',
         model       = 2028722809,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Buck',
         model       = -1963605336,
-        rewardmoney = 7,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Bison',
         model       = 1556473961,
-        rewardmoney = 10,
+        rewardmoney = 3,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Bull',
         model       = 195700131,
-        rewardmoney = 8,
+        rewardmoney = 3,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Deer',
         model       = 1110710183,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Duck',
         model       = -1003616053,
-        rewardmoney = 1,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Eagle',
         model       = 1459778951,
-        rewardmoney = 6,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Egret',
         model       = 831859211,
-        rewardmoney = 3,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Elk',
         model       = -2021043433,
-        rewardmoney = 5,
+        rewardmoney = 2,
         rewarditem  = 'raw_meat'
     },
     {
@@ -111,19 +111,19 @@ Config.Animal = {
     {
         name        = 'Big Grey Wolf',
         model       = -1143398950,
-        rewardmoney = 6,
+        rewardmoney = 2,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Medium Grey Wolf',
         model       = -885451903,
-        rewardmoney = 5,
+        rewardmoney = 1.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Small Grey Wolf',
         model       = -829273561,
-        rewardmoney = 4,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
@@ -135,67 +135,67 @@ Config.Animal = {
     {
         name        = 'Snapping Turtle',
         model       = -407730502,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Wild Turkey',
         model       = -466054788,
-        rewardmoney = 1,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Wild Turkey',
         model       = -2011226991,
-        rewardmoney = 1,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Wild Turkey',
         model       = -166054593,
+        rewardmoney = 0.5,
+        rewarditem  = 'raw_meat'
+    },
+    {
+        name        = 'Water Snake',
+        model       = -229688157,
         rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Water Snake',
         model       = -229688157,
-        rewardmoney = 3,
-        rewarditem  = 'raw_meat'
-    },
-    {
-        name        = 'Water Snake',
-        model       = -229688157,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Snake Red Boa',
         model       = -1790499186,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Snake Fer-De-Lance',
         model       = 1464167925,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Black-Tailed Rattlesnake',
         model       = 846659001, 
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Western Rattlesnake',
         model       = 545068538,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Striped Skunk',
         model       = -1211566332,
-        rewardmoney = 8,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
@@ -213,19 +213,19 @@ Config.Animal = {
     {
         name        = 'Roseate Spoonbill',
         model       = -1076508705,
-        rewardmoney = 2,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Dominique Rooster',
         model       = 2023522846,
-        rewardmoney = 1,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Red-Footed Booby',
         model       = -466687768,
-        rewardmoney = 3,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
@@ -237,13 +237,13 @@ Config.Animal = {
     {
         name        = 'North American Racoon',
         model       = 1458540991,
-        rewardmoney = 1,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Black-Tailed Jackrabbit',
         model       = -541762431,
-        rewardmoney = 1,
+        rewardmoney = 0.5,
         rewarditem  = 'raw_meat'
     },
     {
@@ -261,13 +261,13 @@ Config.Animal = {
     {
         name        = 'Wirginia Possum',
         model       = -1414989025,
-        rewardmoney = 2,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Berkshire Pig',
         model       = 1007418994,
-        rewardmoney = 1,
+        rewardmoney = 12,
         rewarditem  = 'raw_meat'
     },
     {
@@ -285,13 +285,13 @@ Config.Animal = {
     {
         name        = 'Blue And Yellow Macaw',
         model       = -1797450568,
-        rewardmoney = 6,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Panther',
         model       = 1654513481,
-        rewardmoney = 30,
+        rewardmoney = 3,
         rewarditem  = 'raw_meat'
     },
     {
@@ -315,7 +315,7 @@ Config.Animal = {
     {
         name        = 'Cougar',
         model       = 90264823,
-        rewardmoney = 25,
+        rewardmoney = 3,
         rewarditem  = 'raw_meat'
     },
     {
@@ -327,7 +327,7 @@ Config.Animal = {
     {
         name        = 'Coyote',
         model       = 480688259,
-        rewardmoney = 2,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
@@ -339,13 +339,13 @@ Config.Animal = {
     {
         name        = 'Gila Monster',
         model       = 457416415,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Alpine Goat',
         model       = -753902995,
-        rewardmoney = 2,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
@@ -357,19 +357,19 @@ Config.Animal = {
     {
         name        = 'Ferruinous Hawk',
         model       = -2145890973,
-        rewardmoney = 3,
+        rewardmoney = 2,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Great Blue Heron',
         model       = 1095117488,
-        rewardmoney = 4,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Green Iguana',
         model       = -1854059305,
-        rewardmoney = 2,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
@@ -387,25 +387,25 @@ Config.Animal = {
     {
         name        = 'Common Loon',
         model       = 386506078,
-        rewardmoney = 13,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Moose',
         model       = -1098441944,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'American Muskrat',
         model       = -1134449699,
-        rewardmoney = 2,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Great Horned Owl',
         model       = -861544272,
-        rewardmoney = 3,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
@@ -417,25 +417,25 @@ Config.Animal = {
     {
         name        = 'Alligator',
         model       = -1892280447,
-        rewardmoney = 4,
+        rewardmoney = 2,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'North American Beaver',
         model       = 759906147,
-        rewardmoney = 2,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'American Black Bear',
         model       = 730092646,
-        rewardmoney = 4,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
         name        = 'Alligator',
         model       = -1295720802,
-        rewardmoney = 4,
+        rewardmoney = 3,
         rewarditem  = 'raw_meat'
     },
     {
