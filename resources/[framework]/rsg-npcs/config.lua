@@ -3,7 +3,7 @@ Config = {}
 Config.Debug = false
 
 -- settings
-Config.DistanceSpawn = 20.0 -- Distance before spawning/despawning the ped. (GTA Units.)
+Config.DistanceSpawn = 15.0 -- Distance before spawning/despawning the ped. (GTA Units.)
 Config.FadeIn = true
 
 Config.PedList = {
