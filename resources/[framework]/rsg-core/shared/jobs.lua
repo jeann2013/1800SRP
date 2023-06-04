@@ -10,7 +10,7 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Freelancer',
-                payment = 10
+                payment = 1
             },
         },
     },
@@ -21,12 +21,12 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Master',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -37,12 +37,12 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Farm Hand',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Farm Owner',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -53,12 +53,12 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Master',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -69,12 +69,12 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Master',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -85,16 +85,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -105,16 +105,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -125,16 +125,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -145,16 +145,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -165,16 +165,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -185,16 +185,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -205,16 +205,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -225,16 +225,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -245,16 +245,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -265,16 +265,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -285,16 +285,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -305,16 +305,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -325,16 +325,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Tender',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -345,16 +345,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Trader',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -365,16 +365,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Trainee',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Trader',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -385,16 +385,16 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Conductor',
-                payment = 25
+                payment = 6
             },
             ['1'] = {
                 name = 'Driver',
-                payment = 50
+                payment = 7
             },
             ['2'] = {
                 name = 'Station Manager',
                 isboss = true,
-                payment = 75
+                payment = 8
             },
         },
     },
@@ -405,24 +405,24 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 8
             },
             ['1'] = {
                 name = 'Officer',
-                payment = 75
+                payment = 10
             },
             ['2'] = {
                 name = 'Sergeant',
-                payment = 100
+                payment = 12
             },
             ['3'] = {
                 name = 'Lieutenant',
-                payment = 125
+                payment = 14
             },
             ['4'] = {
                 name = 'Chief',
                 isboss = true,
-                payment = 150
+                payment = 16
             },
         },
     },
@@ -433,24 +433,24 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 8
             },
             ['1'] = {
                 name = 'Trainee',
-                payment = 75
+                payment = 10
             },
             ['2'] = {
                 name = 'Doctor',
-                payment = 100
+                payment = 12
             },
             ['3'] = {
                 name = 'Surgeon',
-                payment = 125
+                payment = 14
             },
             ['4'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 150
+                payment = 16
             },
         },
     },
@@ -461,24 +461,24 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 6
             },
             ['1'] = {
                 name = 'House Sales',
-                payment = 75
+                payment = 7
             },
             ['2'] = {
                 name = 'Business Sales',
-                payment = 100
+                payment = 8
             },
             ['3'] = {
                 name = 'Broker',
-                payment = 125
+                payment = 10
             },
             ['4'] = {
                 name = 'Manager',
                 isboss = true,
-                payment = 150
+                payment = 12
             },
         },
     },
@@ -489,7 +489,7 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Judge',
-                payment = 100
+                payment = 25
             },
         },
     },
@@ -500,7 +500,7 @@ RSGShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Associate',
-                payment = 50
+                payment = 18
             },
         },
     },
@@ -512,7 +512,7 @@ RSGShared.Jobs = {
             ['0'] = {
                 name = 'Governor',
                 isboss = true,
-                payment = 100
+                payment = 35
             },
         },
     },
@@ -524,7 +524,7 @@ RSGShared.Jobs = {
             ['0'] = {
                 name = 'Governor',
                 isboss = true,
-                payment = 100
+                payment = 35
             },
         },
     },
@@ -536,7 +536,7 @@ RSGShared.Jobs = {
             ['0'] = {
                 name = 'Governor',
                 isboss = true,
-                payment = 100
+                payment = 35
             },
         },
     },
@@ -548,7 +548,7 @@ RSGShared.Jobs = {
             ['0'] = {
                 name = 'Governor',
                 isboss = true,
-                payment = 100
+                payment = 35
             },
         },
     },
@@ -560,7 +560,7 @@ RSGShared.Jobs = {
             ['0'] = {
                 name = 'Governor',
                 isboss = true,
-                payment = 100
+                payment = 35
             },
         },
     },
