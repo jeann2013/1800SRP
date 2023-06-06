@@ -4,11 +4,12 @@ local ShowPlayerNames = true
 local ShowPedIds = false
 local ShowVehIds = false
 local ShowObjIds = false
-local TagDrawDistance = 50
+local TagDrawDistance = 20
 local HudIsRevealed = false
 local ActivePlayers = {}
 local MyCoords = vector3(0, 0, 0)
 local playerName = nil
+local names = {}
 
 local entityEnumerator = {
 	__gc = function(enum)
@@ -76,8 +77,8 @@ function OnRevealHud()
 	end)
 end
 
-function callNamePlayer()
-	RSGCore.Functions.TriggerCallback('1800:returnPlayerName', function(Player)
+function callNamePlayer(ped)
+	RSGCore.Functions.TriggerCallback('1800:returnPlayerName', function(ped,Player)
 		if Player ~= nil then
 			local PlayerData = Player.PlayerData
 			local firstname = PlayerData.charinfo.firstname			
@@ -101,7 +102,7 @@ function DrawTags()
 			local pedCoords = GetEntityCoords(ped)			
 			if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(ped) then
 				if playerName == nil then
-					callNamePlayer()
+					callNamePlayer(ped)
 				end				
 				local text = playerName
 				if VoiceChatIsPlayerSpeaking(playerId) then
@@ -124,12 +125,31 @@ Citizen.CreateThread(function(source)
 			playerName = "~o~[**Pensando**]~o~"
 		end		
 		if IsControlPressed(0, `INPUT_PUSH_TO_TALK`) or IsControlPressed(0, `INPUT_MOVE_RIGHT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_LEFT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_UP_ONLY`) or IsControlPressed(0, `INPUT_MOVE_DOWN_ONLY`)  then			
-			callNamePlayer()
+			playerName = showNames()
 		end
-		DrawTags()
+		--DrawTags()
 		Citizen.Wait(0)
 	end
 end)
+
+showNames = function()
+	local curCoords = GetEntityCoords(PlayerPedId())
+	local allActivePlayers = GetActivePlayers()
+	for _,i in ipairs(allActivePlayers) do
+	  local targetPed = GetPlayerPed(i)
+	  local playerStr = '[' .. GetPlayerServerId(i) .. ']' .. ' ' .. GetPlayerName(i)
+  
+	  if not names[i] or not IsMpGamerTagActive(names[i].gamerTag) then
+		names[i] = {
+		  gamerTag = CreateFakeMpGamerTag(targetPed, playerStr, false, false, 0),
+		  ped = targetPed
+		}
+	  end
+  
+	  local targetTag = names[i].gamerTag
+	  local targetPedCoords = GetEntityCoords(targetPed)
+	end
+  end
 
 Citizen.CreateThread(function()
 	while true do		
