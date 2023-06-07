@@ -77,14 +77,14 @@ function OnRevealHud()
 	end)
 end
 
-function callNamePlayer(ped)
-	RSGCore.Functions.TriggerCallback('1800:returnPlayerName', function(ped,Player)
+function callNamePlayer()
+	RSGCore.Functions.TriggerCallback('1800:returnPlayerName', function(Player)		
 		if Player ~= nil then
 			local PlayerData = Player.PlayerData
 			local firstname = PlayerData.charinfo.firstname			
 			local lastname = PlayerData.charinfo.lastname
 			local idPlayer = GetPlayerServerId(PlayerId())
-			playerName = idPlayer .. ' - ' .. firstname .. ' ' .. lastname	
+			playerName = idPlayer .. ' - ' .. firstname .. ' ' .. lastname				
 		end
 	end)
 end
@@ -102,7 +102,7 @@ function DrawTags()
 			local pedCoords = GetEntityCoords(ped)			
 			if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(ped) then
 				if playerName == nil then
-					callNamePlayer(ped)
+					callNamePlayer(ped)					
 				end				
 				local text = playerName
 				if VoiceChatIsPlayerSpeaking(playerId) then
@@ -122,31 +122,34 @@ Citizen.CreateThread(function(source)
 			OnRevealHud()
 		end		
 		if IsControlPressed(0, `INPUT_MP_TEXT_CHAT_ALL`) then			
-			playerName = "~o~[**Pensando**]~o~"
+			showNames(false)
 		end		
 		if IsControlPressed(0, `INPUT_PUSH_TO_TALK`) or IsControlPressed(0, `INPUT_MOVE_RIGHT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_LEFT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_UP_ONLY`) or IsControlPressed(0, `INPUT_MOVE_DOWN_ONLY`)  then			
-			playerName = showNames()
+			showNames(true)
 		end
-		--DrawTags()
+		
 		Citizen.Wait(0)
 	end
 end)
 
-showNames = function()
+showNames = function(typeMessage)
 	local curCoords = GetEntityCoords(PlayerPedId())
-	local allActivePlayers = GetActivePlayers()
-	for _,i in ipairs(allActivePlayers) do
-	  local targetPed = GetPlayerPed(i)
-	  local playerStr = '[' .. GetPlayerServerId(i) .. ']' .. ' ' .. GetPlayerName(i)
-  
-	  if not names[i] or not IsMpGamerTagActive(names[i].gamerTag) then
-		names[i] = {
+	local playerStr = ""
+	local allActivePlayers = RSGCore.Functions.GetPlayers()	
+	
+	for _,v in pairs(allActivePlayers) do
+	  local targetPed = GetPlayerPed(v)	  
+	  
+	  playerStr = '[' .. GetPlayerServerId(v) .. ']' 	  
+	 
+	  if not names[v] or not IsMpGamerTagActive(names[v].gamerTag) then
+		names[v] = {
 		  gamerTag = CreateFakeMpGamerTag(targetPed, playerStr, false, false, 0),
 		  ped = targetPed
 		}
 	  end
   
-	  local targetTag = names[i].gamerTag
+	  local targetTag = names[v].gamerTag
 	  local targetPedCoords = GetEntityCoords(targetPed)
 	end
   end
