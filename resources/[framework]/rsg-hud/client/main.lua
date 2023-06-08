@@ -89,8 +89,8 @@ CreateThread(function()
             local stamina = tonumber(string.format("%.2f", Citizen.InvokeNative(0x0FF421E467373FCF, PlayerId(), Citizen.ResultAsFloat())))
             local mounted = IsPedOnMount(PlayerPedId())
             if metric then
-                --temperature = math.floor(GetTemperatureAtCoords(coords)) .. "°C" --Uncomment for celcius
-                temperature = math.floor(GetTemperatureAtCoords(coords) * 9/5 + 32) .. "°F" --Comment out for celcius 
+                temperature = math.floor(GetTemperatureAtCoords(coords)) .. "°C" --Uncomment for celcius
+                --temperature = math.floor(GetTemperatureAtCoords(coords) * 9/5 + 32) .. "°F" --Comment out for celcius 
             end
             ---@type any
             local horsehealth = 0 
