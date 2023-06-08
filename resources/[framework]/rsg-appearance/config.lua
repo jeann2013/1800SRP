@@ -1,6 +1,6 @@
 RSG = {}
 
-RSG.WelcomeText = "WELCOME TO RSG FRAMEWORK"
+RSG.WelcomeText = "Bienvenido a 1800's"
 
 RSG.Texts = {
     Body = Lang:t('text.body'),
