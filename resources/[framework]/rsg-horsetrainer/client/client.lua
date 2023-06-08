@@ -1,4 +1,6 @@
 local RSGCore = exports['rsg-core']:GetCoreObject()
+
+local floor = math.floor
 local walking = false
 local leading = false
 local playerjob = nil
@@ -11,6 +13,10 @@ local horseName = nil
 local horseTraining = false
 local htNotified = false
 local isRadialPressed = false
+local riding = false
+local counter = false
+local htNotifiedRiding = false
+local coordStart = nil
 
 -- Check horse EXP
 local function CheckEXP()
@@ -31,7 +37,7 @@ RegisterNetEvent('rsg-horsetrainer:client:startTraining', function()
         horseTraining = true
         htNotified = true
 
-        RSGCore.Functions.Notify("Horse training started!", 'success', 3000)
+        RSGCore.Functions.Notify(Lang:t('success.horse_training_started'), 'success', 3000)
 
         isRadialPressed = true
         Wait(8000)
@@ -42,7 +48,7 @@ RegisterNetEvent('rsg-horsetrainer:client:startTraining', function()
     horseTraining = false
     htNotified = false
 
-    RSGCore.Functions.Notify("Horse training stopped!", 'error', 3000)
+    RSGCore.Functions.Notify(Lang:t('error.horse_training_stopped'), 'error', 3000)
 
     isRadialPressed = true
     Wait(8000)
@@ -90,11 +96,18 @@ CreateThread(function()
     while true do
         Wait(1000)
 
+        local ped = PlayerPedId()
+        local mount = GetMount(ped)
+
         if not LocalPlayer.state.isLoggedIn then goto continue end
 
         playerjob = RSGCore.Functions.GetPlayerData().job.name
 
         if playerjob ~= 'horsetrainer' then goto continue end
+
+        horsePed = exports['rsg-horses']:CheckActiveHorse()
+
+        if mount ~= horsePed then goto continue end
 
         walking = false
         leading = false
@@ -124,7 +137,7 @@ CreateThread(function()
         if walking and leading then
             if not horseTraining then
                 if not htNotified then
-                    RSGCore.Functions.Notify('You\'re currently off duty, your horse won\'t get any EXP!', 'primary', 5000)
+                    RSGCore.Functions.Notify(Lang:t('primary.youre_currently_off_duty_your_horse_wont_get_any'), 'primary', 5000)
                     htNotified = true
                 end
 
@@ -133,6 +146,109 @@ CreateThread(function()
 
             Wait(Config.LeadingXpTime)
             TriggerServerEvent('rsg-horsetrainer:server:updatexp', 'leading')
+        end
+
+        ::continue::
+    end
+end)
+
+-------------------------------------------------------------------------------
+
+-- Riding Horse for EXP
+CreateThread(function()
+    while true do
+        Wait(3000)
+
+        local ped = PlayerPedId()
+        local mounted = IsPedOnMount(ped)
+        local mount = GetMount(ped)
+
+        if not LocalPlayer.state.isLoggedIn then goto continue end
+
+        playerjob = RSGCore.Functions.GetPlayerData().job.name
+
+        if playerjob ~= 'horsetrainer' then goto continue end
+        if not mounted then goto continue end
+
+        horsePed = exports['rsg-horses']:CheckActiveHorse()
+
+        if mount ~= horsePed then goto continue end
+
+        CheckEXP()
+
+        if horseEXP >= Config.FullyTrained then
+            maxedEXP = true
+        end
+
+        if maxedEXP then goto continue end
+
+        if not riding then
+            if htNotifiedRiding then
+                htNotifiedRiding = false
+            end
+        end
+
+        local coordEnd = nil
+        local distance = 0
+        local distanceTraveled = 0
+
+        if not counter and mounted then -- riding
+            coordStart = GetEntityCoords(ped)
+            riding = true
+            counter = true
+        end
+
+        if not mounted then
+            riding = false
+            counter = false
+        end
+
+        if riding and counter then
+            horseTraining = RSGCore.Functions.GetPlayerData().job.onduty
+
+            if not horseTraining then
+                if not htNotifiedRiding then
+                    RSGCore.Functions.Notify(Lang:t('primary.youre_currently_off_duty_your_horse_wont_get_any'), 'primary', 5000)
+
+                    htNotifiedRiding = true
+                end
+
+                goto continue
+            end
+
+            if riding then
+                coordEnd = GetEntityCoords(ped)
+                distance = #(coordEnd - coordStart)
+
+                distanceTraveled = floor(distance)
+
+                if distanceTraveled >= Config.RidingDistance then
+                    TriggerServerEvent('rsg-horsetrainer:server:updatexp', 'riding')
+
+                    if Config.RidingEXPNotifications then
+                        RSGCore.Functions.TriggerCallback('rsg-horses:server:GetActiveHorse', function(horse)
+                            RSGCore.Functions.Notify(Lang:t('primary.distance_traveled')..distanceTraveled..Lang:t('primary.metres')..horse.name..
+                            Lang:t('primary.exp_is_now')..horse.horsexp..'!', 'primary', 3000)
+                        end)
+                    end
+
+                    Wait(Config.RidingXpTime)
+                end
+            end
+
+            if counter and not mounted then -- not riding
+                riding = false
+                counter = false
+
+                if Config.RidingEXPNotifications then
+                    RSGCore.Functions.TriggerCallback('rsg-horses:server:GetActiveHorse', function(horse)
+                        RSGCore.Functions.Notify(Lang:t('primary.distance_traveled')..distanceTraveled..Lang:t('primary.metres')..horse.name..
+                        Lang:t('primary.exp_is_now')..horse.horsexp..'!', 'primary', 3000)
+                    end)
+                end
+
+                Wait(Config.RidingXpTime)
+            end
         end
 
         ::continue::
@@ -181,7 +297,7 @@ RegisterNetEvent('rsg-horsetrainer:client:brushHorse', function(item)
 
     if not horseTraining then
         if not htNotified then
-            RSGCore.Functions.Notify('You\'re currently off duty, your horse won\'t get any EXP!', 'primary', 5000)
+            RSGCore.Functions.Notify(Lang:t('primary.youre_currently_off_duty_your_horse_wont_get_any'), 'primary', 5000)
             htNotified = true
         end
 
@@ -264,7 +380,7 @@ RegisterNetEvent('rsg-horsetrainer:client:feedHorse',function(item)
 
     if not horseTraining then
         if not htNotified then
-            RSGCore.Functions.Notify('You\'re currently off duty, your horse won\'t get any EXP!', 'primary', 5000)
+            RSGCore.Functions.Notify(Lang:t('primary.youre_currently_off_duty_your_horse_wont_get_any'), 'primary', 5000)
             htNotified = true
         end
 
@@ -314,7 +430,7 @@ AddEventHandler('rsg-horsetrainer:client:checkHorseEXP', function()
 
             local level = exports['rsg-horses']:CheckHorseLevel()
             local bondingLevel = exports['rsg-horses']:CheckHorseBondingLevel()
-            local msg = "Name: ~e~"..horseName.."~q~ | EXP: ~e~"..horseEXP.."~q~ | Level: ~e~"..level.."~q~ | Bonding Level: ~e~"..bondingLevel.."~q~"
+            local msg = Lang:t('error.name_horse')..horseName..Lang:t('error.exp_error')..horseEXP..Lang:t('error.level_error')..level..Lang:t('error.bonding_level')..bondingLevel.."~q~"
 
             if distance > 1.7 then
                 RSGCore.Functions.Notify(Lang:t('error.horse_too_far'), 'error')
