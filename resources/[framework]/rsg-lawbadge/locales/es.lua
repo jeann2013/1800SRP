@@ -19,6 +19,9 @@ local Translations = {
         wagon_store = 'Almacenar Vagón',
         close_menu = '>> Cerrar Menú <<',
     },
+    command = {
+        put_on_take_off_badge = 'poner / quitar insignia',
+    }
 }
 
 if GetConvar('rsg_locale', 'en') == 'es' then

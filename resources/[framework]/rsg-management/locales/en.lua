@@ -1,7 +1,7 @@
 local Translations = {
     error = {      
         you_dont_have_enough_money_the_account = "You dont have enough money in the account!",                                                 
-        you_dont_have_enough_money_to_add = "You dont have enough money to add!"
+        you_dont_have_enough_money_to_add = "You dont have enough money to add!",
         you_cannot_promote_this_rank = "You cannot promote to this rank!",
         grade_does_not_exist = "Grade does not exist.",
         civilian_is_not_in_city = "Civilian is not in city.",
