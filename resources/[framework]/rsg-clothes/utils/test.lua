@@ -96338,7 +96338,7 @@ clothes_list = {
 					['ped_type'] = 'male'
 				}
 			}
-		},
+		},		
 		['jewelry_bracelets'] = {
 			[1] = {
 				[1] = {

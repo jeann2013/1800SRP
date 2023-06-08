@@ -1,5 +1,5 @@
 Config = {}
-Config.StressChance = 0.1 -- Default: 10% -- Percentage Stress Chance When Shooting (0-1)
+Config.StressChance = 0 -- Default: 10% -- Percentage Stress Chance When Shooting (0-1)
 Config.MinimumStress = 50 -- Minimum Stress Level For Screen Shaking
 Config.MinimumSpeed = 100 -- Going Over This Speed Will Cause Stress
 
