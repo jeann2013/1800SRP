@@ -281,6 +281,7 @@ Config.BoxZones = {
             ["heading"] = 245.73,
             ["model"] = "a_c_horse_gypsycob_splashedpiebald",
             ["price"] = 650,
+            ["horsexp"] = 1500,
             ["names"] = "Splashed Pie Bald Irish Vanner",
         },
         [2] = {
@@ -288,6 +289,7 @@ Config.BoxZones = {
             ["heading"] = 245.73,
             ["model"] = "a_c_horse_missourifoxtrotter_dapplegrey",
             ["price"] = 450,
+            ["horsexp"] = 1500,
             ["names"] = "Dapple Grey Fox Trotter",
         },
         [3] = {
@@ -295,6 +297,7 @@ Config.BoxZones = {
             ["heading"] = 245.73,
             ["model"] = "a_c_horse_missourifoxtrotter_buckskinbrindle",
             ["price"] = 600,
+            ["horsexp"] = 1500,
             ["names"] = "Buckskin Brindle Fox Trotter",
         },
         [4] = {
@@ -302,6 +305,7 @@ Config.BoxZones = {
             ["heading"] = 245.73,
             ["model"] = "a_c_horse_norfolkroadster_speckledgrey",
             ["price"] = 300,
+            ["horsexp"] = 1500,
             ["names"] = "Speckled Grey Roadster",
         },
         [5] = {
@@ -309,6 +313,7 @@ Config.BoxZones = {
             ["heading"] = 245.73,
             ["model"] = "a_c_horse_norfolkroadster_spottedtricolor",
             ["price"] = 500,
+            ["horsexp"] = 1500,
             ["names"] = "Tri Color Roadster",
         },
         [6] = {
@@ -316,6 +321,7 @@ Config.BoxZones = {
             ["heading"] = 245.73,
             ["model"] = "a_c_horse_breton_steelgrey",
             ["price"] = 450,
+            ["horsexp"] = 1500,
             ["names"] = "Steel Grey Breton",
         },
     },
@@ -325,6 +331,7 @@ Config.BoxZones = {
             ["heading"] = 177.97,
             ["model"] = "a_c_horse_kladruber_black",
             ["price"] = 300,
+            ["horsexp"] = 1500,
             ["names"] = "Black Kladruber",
         },
         [2] = {
@@ -332,6 +339,7 @@ Config.BoxZones = {
             ["heading"] = 177.97,
             ["model"] = "a_c_horse_hungarianhalfbred_liverchestnut",
             ["price"] = 400,
+            ["horsexp"] = 1500,
             ["names"] = "Liver Chestnut Hungarian Halfbred",
         },
         [3] = {
@@ -339,6 +347,7 @@ Config.BoxZones = {
             ["heading"] = 177.97,
             ["model"] = "a_c_horse_kentuckysaddle_black",
             ["price"] = 70,
+            ["horsexp"] = 1500,
             ["names"] = "Black Kentucky Saddler",
         },
         [4] = {
@@ -346,6 +355,7 @@ Config.BoxZones = {
             ["heading"] = 177.97,
             ["model"] = "a_c_horse_morgan_liverchestnut_pc",
             ["price"] = 70,
+            ["horsexp"] = 1500,
             ["names"] = "Liver Chestnut Morgan",
         },
         [5] = {
@@ -353,6 +363,7 @@ Config.BoxZones = {
             ["heading"] = 177.97,
             ["model"] = "a_c_horse_thoroughbred_blackchestnut",
             ["price"] = 300,
+            ["horsexp"] = 1500,
             ["names"] = "Black Chestnut Thoroughbred",
         },
         [6] = {
@@ -360,6 +371,7 @@ Config.BoxZones = {
             ["heading"] = 3.97,
             ["model"] = "a_c_horse_turkoman_silver",
             ["price"] = 450,
+            ["horsexp"] = 1500,
             ["names"] = "Silver Turkoman",
         },
     },
@@ -369,6 +381,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_tennesseewalker_chestnut",
             ["price"] = 55,
+            ["horsexp"] = 1500,
             ["names"] = "Chestnut Tennessee Walker",
         },
         [2] = {
@@ -376,6 +389,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_tennesseewalker_goldpalomino_pc",
             ["price"] = 75,
+            ["horsexp"] = 1500,
             ["names"] = "Gold Palomino Tennessee Walker",
         },
         [3] = {
@@ -383,6 +397,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_americanstandardbred_lightbuckskin",
             ["price"] = 150,
+            ["horsexp"] = 1500,
             ["names"] = "Light Buckskin American Standardbred",
         },
         [4] = {
@@ -390,6 +405,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_tennesseewalker_flaxenroan",
             ["price"] = 80,
+            ["horsexp"] = 1500,
             ["names"] = "Flaxen Roan Tennessee Walker",
         },
         [5] = {
@@ -397,6 +413,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_tennesseewalker_redroan",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "Red Roan Tennessee Walker",
         },
         [6] = {
@@ -404,6 +421,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_kladruber_white",
             ["price"] = 300,
+            ["horsexp"] = 1500,
             ["names"] = "White Kladruber",
         },
     },
@@ -413,6 +431,7 @@ Config.BoxZones = {
             ["heading"] = 281.00,
             ["model"] = "a_c_horse_morgan_flaxenchestnut",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "Flaxen Chestnut Morgan",
         },
         [2] = {
@@ -420,6 +439,7 @@ Config.BoxZones = {
             ["heading"] = 281.00,
             ["model"] = "a_c_horse_kladruber_dapplerosegrey",
             ["price"] = 600,
+            ["horsexp"] = 1500,
             ["names"] = "Dapple Rose Grey Kladruber",
         },
         [3] = {
@@ -427,6 +447,7 @@ Config.BoxZones = {
             ["heading"] = 281.00,
             ["model"] = "a_c_horse_kladruber_cremello",
             ["price"] = 550,
+            ["horsexp"] = 1500,
             ["names"] = "Cremello Kladruber",
         },
         [4] = {
@@ -434,6 +455,7 @@ Config.BoxZones = {
             ["heading"] = 281.00,
             ["model"] = "a_c_horse_breton_sorrel",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Sorrel Breton",
         },
         [5] = {
@@ -441,6 +463,7 @@ Config.BoxZones = {
             ["heading"] = 110.00,
             ["model"] = "a_c_horse_ardennes_irongreyroan",
             ["price"] = 450,
+            ["horsexp"] = 1500,
             ["names"] = "Iron Grey Roan Ardennes",
         },
         [6] = {
@@ -448,6 +471,7 @@ Config.BoxZones = {
             ["heading"] = 110.00,
             ["model"] = "a_c_horse_shire_lightgrey",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "Light Grey Shire",
         },
     },
@@ -458,6 +482,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_dutchwarmblood_chocolateroan",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Chocolate Roan Warmblood",
         },
         [2] = {
@@ -465,6 +490,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_dutchwarmblood_sootybuckskin",
             ["price"] = 150,
+            ["horsexp"] = 1500,
             ["names"] = "Sooty Buckskin Warmblood",
         },
         [3] = {
@@ -472,6 +498,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_kentuckysaddle_silverbay",
             ["price"] = 55,
+            ["horsexp"] = 1500,
             ["names"] = "Silver Bay Kentucky Saddle",
         },
         [4] = {
@@ -479,6 +506,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_kentuckysaddle_buttermilkbuckskin_pc",
             ["price"] = 70,
+            ["horsexp"] = 1500,
             ["names"] = "Buttermilk Buckskin Kentucky Saddler",
         },
         [5] = {
@@ -486,6 +514,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_morgan_bay",
             ["price"] = 50,
+            ["horsexp"] = 1500,
             ["names"] = "Bay Morgan",
         },
         [6] = {
@@ -493,6 +522,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_morgan_bayroan",
             ["price"] = 55,
+            ["horsexp"] = 1500,
             ["names"] = "Bay Roan Morgan",
         },
         [7] = {
@@ -500,6 +530,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_mustang_reddunovero",
             ["price"] = 500,
+            ["horsexp"] = 1500,
             ["names"] = "Red Overo Mustang",
         },
         [8] = {
@@ -507,6 +538,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_suffolkpunch_sorrel",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "Sorrel Suffolk Punch",
         },
         [9] = {
@@ -514,6 +546,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_turkoman_darkbay",
             ["price"] = 350,
+            ["horsexp"] = 1500,
             ["names"] = "Dark Bay Turkoman",
         },
         [10] = {
@@ -521,6 +554,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_turkoman_gold",
             ["price"] = 500,
+            ["horsexp"] = 1500,
             ["names"] = "Gold Turkoman",
         },
         [11] = {
@@ -528,6 +562,7 @@ Config.BoxZones = {
             ["heading"] = 179.00,
             ["model"] = "a_c_horse_andalusian_rosegray",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Rose Gray Andalusian",
         },
         [12] = {
@@ -535,6 +570,7 @@ Config.BoxZones = {
             ["heading"] = 179.00,
             ["model"] = "a_c_horse_breton_redroan",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Red Roan Breton",
         },
         [13] = {
@@ -542,6 +578,7 @@ Config.BoxZones = {
             ["heading"] = 179.00,
             ["model"] = "a_c_horse_americanpaint_tobiano",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "American Paint Tobiano",
         },
     },
@@ -551,6 +588,7 @@ Config.BoxZones = {
             ["heading"] = 160.00,
             ["model"] = "a_c_horse_arabian_white",
             ["price"] = 750,
+            ["horsexp"] = 1500,
             ["names"] = "White Arabian",
         },
         [2] = {
@@ -558,6 +596,7 @@ Config.BoxZones = {
             ["heading"] = 160.00,
             ["model"] = "a_c_horse_belgian_blondchestnut",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "Blonde Chestnut Belgian",
         },
         [3] = {
@@ -565,6 +604,7 @@ Config.BoxZones = {
             ["heading"] = 160.00,
             ["model"] = "a_c_horse_gypsycob_whiteblagdon",
             ["price"] = 300,
+            ["horsexp"] = 1500,
             ["names"] = "White Blagdon Irish Vanner",
         },
         [4] = {
@@ -572,6 +612,7 @@ Config.BoxZones = {
             ["heading"] = 160.00,
             ["model"] = "a_c_horse_gypsycob_skewbald",
             ["price"] = 500,
+            ["horsexp"] = 1500,
             ["names"] = "Skewbald Irish Vanner",
         },
         [5] = {
@@ -579,6 +620,7 @@ Config.BoxZones = {
             ["heading"] = 344.00,
             ["model"] = "a_c_horse_americanpaint_splashedwhite",
             ["price"] = 100,
+            ["horsexp"] = 1500,
             ["names"] = "Splashed White American Paint",
         },
         [6] = {
@@ -586,6 +628,7 @@ Config.BoxZones = {
             ["heading"] = 344.00,
             ["model"] = "a_c_horse_norfolkroadster_piebaldroan",
             ["price"] = 400,
+            ["horsexp"] = 1500,
             ["names"] = "Piebald Roan Roadster",
         },
     },
@@ -595,6 +638,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_thoroughbred_dapplegrey",
             ["price"] = 130,
+            ["horsexp"] = 1500,
             ["names"] = "Dapple Grey Thoroughbred",
         },
         [2] = {
@@ -602,6 +646,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_mustang_grullodun",
             ["price"] = 200,
+            ["horsexp"] = 1500,
             ["names"] = "Grullo Dun Mustang",
         },
         [3] = {
@@ -609,6 +654,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_nokota_whiteroan",
             ["price"] = 200,
+            ["horsexp"] = 1500,
             ["names"] = "White Roan Nokota",
         },
         [4] = {
@@ -616,6 +662,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_nokota_blueroan",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Blue Roan Nokota",
         },
         [5] = {
@@ -623,6 +670,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_kentuckysaddle_grey",
             ["price"] = 55,
+            ["horsexp"] = 1500,
             ["names"] = "Grey Kentucky Saddler",
         },
         [6] = {
@@ -630,6 +678,7 @@ Config.BoxZones = {
             ["heading"] = 90.00,
             ["model"] = "a_c_horse_kentuckysaddle_chestnutpinto",
             ["price"] = 65,
+            ["horsexp"] = 1500,
             ["names"] = "Chestnut Pinto Kentucky Saddler",
         },
     },
@@ -639,6 +688,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_mustang_wildbay",
             ["price"] = 200,
+            ["horsexp"] = 1500,
             ["names"] = "Wild Bay Mustang",
         },
         [2] = {
@@ -646,6 +696,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_mustang_goldendun",
             ["price"] = 350,
+            ["horsexp"] = 1500,
             ["names"] = "Golden Dun Mustang",
         },
         [3] = {
@@ -653,6 +704,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_missourifoxtrotter_silverdapplepinto",
             ["price"] = 700,
+            ["horsexp"] = 1500,
             ["names"] = "Silver Dapple Pinto Missouri Fox Trotter",
         },
         [4] = {
@@ -660,6 +712,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_appaloosa_blanket",
             ["price"] = 100,
+            ["horsexp"] = 1500,
             ["names"] = "Blanket Appaloosa",
         },
         [5] = {
@@ -667,6 +720,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_appaloosa_brownleopard",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Brown Leopard Appaloosa",
         },
         [6] = {
@@ -674,6 +728,7 @@ Config.BoxZones = {
             ["heading"] = 180.00,
             ["model"] = "a_c_horse_americanstandardbred_palominodapple",
             ["price"] = 130,
+            ["horsexp"] = 1500,
             ["names"] = "Palomino Dapple American Standardbred",
         },
         [7] = {
@@ -681,6 +736,7 @@ Config.BoxZones = {
             ["heading"] = 180.00,
             ["model"] = "a_c_horse_americanstandardbred_silvertailbuckskin",
             ["price"] = 250,
+            ["horsexp"] = 1500,
             ["names"] = "Silver Tail Buckstin American Standardbred",
         },
         [8] = {
@@ -688,6 +744,7 @@ Config.BoxZones = {
             ["heading"] = 180.00,
             ["model"] = "a_c_horse_belgian_mealychestnut",
             ["price"] = 60,
+            ["horsexp"] = 1500,
             ["names"] = "Mealy Chestnut Belgian",
         },
         [9] = {
@@ -695,6 +752,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_breton_grullodun",
             ["price"] = 500,
+            ["horsexp"] = 1500,
             ["names"] = "Grullo Dun Breton",
         },
         [10] = {
@@ -702,6 +760,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_criollo_sorrelovero",
             ["price"] = 450,
+            ["horsexp"] = 1500,
             ["names"] = "Sorrel Overo Criollo",
         },
         [11] = {
@@ -709,6 +768,7 @@ Config.BoxZones = {
             ["heading"] = 5.00,
             ["model"] = "a_c_horse_criollo_dun",
             ["price"] = 300,
+            ["horsexp"] = 1500,
             ["names"] = "Dun Criollo",
         },
     },
