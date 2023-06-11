@@ -43,7 +43,7 @@ local Translations =
         new_person_successfuly = "New Person add Successfuly",
     },
     command = {
-        your_personal_addressbook = 'Su libreta personal de direcciones',
+        your_personal_addressbook = 'Libreta personal de direcciones',
     },
     header = {
         telegram_menu = "| Menú Telegrama |",

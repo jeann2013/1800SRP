@@ -210,7 +210,7 @@ end)
 
 
 -- Command
-RSGCore.Commands.Add('addressbook', Lang:t('command.your_personal_addressbook'), {}, false, function(source)
+RSGCore.Commands.Add('addressbook', 'Libreta personal de direcciones', {}, false, function(source)
     local src = source
     TriggerClientEvent('rsg-telegram:client:OpenAddressbook', src)
 end)
