@@ -11,7 +11,7 @@ local Translations =
         recipient = "Destinatario",
         subject = "Asunto",
         message = "¡Escribe tu mensaje aquí!",
-        message_prefix = "Publicación de aves"
+        message_prefix = "Publicación de aves",
     },
     info =
     {
@@ -39,7 +39,7 @@ local Translations =
     success =
     {
         letter_delivered = "Letter sent to %{pName} successfully!",
-        delete_success = "Message deleted successfully!"
+        delete_success = "Message deleted successfully!",
         new_person_successfuly = "New Person add Successfuly",
     },
     command = {

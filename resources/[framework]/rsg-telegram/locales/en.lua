@@ -39,7 +39,7 @@ local Translations =
     success =
     {
         letter_delivered = "Letter sent to %{pName} successfully!",
-        delete_success = "Message deleted successfully!"
+        delete_success = "Message deleted successfully!",
         new_person_successfuly = "New Person add Successfuly",
     },
     command = {
