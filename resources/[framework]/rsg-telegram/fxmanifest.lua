@@ -7,11 +7,11 @@ description 'Use the Bird Post to send letters to anyone! This mod requires rsg-
 
 ui_page('html/ui.html')
 
-shared_scripts {    
+shared_scripts {
     '@rsg-core/shared/locale.lua',
-    'config.lua',    
+    'config.lua',
     'locales/en.lua',
-    'locales/*.lua',    
+    'locales/*.lua',
 }
 
 server_scripts {

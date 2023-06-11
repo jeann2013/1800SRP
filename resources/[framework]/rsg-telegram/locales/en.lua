@@ -73,8 +73,7 @@ local Translations =
     }
 }
 
-Lang = Locale:new
-({
+Lang = Locale:new({
     phrases = Translations,
     warnOnMissing = true
 })
