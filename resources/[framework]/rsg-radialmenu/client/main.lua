@@ -139,7 +139,7 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
 end)
 
 RegisterNetEvent('rsg-radialmenu:client:noPlayers', function()
-    RSGCore.Functions.Notify('No One Nearby', 'error')
+    RSGCore.Functions.Notify(Lang:t('error.no_one_nearby'), 'error')
 end)
 
 -- NUI Callbacks

@@ -1,5 +1,6 @@
 local Translations = {
     error = {      
+        no_one_nearby = 'No hay nadie cerca',
     },
     success = {      
     },
