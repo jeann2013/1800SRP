@@ -64,28 +64,28 @@ end)
 RegisterNetEvent('rsg-telegram:client:TelegramMenu', function(data)
     exports['rsg-menu']:openMenu({
         {
-            header = "| Telegram Menu |",
+            header = Lang:t('header.telegram_menu'),
             isMenuHeader = true,
             icon   = 'fa-solid fa-envelope-open-text',
         },
         {
-            header = "📥 | Read Messages",
-            txt = "read your telegram messages",
+            header = Lang:t('header.read_messages'),
+            txt = Lang:t('header.read_your_telegram_messages'),
             params = {
                 event = 'rsg-telegram:client:ReadMessages',
                 isServer = false
             }
         },
         {
-            header = "📤 | Send Telegram",
-            txt = "send a telegram to another player",
+            header = Lang:t('header.send_telegram'),
+            txt = Lang:t('text.send_telegram_another_player'),
             params = {
                 event = 'rsg-telegram:client:WriteMessagePostOffice',
                 isServer = false
             }
         },
         {
-            header = "Close Menu",
+            header = Lang:t('header.close_menu'),
             txt = '',
             icon   = 'fa-solid fa-circle-xmark',
             params = {
@@ -120,7 +120,7 @@ RegisterNetEvent('rsg-telegram:client:WriteMessagePostOffice', function()
             submitText = sendButton,
                 inputs = {
                     {
-                        text = "Recipient",
+                        text = Lang:t('text.recipient_text'),
                         name = "recipient",
                         type = "select",
                         options = option
@@ -128,13 +128,13 @@ RegisterNetEvent('rsg-telegram:client:WriteMessagePostOffice', function()
                     {
                         type = 'text',
                         name = 'subject',
-                        text = 'subject',
+                        text = Lang:t('text.subject_menu'),
                         isRequired = true,
                     },
                     {
                         type = 'text',
                         name = 'message',
-                        text = 'add your message here',
+                        text = Lang:t('text.add_your_message_here'),
                         isRequired = true,
                     },
                 }
@@ -150,7 +150,7 @@ RegisterNetEvent('rsg-telegram:client:WriteMessagePostOffice', function()
                 TriggerServerEvent('rsg-telegram:server:SendMessagePostOffice', sendertelegram, senderfullname, input.recipient, input.subject, input.message)
             end
         else
-            RSGCore.Functions.Notify("You Need To Add People to Your Addressbook", 'error')
+            RSGCore.Functions.Notify(Lang:t('error.you_need_add_people_your_addressbook'), 'error')
 
         end
     end)
@@ -472,7 +472,7 @@ RegisterNetEvent('rsg-telegram:client:WriteMessage', function()
             SpawnBirdPost(playerCoords.x, playerCoords.y - rFar, playerCoords.z, heading, rFar)
 
             if cuteBird == nil then
-                RSGCore.Functions.Notify('The bird got away!', 'error')
+                RSGCore.Functions.Notify(Lang:t('error.the_bird_got_away_error'), 'error')
                 return
             end
 
@@ -599,7 +599,7 @@ RegisterNetEvent('rsg-telegram:client:WriteMessage', function()
 
             TriggerServerEvent('rsg-telegram:server:SendMessage', senderID, sendertelegram, senderfullname, input.recipient, Lang:t('desc.message_prefix')..': '..input.subject, input.message)
         else
-            RSGCore.Functions.Notify("You Need To Add People to Your Addressbook", 'error')
+            RSGCore.Functions.Notify(Lang:t('error.you_need_add_people_your_addressbook'), 'error')
         end
     end)
 end)
@@ -689,36 +689,36 @@ end)
 RegisterNetEvent('rsg-telegram:client:OpenAddressbook', function()
     exports['rsg-menu']:openMenu({
         {
-            header = "| Address Book |",
+            header = Lang:t('header.address_book_header'),
             isMenuHeader = true,
             icon   = 'fa-solid fa-envelope-open-text',
         },
         {
-            header = "📝 | View Addressbook",
-            txt = "See All of Person in my Addressbook",
+            header = Lang:t('header.view_addressbook'),
+            txt = Lang:t('text.see_all_of_person_my_addressbook'),
             params = {
                 event = 'rsg-telegram:client:ViewAddressBook',
                 isServer = false
             }
         },
         {
-            header = "➕ | Add New Person",
-            txt = "Add new Person To Your Addressbook",
+            header = Lang:t('header.add_new_person'),
+            txt = Lang:t('text.add_new_person_your_addressbook'),
             params = {
                 event = 'rsg-telegram:client:AddPersonMenu',
                 isServer = false
             }
         },
         {
-            header = "❌ | Remove Person",
-            txt = "Remove Person From your Addressbook",
+            header = Lang:t('header.remove_person'),
+            txt = Lang:t('text.remove_person_from_your_addressbook'),
             params = {
                 event = 'rsg-telegram:client:RemovePersonMenu',
                 isServer = false
             }
         },
         {
-            header = "Close Menu",
+            header = Lang:t('header.close_menu'),
             txt = '',
             icon   = 'fa-solid fa-circle-xmark',
             params = {
@@ -737,13 +737,13 @@ RegisterNetEvent('rsg-telegram:client:AddPersonMenu', function()
                 {
                     type = 'text',
                     name = 'name',
-                    text = 'Name',
+                    text = Lang:t('inputs.name_input'),
                     isRequired = true,
                 },
                 {
                     type = 'text',
                     name = 'cid',
-                    text = 'CitizenId',
+                    text = Lang:t('inputs.citizenid_input'),
                     isRequired = true,
                 },
             }
@@ -758,7 +758,7 @@ RegisterNetEvent('rsg-telegram:client:ViewAddressBook', function()
         if players ~= nil then
             local options = {
                 {
-                    header = "| Address Book |",
+                    header = Lang:t('header.address_book_header'),
                     isMenuHeader = true,
                     icon   = 'fa-solid fa-envelope-open-text',
                 },
@@ -773,7 +773,7 @@ RegisterNetEvent('rsg-telegram:client:ViewAddressBook', function()
             end
             options[#options+1] = 
             {
-                header = "Close Menu",
+                header = Lang:t('header.close_menu'),
                 txt = '',
                 icon   = 'fa-solid fa-circle-xmark',
                 params = {
@@ -782,7 +782,7 @@ RegisterNetEvent('rsg-telegram:client:ViewAddressBook', function()
             }
             exports['rsg-menu']:openMenu(options)
         else
-            RSGCore.Functions.Notify("You Need To Add People to Your Addressbook", 'error')
+            RSGCore.Functions.Notify(Lang:t('error.you_need_add_people_your_addressbook'), 'error')
         end
     end)
 end)
@@ -798,11 +798,11 @@ RegisterNetEvent('rsg-telegram:client:RemovePersonMenu', function()
                 option[#option + 1] = content
             end
             local input = exports['rsg-input']:ShowInput({
-            header = "Remove Person",
-            submitText = "Remove",
+            header = Lang:t('header.remove_person'),
+            submitText = Lang:t('text.remove_text'),
                 inputs = {
                     {
-                        text = "Recipient",
+                        text = Lang:t('text.recipient_text'),
                         name = "citizenid",
                         type = "select",
                         options = option
@@ -813,7 +813,7 @@ RegisterNetEvent('rsg-telegram:client:RemovePersonMenu', function()
                 TriggerServerEvent('rsg-telegram:server:RemovePerson', input.citizenid)
             end
         else
-            RSGCore.Functions.Notify("You Need To Add People to Your Addressbook", 'error')
+            RSGCore.Functions.Notify(Lang:t('error.you_need_add_people_your_addressbook'), 'error')
         end
     end)
 end)

@@ -191,7 +191,7 @@ AddEventHandler('rsg-telegram:server:SavePerson', function(name,cid)
     local xPlayer = RSGCore.Functions.GetPlayer(src)
     while xPlayer == nil do Wait(0) end
     exports.oxmysql:execute('INSERT INTO address_book (`citizenid`, `name`, `owner`) VALUES (?, ?, ?);', {cid, name, xPlayer.PlayerData.citizenid})
-    RSGCore.Functions.Notify(src, "New Person add Successfuly" , 'success', 3000)
+    RSGCore.Functions.Notify(src, Lang:t('success.new_person_successfuly'), 'success', 3000)
 end)
 
 RegisterServerEvent('rsg-telegram:server:RemovePerson')
@@ -210,7 +210,7 @@ end)
 
 
 -- Command
-RSGCore.Commands.Add('addressbook', 'Your Personal Addressbook', {}, false, function(source)
+RSGCore.Commands.Add('addressbook', Lang:t('header.address_book_header'), {}, false, function(source)
     local src = source
     TriggerClientEvent('rsg-telegram:client:OpenAddressbook', src)
 end)
