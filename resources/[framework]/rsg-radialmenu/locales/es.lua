@@ -6,8 +6,8 @@ local Translations = {
     primary = {        
     },
     menu = {      
-        work = 'Work ',
-        user = 'User',
+        work = 'Trabjo ',
+        user = 'Usuario',
     },
     text = {        
     },
