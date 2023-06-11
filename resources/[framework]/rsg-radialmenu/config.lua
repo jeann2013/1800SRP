@@ -5,19 +5,19 @@ Config.EnableExtraMenu = false
 Config.MenuItems = {
     [1] = {
         id = 'world',
-        title = 'World',
+        title = Lang:t('menu.world_menu'),
         icon = 'globe',
         items = {
         },
     }, 
     [2] = {
         id = 'horse',
-        title = 'Horse',
+        title = Lang:t('menu.horse'),
         icon = 'horse-head',
         items = {
             {
                 id = 'horselantern',
-                title = 'Horse Lantern',
+                title = Lang:t('menu.horse_lantern'),
                 icon = 'lightbulb',
                 type = 'client',
                 event = 'rsg-horses:client:equipHorseLantern',
@@ -25,7 +25,7 @@ Config.MenuItems = {
             },
             {
                 id = 'horseinventory',
-                title = 'Inventory',
+                title = Lang:t('menu.inventory'),
                 icon = 'box',
                 type = 'client',
                 event = 'rsg-horses:client:inventoryHorse',
@@ -40,12 +40,12 @@ Config.MenuItems = {
         items = {
             {     
                 id = 'walkstyles',
-                title = 'Walk Styles',
+                title = Lang:t('menu.walk_styles'),
                 icon = 'person-walking',
                 items = {
                     {
                         id = 'normal',
-                        title = 'Normal',
+                        title = Lang:t('menu.normal'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:normal',
@@ -53,7 +53,7 @@ Config.MenuItems = {
                     },
                     {
                         id = 'angry',
-                        title = 'Angry',
+                        title = Lang:t('menu.angry'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:angry',
@@ -61,7 +61,7 @@ Config.MenuItems = {
                     },
                     {
                         id = 'war_veteran',
-                        title = 'Veteran',
+                        title = Lang:t('menu.veteran'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:war_veteran',
@@ -69,7 +69,7 @@ Config.MenuItems = {
                     },
                     {
                         id = 'gold_panner',
-                        title = 'Gold Panner',
+                        title = Lang:t('menu.gold_panner'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:gold_panner',
@@ -77,7 +77,7 @@ Config.MenuItems = {
                     },
                     {
                         id = 'lost_Man',
-                        title = 'Lost',
+                        title = Lang:t('menu.lost'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:lost_Man',
@@ -85,7 +85,7 @@ Config.MenuItems = {
                     },
                     {
                         id = 'murfree',
-                        title = 'Murfree',
+                        title = Lang:t('menu.murfree'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:murfree',
@@ -93,7 +93,7 @@ Config.MenuItems = {
                     },
                     {
                         id = 'primate',
-                        title = 'Primate',
+                        title = Lang:t('menu.primate'),
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:primate',
@@ -111,7 +111,7 @@ Config.MenuItems = {
             },
             {
                 id = 'contraband',
-                title = 'Contraband',
+                title = Lang:t('menu.contraband'),
                 icon = 'skull-crossbones',
                 type = 'command',
                 event = 'sellcontraband',
@@ -119,7 +119,7 @@ Config.MenuItems = {
             },
             {
                 id = 'pvptoggle',
-                title = 'Toggle PVP on/off',
+                title = Lang:t('menu.toggle_pvp_on_off'),
                 icon = 'hand-holding-hand',
                 type = 'client',
                 event = 'rsg-pvp:client:pvpToggle',
@@ -127,7 +127,7 @@ Config.MenuItems = {
             },
             {
                 id = 'billing',
-                title = 'Billing',
+                title = Lang:t('menu.billing'),
                 icon = 'file-invoice-dollar',
                 type = 'client',
                 event = 'rsg-billing:client:billingMenu',
@@ -135,7 +135,7 @@ Config.MenuItems = {
             },
             {
                 id= 'adressbook',
-                title = 'Adress book',
+                title = Lang:t('menu.adress_book'),
                 icon = 'address-book',
                 type = 'client',
                 event = 'rsg-telegram:client:OpenAddressbook',
@@ -145,12 +145,12 @@ Config.MenuItems = {
     },
     [4] = {
         id = 'clothing',
-        title = 'Clothing',
+        title = Lang:t('menu.clothing'),
         icon = 'shirt',
         items = {
             {
                 id = 'onoffhat',
-                title = 'Hat',
+                title = Lang:t('menu.clothing'),
                 icon = 'hat-cowboy',
                 type = 'command',
                 event = 'hat',
@@ -158,7 +158,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffvest',
-                title = 'Vest',
+                title = Lang:t('menu.vest'),
                 icon = 'vest',
                 type = 'command',
                 event = 'vest',
@@ -166,7 +166,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffboots',
-                title = 'Boots',
+                title = Lang:t('menu.boots'),
                 icon = 'shoe-prints',
                 type = 'command',
                 event = 'boots',
@@ -174,7 +174,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffpants',
-                title = 'Pants',
+                title = Lang:t('menu.pants'),
                 icon = 'circle-user',
                 type = 'command',
                 event = 'pants',
@@ -182,7 +182,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffshirt',
-                title = 'Shirt',
+                title = Lang:t('menu.shirt'),
                 icon = 'shirt',
                 type = 'command',
                 event = 'shirt',
@@ -190,7 +190,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffgunbelt',
-                title = 'Gun Belt',
+                title = Lang:t('menu.gun_belt'),
                 icon = 'gun',
                 type = 'command',
                 event = 'gunbelt',
@@ -198,7 +198,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffmask',
-                title = 'Mask',
+                title = Lang:t('menu.mask'),
                 icon = 'masks-theater',
                 type = 'command',
                 event = 'mask',
@@ -206,7 +206,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffcoat',
-                title = 'Coat',
+                title = Lang:t('menu.coat'),
                 icon = 'vest-patches',
                 type = 'command',
                 event = 'coat',
@@ -214,7 +214,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffclosedcoat',
-                title = 'Closed Coat',
+                title = Lang:t('menu.closed_coat'),
                 icon = 'vest-patches',
                 type = 'command',
                 event = 'closedcoat',
@@ -228,21 +228,21 @@ Config.JobInteractions = {
     ["medic"] = {
         {
             id = 'medicbutton',
-            title = 'Emergency Button',
+            title = Lang:t('menu.emergency_button'),
             icon = 'exclamation',
             type = 'client',
             event = 'rsg-radialmenu:client:SendMedicEmergencyAlert',
             shouldClose = true
         },{
             id = 'revivep',
-            title = 'Revive',
+            title = Lang:t('menu.revive'),
             icon = 'user-doctor',
             type = 'client',
             event = 'rsg-medic:client:RevivePlayer',
             shouldClose = true
         },{
             id = 'treatwounds',
-            title = 'Heal wounds',
+            title = Lang:t('menu.heal_wounds'),
             icon = 'bandage',
             type = 'client',
             event = 'rsg-medic:client:TreatWounds',
@@ -252,56 +252,56 @@ Config.JobInteractions = {
     ["police"] = {
         {
             id = 'policebutton',
-            title = 'Emergency Button',
+            title = Lang:t('menu.emergency_button'),
             icon = 'exclamation',
             type = 'client',
             event = 'rsg-radialmenu:client:SendPoliceEmergencyAlert',
             shouldClose = true
         },{
             id = 'handcuff',
-            title = 'Cuff',
+            title = Lang:t('menu.cuff_menu'),
             icon = 'user-lock',
             type = 'client',
             event = 'police:client:CuffPlayerSoft',
             shouldClose = true
         },{
             id = 'checkstatus',
-            title = 'Check status',
+            title = Lang:t('menu.check_status'),
             icon = 'question',
             type = 'client',
             event = 'police:client:CheckStatus',
             shouldClose = true
         },{
             id = 'escort',
-            title = 'Escort',
+            title = Lang:t('menu.escort_menu'),
             icon = 'user-group',
             type = 'client',
             event = 'police:client:EscortPlayer',
             shouldClose = true
         }, {
             id = 'searchplayer',
-            title = 'Search Player',
+            title = Lang:t('menu.search_player'),
             icon = 'magnifying-glass',
             type = 'client',
             event = 'police:client:SearchPlayer',
             shouldClose = true
         }, {
             id = 'searchhorse',
-            title = 'Search Horse',
+            title = Lang:t('menu.search_horse'),
             icon = 'magnifying-glass',
             type = 'client',
             event = 'police:client:SearchHorse',
             shouldClose = true
         }, {
             id = 'jailplayer',
-            title = 'Jail',
+            title = Lang:t('menu.jail_menu'),
             icon = 'user-lock',
             type = 'client',
             event = 'police:client:JailPlayer',
             shouldClose = true
         }, {
             id = 'lawbadge',
-            title = 'Badge On/Off',
+            title = Lang:t('menu.badge_on_off'),
             icon = 'id-badge',
             type = 'command',
             event = 'lawbadge',
@@ -311,7 +311,7 @@ Config.JobInteractions = {
     ["horsetrainer"] = {
         {
             id = 'starttraining',
-            title = 'Toggle Training On/Off',
+            title = Lang:t('menu.toggle_training_on_off'),
             icon = 'horse-head',
             type = 'client',
             event = 'rsg-horsetrainer:client:startTraining',
@@ -319,7 +319,7 @@ Config.JobInteractions = {
         },
         {
             id = 'trainerbrush',
-            title = 'Trainer Brush',
+            title = Lang:t('menu.trainer_brush'),
             icon = 'horse-head',
             type = 'client',
             event = 'rsg-horsetrainer:client:brushHorse',
@@ -327,7 +327,7 @@ Config.JobInteractions = {
         },
         {
             id = 'trainercarrot',
-            title = 'Trainer Carrot',
+            title = Lang:t('menu.trainer_carrot'),
             icon = 'horse-head',
             type = 'client',
             event = 'rsg-horsetrainer:client:feedHorse',
@@ -335,7 +335,7 @@ Config.JobInteractions = {
         },
         {
             id = 'checkhorsexp',
-            title = 'Check Horse EXP',
+            title = Lang:t('menu.check_horse_exp'),
             icon = 'horse-head',
             type = 'client',
             event = 'rsg-horsetrainer:client:checkHorseEXP',
