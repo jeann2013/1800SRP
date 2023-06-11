@@ -18,6 +18,7 @@ local Translations =
         bird_approaching = "There's a Bird Post approaching to You!",
         wait_for_bird = "Please wait for the Bird Post to approaches You!",
         inside_building = "Please move out from the building, the bird can't reach you!",
+        post_office_info = 'Post Office',
     },
     error =
     {
