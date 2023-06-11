@@ -32,7 +32,7 @@ local Translations =
         delivery_fail2 = "¡El pájaro se cansó y decidió irse!",
         delivery_fail3 = "¡Puedes recuperar la carta en la oficina de correos local!",
         send_receiver = "¡No puedes escribir una carta mientras esperas que llegue Bird Post!",
-        wait_etween_send"] = "¡Por favor, espere %{tDelay} segundos antes de enviar otra carta!",
+        wait_etween_send = "¡Por favor, espere %{tDelay} segundos antes de enviar otra carta!",
         you_need_add_people_your_addressbook = "Necesita agregar personas a su libreta de direcciones",
         the_bird_got_away_error= '¡El pájaro se escapó!',          
     },
