@@ -11,7 +11,7 @@ shared_scripts {
     '@rsg-core/shared/locale.lua',
     'shared/functions.lua',
     'locales/en.lua',
-    'locales/*.lua'
+    'locales/*.lua',
     'config.lua',
 }
 
