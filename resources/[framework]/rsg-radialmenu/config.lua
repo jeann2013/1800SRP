@@ -35,7 +35,7 @@ Config.MenuItems = {
     },
     [3] = {
         id = 'user',
-        title = 'User',
+        title = Lang:t('menu.user'),
         icon = 'user',
         items = {
             {     

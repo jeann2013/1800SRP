@@ -47,7 +47,7 @@ local function SetupJobMenu()
     local PlayerData = RSGCore.Functions.GetPlayerData()
     local JobMenu = {
         id = 'jobinteractions',
-        title = 'Work',
+        title = Lang:t('menu.work'),
         icon = 'briefcase',
         items = {}
     }
@@ -174,9 +174,9 @@ RegisterNetEvent('rsg-radialmenu:client:SendPoliceEmergencyAlert', function()
     local firstname = Player.charinfo.firstname
     local lastname = Player.charinfo.lastname
     -- notify police
-    TriggerServerEvent('police:server:policeAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
+    TriggerServerEvent('police:server:policeAlert', Lang:t('event.officer')..firstname..' '..lastname..Lang:t('event.emergency_button_pressed'))
     -- notify medics
-    TriggerServerEvent('rsg-medic:server:medicAlert', 'Medic '..firstname..' '..lastname..' emergency button pressed!')
+    TriggerServerEvent('rsg-medic:server:medicAlert', Lang:t('event.medic')..firstname..' '..lastname..Lang:t('event.emergency_button_pressed'))
 end)
 
 -- medic emergency button pressed
@@ -185,9 +185,9 @@ RegisterNetEvent('rsg-radialmenu:client:SendMedicEmergencyAlert', function()
     local firstname = Player.charinfo.firstname
     local lastname = Player.charinfo.lastname
     -- notify medics
-    TriggerServerEvent('rsg-medic:server:medicAlert', 'Medic '..firstname..' '..lastname..' emergency button pressed!')
+    TriggerServerEvent('rsg-medic:server:medicAlert', Lang:t('event.medic')..firstname..' '..lastname..Lang:t('event.emergency_button_pressed'))
     -- notify police
-    TriggerServerEvent('police:server:policeAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
+    TriggerServerEvent('police:server:policeAlert', Lang:t('event.officer')..firstname..' '..lastname..Lang:t('event.emergency_button_pressed'))
 end)
 
 exports('AddOption', AddOption)

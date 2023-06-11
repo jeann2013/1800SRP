@@ -6,9 +6,8 @@ local Translations = {
     primary = {        
     },
     menu = {
-        looted_menu = 'looted 🌟',  
-        found_loot_baby = ' found Loot baby!',    
-        manage_menu = 'Manage menu',  
+        work = 'Work ',
+        user = 'User',
     },
     text = {        
     },
@@ -16,6 +15,11 @@ local Translations = {
     },
     progressbar = {        
     },
+    event = {
+        officer = 'Officer ',
+        emergency_button_pressed = ' emergency button pressed!',
+        medic = 'Medic ',
+    }
 }
 Lang = Locale:new({
     phrases = Translations,

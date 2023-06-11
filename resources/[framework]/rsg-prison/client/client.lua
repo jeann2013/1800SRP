@@ -11,7 +11,7 @@ local Zones = {}
 -- prompts
 Citizen.CreateThread(function()
     for prison, v in pairs(Config.MenuLocations) do
-        exports['rsg-core']:createPrompt(v.prompt, v.coords, RSGCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
+        exports['rsg-core']:createPrompt(v.prompt, v.coords, RSGCore.Shared.Keybinds['J'], Lang:t('menu.open') .. v.name, {
             type = 'client',
             event = 'rsg-prison:client:menu',
             args = {},
@@ -83,7 +83,7 @@ CreateThread(function()
         if isJailed <= 0 then goto continue end
         if inJailZone then goto continue end
 
-        RSGCore.Functions.Notify('Returning you back to the Prison zone!', 'primary', 3000)
+        RSGCore.Functions.Notify(Lang:t('primary.returning_you_back_the_prison_zone'), 'primary', 3000)
 
         Wait(3000)
         DoScreenFadeOut(1000)
@@ -108,7 +108,7 @@ RegisterNetEvent('rsg-prison:client:menu', function()
         {
             header = "Prison Shop",
             icon = "fas fa-shopping-basket",
-            txt = "keep yourself alive",
+            txt = Lang:t('menu.keep_yourself_alive'),
             params = { 
                 event = 'rsg-prison:client:shop',
                 isServer = false,
@@ -118,7 +118,7 @@ RegisterNetEvent('rsg-prison:client:menu', function()
         {
             header = "Post Office",
             icon = "far fa-envelope-open",
-            txt = "keep in touch with loved ones",
+            txt = Lang:t('menu.keep_touch_with_loved_ones'),
             params = { 
                 event = 'rsg-prison:client:telegrammenu',
                 isServer = false,
@@ -139,12 +139,12 @@ end)
 RegisterNetEvent('rsg-prison:client:telegrammenu', function(data)
     exports['rsg-menu']:openMenu({
         {
-            header = "| Telegram Menu |",
+            header = Lang:t('menu.telegram_menu'),
             isMenuHeader = true,
         },
         {
-            header = "📥 | Read Messages",
-            txt = "read your telegram messages",
+            header = Lang:t('menu.read_messages'),
+            txt = Lang:t('text.read_your_telegram_messages'),
             params = {
                 event = 'rsg-telegram:client:readmessages',
                 isServer = false,
@@ -152,8 +152,8 @@ RegisterNetEvent('rsg-prison:client:telegrammenu', function(data)
             }
         },
         {
-            header = "📤 | Send Telegram",
-            txt = "send a telegram to another player",
+            header = Lang:t('menu.send_telegram'),
+            txt = Lang:t('text.send_telegram_another_player'),
             params = {
                 event = 'rsg-telegram:client:writemessage',
                 isServer = false,
@@ -161,7 +161,7 @@ RegisterNetEvent('rsg-prison:client:telegrammenu', function(data)
             }
         },
         {
-            header = "<<< Back",
+            header = Lang:t('menu.back'),
             txt = '',
             params = {
                 event = 'rsg-prison:client:menu',
@@ -176,7 +176,7 @@ end)
 RegisterNetEvent('rsg-prison:client:shop')
 AddEventHandler('rsg-prison:client:shop', function()
     local ShopItems = {}
-    ShopItems.label = "Prison Shop"
+    ShopItems.label = Lang:t('menu.prison_shop'),
     ShopItems.items = Config.PrisonShop
     ShopItems.slots = #Config.PrisonShop
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "PrisonShop_"..math.random(1, 99), ShopItems)
@@ -218,7 +218,7 @@ RegisterNetEvent('rsg-prison:client:Enter', function(time)
     SetEntityHeading(PlayerPedId(), RandomStartPosition.coords.w)
     Wait(500)
     TriggerServerEvent('rsg-prison:server:SaveJailItems')
-    RSGCore.Functions.Notify('Your property has been seized', 'primary')
+    RSGCore.Functions.Notify(Lang:t('primary.your_property_has_been_seized'), 'primary')
     TriggerEvent('rsg-prison:client:prisonclothes')
     TriggerServerEvent('rsg-prison:server:RemovePlayerJob')
     inJail = true
@@ -278,7 +278,7 @@ function handleJailtime()
             jailtimeMinsRemaining = jailtimeMinsRemaining - 1
             if jailtimeMinsRemaining > 0 then
                 if jailtimeMinsRemaining > 1 then
-                    exports['rsg-core']:DrawText('Freedom in '..jailtimeMinsRemaining..' mins!', 'left')
+                    exports['rsg-core']:DrawText(Lang:t('meu.freedom_in')..jailtimeMinsRemaining..Lang:t('meu.minutes'), 'left')
                     TriggerServerEvent('rsg-prison:server:updateSentance', jailtimeMinsRemaining)
                 else
                     exports['rsg-core']:DrawText('Getting ready for release!', 'left')
@@ -306,9 +306,9 @@ RegisterNetEvent('rsg-prison:client:freedom', function()
     TriggerServerEvent("rsg-appearance:LoadSkin")
     Wait(3000)
     DoScreenFadeIn(1000)
-    RSGCore.Functions.Notify('You\'re free from prison, good luck', 'primary')
+    RSGCore.Functions.Notify(Lang:t('primary.you_free_from_prison_good_luck'), 'primary')
     Wait(5000)
-    RSGCore.Functions.Notify('You received your property back', 'primary')
+    RSGCore.Functions.Notify(Lang:t('primary.you_received_your_property_back'), 'primary')
     inJail = false
 end)
 

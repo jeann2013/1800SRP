@@ -5,10 +5,9 @@ local Translations = {
     },
     primary = {        
     },
-    menu = {
-        looted_menu = 'saqueada 🌟',  
-        found_loot_baby = ' botín encontrado!',
-        manage_menu = 'Administrar menú',  
+    menu = {      
+        work = 'Work ',
+        user = 'User',
     },
     text = {        
     },
@@ -16,6 +15,11 @@ local Translations = {
     },
     progressbar = {        
     },
+    event = {
+        officer = 'Sherif ',
+        emergency_button_pressed = ' emergencia requerida!',
+        medic = 'Medico ',
+    }
 }
 
 
