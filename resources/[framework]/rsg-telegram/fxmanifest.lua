@@ -9,10 +9,9 @@ ui_page('html/ui.html')
 
 shared_scripts {    
     '@rsg-core/shared/locale.lua',
-    'shared/functions.lua',
+    'config.lua',    
     'locales/en.lua',
-    'locales/*.lua',
-    'config.lua',
+    'locales/*.lua',    
 }
 
 server_scripts {
