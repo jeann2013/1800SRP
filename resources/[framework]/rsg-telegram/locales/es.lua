@@ -30,11 +30,18 @@ local Translations =
         delete_fail = "¡No se pudo eliminar el mensaje!",
         delivery_fail1 = "¡Has decidido no recoger la carta!",
         delivery_fail2 = "¡El pájaro se cansó y decidió irse!",
-        delivery_fail3 = "¡Puedes recuperar la carta en la oficina de correos local!",
+        delivery_fail3 = "¡Puedes recuperar la carta en la oficina de telegramas local!",
         send_receiver = "¡No puedes escribir una carta mientras esperas que llegue Bird Post!",
         wait_etween_send = "¡Por favor, espere %{tDelay} segundos antes de enviar otra carta!",
         you_need_add_people_your_addressbook = "Necesita agregar personas a su libreta de direcciones",
         the_bird_got_away_error= '¡El pájaro se escapó!',          
+    },
+    info =
+    {
+        bird_approaching = "¡Hay un Poste de Pájaros acercándose a Ti!",
+        wait_for_bird = "¡Por favor espera a que Bird Post se te acerque!",
+        inside_building = "¡Por favor, sal del edificio, el pájaro no puede alcanzarte!",
+        post_office_info = 'Oficina de Telegramas',
     },
     success =
     {
