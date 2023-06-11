@@ -35,6 +35,14 @@ local Translations = {
     progressbar = {
         var = 'text goes here',
     },
+    mail = {
+        due_lack_credit_you_checked_out_room = 'Debido a la falta de crédito, ha sido retirado de la habitación',
+        mail_in = 'en',
+        gracias_por_elegir_hotel = '. Gracias por elegir nuestro hotel.',
+        hotel_room_lost = 'Habitación de hotel perdida',
+        room_mail = 'habitación',
+        has_been_deleted = 'ha sido eliminado',
+    }
 }
 
 

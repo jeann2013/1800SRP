@@ -149,11 +149,11 @@ function BillingInterval()
                     'Hotel Reception',
                     'Credit Ran Out!',
                     os.date("%x"),
-                    'Due to lack of credit, you have been checked out of room '..row.roomid..' in '..row.location..'. Thanks for choosing our hotel.',
+                    Lang:t('mail.due_lack_credit_you_checked_out_room')..row.roomid..Lang:t('mail.in_mail')..row.location..Lang:t('mail.thanks_for_choosing_hotel'),
                 })
                 Wait(1000)
                 MySQL.update('DELETE FROM player_rooms WHERE roomid = ? AND citizenid = ?', { row.roomid, row.citizenid })
-                TriggerEvent('rsg-log:server:CreateLog', 'hotel', 'Hotel Room Lost', 'red', row.fullname..' room '..row.roomid..' in '..row.location..' has been deleted')
+                TriggerEvent('rsg-log:server:CreateLog', 'hotel', Lang:t('mail.hotel_room_lost'), 'red', row.fullname..Lang:t('mail.room_mail')..row.roomid..Lang:t('mail.in_mail')..row.location..Lang:t('mail.has_been_deleted'))
             end
         end
     end

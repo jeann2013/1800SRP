@@ -36,6 +36,14 @@ local Translations = {
     progressbar = {
         var = 'text goes here',
     },
+    mail = {
+        due_lack_credit_you_checked_out_room = 'Due to lack of credit, you have been checked out of room ',
+        mail_in = ' in ',
+        thanks_for_choosing_hotel = '. Thanks for choosing our hotel.',
+        hotel_room_lost = 'Hotel Room Lost',
+        room_mail = ' room ',
+        has_been_deleted = ' has been deleted',
+    }
 }
 
 
