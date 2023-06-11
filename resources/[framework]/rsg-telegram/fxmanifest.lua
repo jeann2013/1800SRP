@@ -7,17 +7,17 @@ description 'Use the Bird Post to send letters to anyone! This mod requires rsg-
 
 ui_page('html/ui.html')
 
-server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'server/server.lua'
-}
-
 shared_scripts {    
     '@rsg-core/shared/locale.lua',
     'shared/functions.lua',
     'locales/en.lua',
     'locales/*.lua'
     'config.lua',
+}
+
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'server/server.lua'
 }
 
 client_scripts {
