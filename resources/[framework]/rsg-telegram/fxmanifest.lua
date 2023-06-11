@@ -12,12 +12,12 @@ server_scripts {
     'server/server.lua'
 }
 
-shared_scripts {
-    'config.lua',
+shared_scripts {    
     'shared/functions.lua',
     '@rsg-core/shared/locale.lua',
     'locales/en.lua',
-    'locales/*.lua'
+    'locales/*.lua',
+    'config.lua',
 }
 
 client_scripts {
