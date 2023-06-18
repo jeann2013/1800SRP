@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `asgard_admin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 INSERT INTO `asgard_admin` (`id`, `cid`, `favorite`) VALUES
-	(1, 'CITIZENID', '[{"name":"changemodel"},{"name":"ban"},{"name":"bring"},{"name":"csay"},{"name":"fixvehicle"},{"name":"givecash"},{"name":"godmode"},{"name":"noclip"},{"name":"clothes"}]');
+	(1, 'CFN18295', '[{"name":"changemodel"},{"name":"ban"},{"name":"bring"},{"name":"csay"},{"name":"fixvehicle"},{"name":"givecash"},{"name":"godmode"},{"name":"noclip"},{"name":"clothes"}]');
 
 CREATE TABLE IF NOT EXISTS `asgard_admin_banned` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
