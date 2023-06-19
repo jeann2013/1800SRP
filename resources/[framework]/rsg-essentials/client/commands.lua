@@ -8,7 +8,7 @@ CreateThread(function ()
     TriggerEvent('chat:addSuggestion','/hideui', 'Toggle all UIs ON/OFF (i.e. for taking Screenshot)', {})
 end)
 
-RSGCore.Commands.Add('spectate', "Especteando un Jugador", { { name = "id", help = "ID del Jugador" } }, true, function(source, args)
+RegisterCommand('spectate', "Especteando un Jugador", { { name = "id", help = "ID del Jugador" } }, true, function(source, args)
     local player = tonumber(args[1])
     local Player = RSGCore.Functions.GetPlayer(player)
 
