@@ -43,7 +43,7 @@ Config.Density = {
     -- Parked Vehicle Density
     [7] = 0.1,
     -- Random Vehicle Density
-    [8] = 0.0,
+    [8] = 0.1,
     -- Vehicle Density
     [9] = 0.1,
 }
