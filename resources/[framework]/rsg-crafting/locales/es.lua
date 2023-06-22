@@ -11,7 +11,7 @@ local Translations = {
         not_enough_crafting_reputation_to_make_this = '¡No hay suficiente reputación para la elaborar esto!'
     },
     primary = {
-        your_crafting_rep_is = 'Su elaboración es: ',
+        your_crafting_rep_is = 'Su nivel de elaboración es: ',
         your_crafting_reputation_increased_to  = 'Tu reputación como artesano aumentó a '
     },
     menu = {
