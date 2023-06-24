@@ -122,6 +122,14 @@ RegisterNetEvent('rsg-crafting:client:OpenMenu', function()
                 event = "rsg-crafting:client:craftbow"
             }
         },
+        {
+            header = Lang:t('menu.craft_knife'),
+            icon = "fas fa-cog",
+            txt = Lang:t('text.xbpc_weapon_melee_knife'),
+            params = {
+                event = "rsg-crafting:client:craftknife"
+            }
+        },
     })
 end)
 
