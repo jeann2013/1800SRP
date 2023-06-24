@@ -19,7 +19,9 @@ local Translations = {
         crafting_menu = 'Crafting Menu',
         craft_shovel = 'Craft Shovel',
         craft_axe = 'Craft Axe',
-        craft_pickAxe = 'Craft PickAxe'
+        craft_pickAxe = 'Craft PickAxe',
+        craft_bow_improved = 'Craft Bow Improved',
+        craft_bow = 'Craft Bow',
     },
     commands = {
         get_your_crafting_reputation = 'get your crafting reputation',
@@ -30,9 +32,13 @@ local Translations = {
       crafting_shovel = 'Crafting a Shovel..',
       crafting_axe= 'Crafting a Axe..',
       crafting_pickAxe = 'Crafting a PickAxe..',
+      crafting_bow_improved = 'Crafting a Bow Improved..',
+      crafting_bow = 'Crafting a Bow..',
     },
     text = {
-      xbpc_xsteel_xwood = '1 x BPC / 3 x Steel / 1 x Wood'
+      xbpc_xsteel_xwood = '1 x BPC / 3 x Steel / 1 x Wood',
+      xbpc_weapon_bow_improved = '1 x Bow / 2 x Steel / 2 x Wood',
+      xbpc_weapon_bow = '1x Poor Deer pelt 1 x Steel / 1 x Wood',
     }
 }
 

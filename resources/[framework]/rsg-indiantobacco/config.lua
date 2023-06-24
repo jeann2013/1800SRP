@@ -32,7 +32,7 @@ Config.Blip = {
 -- indian trader shop
 Config.IndianTraderShop = {
 
-    [1] = { name = "indtobaccoseed", price = 5, amount = 50, info = {}, type = "item",	slot = 1, },
+    [1] = { name = "indtobaccoseed", price = 1, amount = 50, info = {}, type = "item",	slot = 1, },
 
 }
 

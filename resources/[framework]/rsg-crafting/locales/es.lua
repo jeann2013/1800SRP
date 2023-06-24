@@ -22,17 +22,21 @@ local Translations = {
         craft_pickAxe = 'Elaborar Pico'
     },
     commands = {
-        get_your_crafting_reputation = 'get your crafting reputation',
+        get_your_crafting_reputation = 'Consigue tu reputación como artesano',
     },
     progressbar = {
       making_copy_of = 'Haciendo una copia de ',
       copy = 'copia-',
-      crafting_shovel = 'Elaboración de una pala..',
-      crafting_axe= 'Elaboración a Hacha..',
-      crafting_pickAxe = 'Elaboración a Pico..',
+      crafting_shovel = 'Creando una pala..',
+      crafting_axe= 'Creando una Hacha..',
+      crafting_pickAxe = 'Creando un Pico..',
+      crafting_bow_improved = 'Creando un arco mejorado..',
+      crafting_bow = 'Creando un Arco..',
     },
     text = {
-      xbpc_xsteel_xwood = '1 x BPC / 3 x Acero / 1 x Madera'
+      xbpc_xsteel_xwood = '1 x BPC / 3 x Acero / 2 x Madera',
+      xbpc_weapon_bow_improved = '1 x Arco / 2 x Acero / 2 x Madera',
+      xbpc_weapon_bow = '1 x BPC / 1 x Acero / 1 x Madera',
     }
 }
 

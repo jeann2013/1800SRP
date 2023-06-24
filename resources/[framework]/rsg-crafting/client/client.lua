@@ -106,6 +106,14 @@ RegisterNetEvent('rsg-crafting:client:OpenMenu', function()
                 event = "rsg-crafting:client:craftpickaxe"
             }
         },
+        {
+            header = Lang:t('menu.craft_bow_improved'),
+            icon = "fas fa-cog",
+            txt = Lang:t('text.xbpc_weapon_bow_improved'),
+            params = {
+                event = "rsg-crafting:client:craftpickaxe"
+            }
+        },
     })
 end)
 
@@ -189,6 +197,48 @@ AddEventHandler('rsg-crafting:client:craftpickaxe', function()
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
             TriggerServerEvent('rsg-crafting:server:craftpickaxe')
+        end)
+    else
+        RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
+    end
+end)
+
+--------------------------------------------------------------------------
+-- Bow Improved crafting
+RegisterNetEvent('rsg-crafting:client:craftbowimproved')
+AddEventHandler('rsg-crafting:client:craftbowimproved', function()
+    local hasItem1 = RSGCore.Functions.HasItem('weapon_bow', 1)
+    local hasItem2 = RSGCore.Functions.HasItem('steel', 2)
+    local hasItem3 = RSGCore.Functions.HasItem('wood', 2)
+    if hasItem1 and hasItem2 and hasItem3 then
+        RSGCore.Functions.Progressbar("crafting-bowimproved", Lang:t('progressbar.crafting_bow_improved'), Config.PickAxeCraftTime, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('rsg-crafting:server:bowimproved')
+        end)
+    else
+        RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
+    end
+end)
+
+--------------------------------------------------------------------------
+-- Bow crafting
+RegisterNetEvent('rsg-crafting:client:craftbow')
+AddEventHandler('rsg-crafting:client:craftbow', function()    
+    local hasItem1 = RSGCore.Functions.HasItem('poor_deer_pelt', 1)
+    local hasItem2 = RSGCore.Functions.HasItem('steel', 1)
+    local hasItem3 = RSGCore.Functions.HasItem('wood', 1)    
+    if hasItem1 and hasItem2 then
+        RSGCore.Functions.Progressbar("crafting-bowimproved", Lang:t('progressbar.crafting_bow'), Config.PickAxeCraftTime, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('rsg-crafting:server:bow')
         end)
     else
         RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')

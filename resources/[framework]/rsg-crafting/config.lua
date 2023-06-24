@@ -21,6 +21,10 @@ Config.InvensionShop = {
     [1] = { name = "bposhovel",  price = 500, amount = 1, info = {}, type = "item", slot = 1, }, -- crafting level 0
     [2] = { name = "bpoaxe",     price = 500, amount = 1, info = {}, type = "item", slot = 2, }, -- crafting level 0
     [3] = { name = "bpopickaxe", price = 500, amount = 1, info = {}, type = "item", slot = 3, }, -- crafting level 0
+    [4] = { name = "weapon_bow_improved", price = 500, amount = 1, info = {}, type = "item", slot = 4, }, -- crafting level 0
+    [5] = { name = "weapon_bow", price = 500, amount = 1, info = {}, type = "item", slot = 5, }, -- crafting level 0
+    
+    
 }
 
 -- blueprint original shope locations
