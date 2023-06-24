@@ -248,6 +248,30 @@ AddEventHandler('rsg-crafting:server:knife', function()
     end
 end)
 
+-- craft machete 
+RegisterServerEvent('rsg-crafting:server:machete')
+AddEventHandler('rsg-crafting:server:machete', function()
+    local src = source
+    local Player = RSGCore.Functions.GetPlayer(src)
+    local craftingRep = Player.PlayerData.metadata["craftingrep"]
+    if craftingRep >= Config.AxeRepRequired then
+        -- remove items        
+        Player.Functions.RemoveItem('steel', 7)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['steel'], "remove")
+        Player.Functions.RemoveItem('wood', 2)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['wood'], "remove")
+        -- add items
+        Player.Functions.AddItem('weapon_melee_machete', 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['weapon_melee_machete'], "add")
+        Player.Functions.SetMetaData("craftingrep", Player.PlayerData.metadata["craftingrep"] + 1)
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.crafting_successful'), 'success')
+        Wait(5000)
+        TriggerEvent('rsg-crafting:server:craftingrep', src)
+    else
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.not_enough_crafting_reputation_to_make_this'), 'success')
+    end
+end)
+
 --------------------------------------------------------------------------
 
 -- give blueprint copy

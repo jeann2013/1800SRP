@@ -130,6 +130,14 @@ RegisterNetEvent('rsg-crafting:client:OpenMenu', function()
                 event = "rsg-crafting:client:craftknife"
             }
         },
+        {
+            header = Lang:t('menu.craft_machete'),
+            icon = "fas fa-cog",
+            txt = Lang:t('text.xbpc_weapon_melee_machete'),
+            params = {
+                event = "rsg-crafting:client:craftmachete"
+            }
+        },
     })
 end)
 
@@ -275,6 +283,25 @@ AddEventHandler('rsg-crafting:client:craftknife', function()
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
             TriggerServerEvent('rsg-crafting:server:knife')
+        end)
+    else
+        RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
+    end
+end)
+--------------------------------------------------------------------------
+-- Machete crafting
+RegisterNetEvent('rsg-crafting:client:craftmachete')
+AddEventHandler('rsg-crafting:client:craftmachete', function()        
+    local hasItem1 = RSGCore.Functions.HasItem('steel', 7)
+    local hasItem2 = RSGCore.Functions.HasItem('wood', 2)    
+    if hasItem1 and hasItem2 then
+        RSGCore.Functions.Progressbar("crafting-machete", Lang:t('progressbar.crafting_weapon_melee_machete'), Config.PickAxeCraftTime, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('rsg-crafting:server:machete')
         end)
     else
         RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
