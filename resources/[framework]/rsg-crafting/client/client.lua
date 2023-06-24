@@ -274,7 +274,7 @@ AddEventHandler('rsg-crafting:client:craftknife', function()
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
-            TriggerServerEvent('rsg-crafting:server:bow')
+            TriggerServerEvent('rsg-crafting:server:knife')
         end)
     else
         RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
