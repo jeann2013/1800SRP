@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
     for bpos, v in pairs(Config.InvensionShopLocations) do
         exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'], Lang:t('menu.open') .. v.name, {
             type = 'client',
-            event = 'rsg-crafting:client:OpenInvensionShop',
+            event = 'rsg-crafting:client:OpenInvensionShop'
         })
         if v.showblip == true then
             local StoreBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, v.coords)
@@ -51,7 +51,8 @@ Citizen.CreateThread(function()
     for crafting, v in pairs(Config.CraftingLocations) do
         exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
             type = 'client',
-            event = 'rsg-crafting:client:OpenMenu',
+            event = 'rsg-crafting:client:OpenMenu',            
+            location = v.location,
         })
         if v.showblip == true then
             local CraftingBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, v.coords)
@@ -292,6 +293,25 @@ end)
 -- Machete crafting
 RegisterNetEvent('rsg-crafting:client:craftmachete')
 AddEventHandler('rsg-crafting:client:craftmachete', function()        
+    local hasItem1 = RSGCore.Functions.HasItem('steel', 7)
+    local hasItem2 = RSGCore.Functions.HasItem('wood', 2)    
+    if hasItem1 and hasItem2 then
+        RSGCore.Functions.Progressbar("crafting-machete", Lang:t('progressbar.crafting_weapon_melee_machete'), Config.PickAxeCraftTime, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('rsg-crafting:server:machete')
+        end)
+    else
+        RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
+    end
+end)
+
+-- Machete crafting
+RegisterNetEvent('rsg-crafting:client:craftlasso')
+AddEventHandler('rsg-crafting:client:craftlasso', function()        
     local hasItem1 = RSGCore.Functions.HasItem('steel', 7)
     local hasItem2 = RSGCore.Functions.HasItem('wood', 2)    
     if hasItem1 and hasItem2 then

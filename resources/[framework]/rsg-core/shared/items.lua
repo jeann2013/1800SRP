@@ -380,4 +380,7 @@ RSGShared.Items = {
 
     -- Money Clip
     ['moneyclip'] = {['name'] = 'moneyclip', ['label'] = 'Money Clip', ['weight'] = 1, ['type'] = 'item', ['image'] = 'money_moneyclip.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Money Clip'},
+
+    -- Others
+    ['fibers'] = {['name'] = 'fibers', ['label'] = 'Fibers', ['weight'] = 1, ['type'] = 'item', ['image'] = 'fibers.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Fibers'},
 }
