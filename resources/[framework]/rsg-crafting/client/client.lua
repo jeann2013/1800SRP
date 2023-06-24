@@ -216,8 +216,8 @@ end)
 RegisterNetEvent('rsg-crafting:client:craftbowimproved')
 AddEventHandler('rsg-crafting:client:craftbowimproved', function()
     local hasItem1 = RSGCore.Functions.HasItem('weapon_bow', 1)
-    local hasItem2 = RSGCore.Functions.HasItem('steel', 2)
-    local hasItem3 = RSGCore.Functions.HasItem('wood', 2)
+    local hasItem2 = RSGCore.Functions.HasItem('steel', 1)
+    local hasItem3 = RSGCore.Functions.HasItem('wood', 1)
     if hasItem1 and hasItem2 and hasItem3 then
         RSGCore.Functions.Progressbar("crafting-bowimproved", Lang:t('progressbar.crafting_bow_improved'), Config.PickAxeCraftTime, false, true, {
             disableMovement = true,
@@ -239,7 +239,7 @@ AddEventHandler('rsg-crafting:client:craftbow', function()
     local hasItem1 = RSGCore.Functions.HasItem('poor_deer_pelt', 1)
     local hasItem2 = RSGCore.Functions.HasItem('steel', 1)
     local hasItem3 = RSGCore.Functions.HasItem('wood', 1)    
-    if hasItem1 and hasItem2 then
+    if hasItem1 and hasItem2 and hasItem3 then
         RSGCore.Functions.Progressbar("crafting-bowimproved", Lang:t('progressbar.crafting_bow'), Config.PickAxeCraftTime, false, true, {
             disableMovement = true,
             disableCarMovement = false,
@@ -254,3 +254,21 @@ AddEventHandler('rsg-crafting:client:craftbow', function()
 end)
 
 --------------------------------------------------------------------------
+-- Knife crafting
+RegisterNetEvent('rsg-crafting:client:craftknife')
+AddEventHandler('rsg-crafting:client:craftknife', function()        
+    local hasItem1 = RSGCore.Functions.HasItem('steel', 5)
+    local hasItem2 = RSGCore.Functions.HasItem('wood', 1)    
+    if hasItem1 and hasItem2 then
+        RSGCore.Functions.Progressbar("crafting-knife", Lang:t('progressbar.crafting_weapon_melee_knife'), Config.PickAxeCraftTime, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('rsg-crafting:server:bow')
+        end)
+    else
+        RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
+    end
+end)

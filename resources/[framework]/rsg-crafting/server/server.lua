@@ -181,10 +181,10 @@ AddEventHandler('rsg-crafting:server:bowimproved', function()
     if craftingRep >= Config.AxeRepRequired then
         -- remove items
         Player.Functions.RemoveItem('weapon_bow', 1)
-        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['bpcpickaxe'], "remove")
-        Player.Functions.RemoveItem('steel', 2)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['weapon_bow'], "remove")
+        Player.Functions.RemoveItem('steel', 1)
         TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['steel'], "remove")
-        Player.Functions.RemoveItem('wood', 2)
+        Player.Functions.RemoveItem('wood', 1)
         TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['wood'], "remove")
         -- add items
         Player.Functions.AddItem('weapon_bow_improved', 1)
@@ -215,6 +215,30 @@ AddEventHandler('rsg-crafting:server:bow', function()
         -- add items
         Player.Functions.AddItem('weapon_bow', 1)
         TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['weapon_bow'], "add")
+        Player.Functions.SetMetaData("craftingrep", Player.PlayerData.metadata["craftingrep"] + 1)
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.crafting_successful'), 'success')
+        Wait(5000)
+        TriggerEvent('rsg-crafting:server:craftingrep', src)
+    else
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.not_enough_crafting_reputation_to_make_this'), 'success')
+    end
+end)
+
+-- craft knife 
+RegisterServerEvent('rsg-crafting:server:knife')
+AddEventHandler('rsg-crafting:server:knife', function()
+    local src = source
+    local Player = RSGCore.Functions.GetPlayer(src)
+    local craftingRep = Player.PlayerData.metadata["craftingrep"]
+    if craftingRep >= Config.AxeRepRequired then
+        -- remove items        
+        Player.Functions.RemoveItem('steel', 5)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['steel'], "remove")
+        Player.Functions.RemoveItem('wood', 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['wood'], "remove")
+        -- add items
+        Player.Functions.AddItem('weapon_melee_knife', 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['weapon_melee_knife'], "add")
         Player.Functions.SetMetaData("craftingrep", Player.PlayerData.metadata["craftingrep"] + 1)
         TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.crafting_successful'), 'success')
         Wait(5000)

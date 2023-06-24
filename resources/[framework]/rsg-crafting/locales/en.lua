@@ -22,6 +22,7 @@ local Translations = {
         craft_pickAxe = 'Craft PickAxe',
         craft_bow_improved = 'Craft Bow Improved',
         craft_bow = 'Craft Bow',
+        craft_knife = 'Craft Knife',
     },
     commands = {
         get_your_crafting_reputation = 'get your crafting reputation',
@@ -34,11 +35,13 @@ local Translations = {
       crafting_pickAxe = 'Crafting a PickAxe..',
       crafting_bow_improved = 'Crafting a Bow Improved..',
       crafting_bow = 'Crafting a Bow..',
+      crafting_weapon_melee_knife = 'Crafting a Knife..',
     },
     text = {
       xbpc_xsteel_xwood = '1 x BPC / 3 x Steel / 1 x Wood',
-      xbpc_weapon_bow_improved = '1 x Bow / 2 x Steel / 2 x Wood',
+      xbpc_weapon_bow_improved = '1 x Bow / 1 x Steel / 1 x Wood',
       xbpc_weapon_bow = '1x Poor Deer pelt 1 x Steel / 1 x Wood',
+      xbpc_weapon_melee_knife = '5 x Steel / 1 x Wood',
     }
 }
 
