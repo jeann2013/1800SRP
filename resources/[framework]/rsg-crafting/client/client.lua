@@ -111,7 +111,15 @@ RegisterNetEvent('rsg-crafting:client:OpenMenu', function()
             icon = "fas fa-cog",
             txt = Lang:t('text.xbpc_weapon_bow_improved'),
             params = {
-                event = "rsg-crafting:client:craftpickaxe"
+                event = "rsg-crafting:client:craftbowimproved"
+            }
+        },
+        {
+            header = Lang:t('menu.craft_bow'),
+            icon = "fas fa-cog",
+            txt = Lang:t('text.xbpc_weapon_bow'),
+            params = {
+                event = "rsg-crafting:client:craftbow"
             }
         },
     })

@@ -19,7 +19,9 @@ local Translations = {
         crafting_menu = 'Menú de elaboración',
         craft_shovel = 'Elaborar Pala',
         craft_axe = 'Elaborar Hacha',
-        craft_pickAxe = 'Elaborar Pico'
+        craft_pickAxe = 'Elaborar Pico',
+        craft_bow_improved = 'Elaborar Arco Mejorado',
+        craft_bow = 'Elaborar Arco'        
     },
     commands = {
         get_your_crafting_reputation = 'Consigue tu reputación como artesano',
