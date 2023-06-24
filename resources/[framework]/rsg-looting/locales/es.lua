@@ -1,5 +1,7 @@
 local Translations = {
-    error = {      
+    error = {  
+        player_not_nearby = "¡El jugador no está cerca!",
+        action_canceled = "Acción cancelada",    
     },
     success = {      
     },
@@ -11,10 +13,12 @@ local Translations = {
         manage_menu = 'Administrar menú',  
     },
     text = {        
+        looted_citizen = 'Ciudadano(a) saqueado(a) 🌟',
     },
     commands = {        
     },
-    progressbar = {        
+    progressbar = {   
+        robbing_player = "Jugador robando",     
     },
 }
 

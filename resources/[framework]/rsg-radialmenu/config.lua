@@ -142,6 +142,14 @@ Config.MenuItems = {
                 shouldClose = true
             },
         },
+        {
+            id = 'stealplayer',
+            title = Lang:t('menu.rob_menu'),
+            icon = 'mask',
+            type = 'client',
+            event = 'rsg-looting:client:RobPlayer',
+            shouldClose = true
+        },
     },
     [4] = {
         id = 'clothing',

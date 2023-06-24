@@ -7,6 +7,7 @@ local Translations = {
     primary = {        
     },
     menu = {
+        rob_menu = 'Rob',
         work = 'Work ',
         user = 'User',
         horse = 'Horse',
