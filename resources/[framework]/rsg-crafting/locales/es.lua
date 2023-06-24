@@ -36,7 +36,7 @@ local Translations = {
     text = {
       xbpc_xsteel_xwood = '1 x BPC / 3 x Acero / 2 x Madera',
       xbpc_weapon_bow_improved = '1 x Arco / 2 x Acero / 2 x Madera',
-      xbpc_weapon_bow = '1 x BPC / 1 x Acero / 1 x Madera',
+      xbpc_weapon_bow = '1 x Piel de ciervo * / 1 x Acero / 1 x Madera',      
     }
 }
 
