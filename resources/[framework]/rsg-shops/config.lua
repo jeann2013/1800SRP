@@ -46,10 +46,10 @@ Config.Products = {
         -- [21] = { name = "weapon_shotgun_doublebarrel",         price = 185, amount = 50,   info = {}, type = "weapon", slot = 21, },
         -- [22] = { name = "weapon_shotgun_semiauto",             price = 540, amount = 50,   info = {}, type = "weapon", slot = 22, },
         -- -- WEAPONS OTHER
-        -- [23] = { name = "weapon_melee_knife",                  price = 75,  amount = 50,   info = {}, type = "weapon", slot = 23, },
-        -- [24] = { name = "weapon_lasso",                        price = 5,   amount = 50,   info = {}, type = "weapon", slot = 24, },
-        -- [25] = { name = "weapon_bow",                          price = 10,  amount = 50,   info = {}, type = "weapon", slot = 25, },
-        -- [26] = { name = "weapon_bow_improved",                 price = 30,  amount = 50,   info = {}, type = "weapon", slot = 26, },
+        [11] = { name = "weapon_melee_knife",                  price = 75,  amount = 50,   info = {}, type = "weapon", slot = 11, },
+        [12] = { name = "weapon_lasso",                        price = 5,   amount = 50,   info = {}, type = "weapon", slot = 12, },
+        [13] = { name = "weapon_bow",                          price = 10,  amount = 50,   info = {}, type = "weapon", slot = 13, },
+        [14] = { name = "weapon_bow_improved",                 price = 30,  amount = 50,   info = {}, type = "weapon", slot = 14, },
         -- AMMO
         [4] = { name = "ammo_revolver",                       price = 0.50, amount = 500, info = {}, type = "item",   slot = 4, },
         [5] = { name = "ammo_pistol",                         price = 0.50, amount = 500, info = {}, type = "item",   slot = 5, },
