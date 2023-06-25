@@ -20,6 +20,7 @@ Config.FishVendorShop = {
     [5] = { name = "p_baitworm01x",     price = 0.50, amount = 5000, info = {}, type = "item",   slot = 5, },
     [6] = { name = "p_baitcricket01x",  price = 0.50, amount = 5000, info = {}, type = "item",   slot = 6, },
     [7] = { name = "p_crawdad01x",      price = 0.50, amount = 5000, info = {}, type = "item",   slot = 7, },
+    [8] = { name = "raw_fish",          price = 1.00, amount = 5000, info = {}, type = "item",   slot = 8, },
 }
 
 -- prompt locations

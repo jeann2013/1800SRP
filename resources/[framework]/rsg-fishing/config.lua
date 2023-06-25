@@ -20,7 +20,7 @@ Config.Baits = {
     "p_finisdfishlurelegendary01x",
     "p_finishdcrawdlegendary01x",
     "p_lgoc_spinner_v4",
-    "p_lgoc_spinner_v6",
+    "p_lgoc_spinner_v6"
 }
 
 -- bait to catch fish
