@@ -50,6 +50,12 @@ Config.Products = {
         [12] = { name = "weapon_lasso",                        price = 5,   amount = 50,   info = {}, type = "weapon", slot = 12, },
         [13] = { name = "weapon_bow",                          price = 10,  amount = 50,   info = {}, type = "weapon", slot = 13, },
         [14] = { name = "weapon_bow_improved",                 price = 30,  amount = 50,   info = {}, type = "weapon", slot = 14, },
+        [15] = { name = "weapon_lasso_reinforced",             price = 35,  amount = 50,   info = {}, type = "weapon", slot = 15, },
+        [16] = { name = "weapon_melee_machete",                price = 40,  amount = 50,   info = {}, type = "weapon", slot = 16, },
+        [17] = { name = "weapon_melee_hatchet",                price = 42,  amount = 50,   info = {}, type = "weapon", slot = 17, },
+        
+        
+        
         -- AMMO
         [4] = { name = "ammo_revolver",                       price = 0.50, amount = 500, info = {}, type = "item",   slot = 4, },
         [5] = { name = "ammo_pistol",                         price = 0.50, amount = 500, info = {}, type = "item",   slot = 5, },
