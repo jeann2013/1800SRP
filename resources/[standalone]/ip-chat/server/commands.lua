@@ -148,23 +148,22 @@ if Config.EnableRhodesCommand then
 end
 
 RegisterCommand('report', function(source, args, rawCommand)
-    local Player = RSGcore.Functions.GetPlayer(source)
-    local playerName = Player.PlayerData.name
-    local message = table.concat(args, ' ')
-    local time = os.date(Config.DateFormat)
     local src = source
+	local msg = table.concat(args, ' ')
+	local Player = RSGCore.Functions.GetPlayer(src)
+	TriggerClientEvent('ip-chat:client:SendReport', -1, GetPlayerName(src), src, msg)
+	TriggerEvent('rsg-log:server:CreateLog', 'report', 'Report', 'green', '**' .. GetPlayerName(src) ..' (' .. GetPlayerIdentifier(src) .. ') ** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. src .. ') **Report:** ' .. msg, false)
+end)
 
-    local players = getPlayersWithStaffRoles()
-    for k, v in ipairs(players) do
-        TriggerClientEvent('chat:addMessage', v, {
-            template = '<div class="chat-message report"><i class="fas fa-flag"></i> <b><span style="color: #ff3838">[REPORT] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{2}</span></b><div style="margin-top: 5px; font-weight: 300;">{1}</div></div>',
-            args = { playerName, message, time }
-        })
-    end
-    TriggerClientEvent('chat:addMessage', src, {
-        template = '<div class="chat-message report"><i class="fas fa-flag"></i> <b><span style="color: #ff3838">[REPORT] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{2}</span></b><div style="margin-top: 5px; font-weight: 300;">{1}</div></div>',
-        args = { 'Your report has been submitted successfully!', message, time }
-    })
+RegisterNetEvent('ip-chat:server:SendReport', function(name, targetSrc, msg)
+	local src = source
+	if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
+		TriggerClientEvent('chat:addMessage', src, {
+			template =
+			'<div class="chat-message report"><i class="fas fa-comment"></i> <b><span style="color: #e1e1e1">[REPORT] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+			args = { name, targetSrc, msg }
+		})
+	end
 end)
 
 RegisterCommand('reply', function(source, args, rawCommand)
@@ -254,6 +253,34 @@ if Config.EnableWhisperCommand then
     end)
 end
 
+--restart announcement
+
+local times = {
+    [1800] = '30 munutos',
+    [900] = '15 munutos',
+    [600] = '10 munutos',
+    [300] = '5 munutos',
+    [240] = '4 munutos',
+    [180] = '3 munutos',
+    [120] = '2 munutos',
+    [60] = '1 minuto. Por favor desconectate.',
+}
+
+AddEventHandler('txAdmin:events:announcement', function(data)
+	local time = os.date(Config.DateFormat)
+    TriggerClientEvent('chat:addMessage', -1, {
+        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        args = { data.message, time }
+    })
+end)
+
+AddEventHandler('txAdmin:events:scheduledRestart', function(data)
+	local time = os.date(Config.DateFormat)
+    TriggerClientEvent('chat:addMessage', -1, {
+        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        args = { 'This server is scheduled to restart in ' .. times[data.secondsRemaining], time }
+    })
+end)
 
 function getPlayersWithStaffRoles()
     local players = {}
