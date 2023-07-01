@@ -74,6 +74,6 @@ Config.RhodesJobName = 'rhodes'
 
 Config.EnableWhisperCommand = true
 
-Config.WhisperCommand = 'whisper'
+Config.WhisperCommand = 'mp'
 
 Config.WhisperDistance = 10
