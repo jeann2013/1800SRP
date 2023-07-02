@@ -2,13 +2,49 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 
 -- store pelt to inventory
 RegisterNetEvent('rsg-trapperplus:server:storepelt')
-AddEventHandler('rsg-trapperplus:server:storepelt', function(rewarditem1, rewarditem2)
+AddEventHandler('rsg-trapperplus:server:storepelt', function(rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5)
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     Player.Functions.AddItem(rewarditem1, 1)
 	Player.Functions.AddItem(rewarditem2, 1)
     TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem1], "add")
 	TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem2], "add")
+    if rewarditem3 then
+        Player.Functions.AddItem(rewarditem3, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem3], "add")
+    end
+    if rewarditem4 then
+        Player.Functions.AddItem(rewarditem4, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem4], "add")
+    end
+    if rewarditem5 then
+        Player.Functions.AddItem(rewarditem5, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem5], "add")
+    end
+end)
+
+-- store carcars to inventory
+RegisterNetEvent('rsg-trapperplus:server:carcars')
+AddEventHandler('rsg-trapperplus:server:carcars', function(rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5)
+    local src = source
+    local Player = RSGCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem(rewarditem1, 1)
+	Player.Functions.AddItem(rewarditem2, 1)
+    TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem1], "add")
+	TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem2], "add")
+
+    if rewarditem3 then
+        Player.Functions.AddItem(rewarditem3, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem3], "add")
+    end
+    if rewarditem4 then
+        Player.Functions.AddItem(rewarditem4, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem4], "add")
+    end
+    if rewarditem5 then
+        Player.Functions.AddItem(rewarditem5, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem5], "add")
+    end
 end)
 
 RegisterServerEvent('rsg-trapperplus:server:sellpelts')
@@ -362,6 +398,10 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
                     price = price + (Config.PerfectPeltPrice * Player.PlayerData.items[k].amount)
                     Player.Functions.RemoveItem("perfect_raccoon_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
+                elseif Player.PlayerData.items[k].name == "provision_snake_skin" then 
+                    price = price + (Config.provision_snake_skin * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("provision_snake_skin", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                        
                 end
             end
         end
@@ -371,6 +411,139 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
             haspelts = false
         else
             RSGCore.Functions.Notify(source, Lang:t('error.you_dont_have_any_pelts_to_sell'), 'error')
+        end
+    end
+end)
+
+RegisterServerEvent('rsg-trapperplus:server:sellcarcars')
+AddEventHandler('rsg-trapperplus:server:sellcarcars', function()
+    local src = source
+    local Player = RSGCore.Functions.GetPlayer(src)
+    local price = 0
+    local haspelts = false
+    if Player.PlayerData.items ~= nil and next(Player.PlayerData.items) ~= nil then 
+        for k, v in pairs(Player.PlayerData.items) do 
+            if Player.PlayerData.items[k] ~= nil then
+                
+                if Player.PlayerData.items[k].name == "claws_opossumc" then 
+                    price = price + (Config.claws_opossumc * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("claws_opossumc", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "tail_rabbitpaw" then 
+                    price = price + (Config.tail_rabbitpaw * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("tail_rabbitpaw", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "tooth_snaket" then 
+                    price = price + (Config.tooth_snaket * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("tooth_snaket", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                
+                elseif Player.PlayerData.items[k].name == "Snake_Poison" then 
+                    price = price + (Config.Snake_Poison * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("Snake_Poison", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "animal_snake" then 
+                    price = price + (Config.animal_snake * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("animal_snake", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "consumable_meat_game_cooked" then 
+                    price = price + (Config.consumable_meat_game_cooked * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("consumable_meat_game_cooked", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                
+                elseif Player.PlayerData.items[k].name == "feather_feather" then 
+                    price = price + (Config.feather_feather * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("feather_feather", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "feather_feather2" then 
+                    price = price + (Config.feather_feather2 * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("feather_feather2", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "feather_feather3" then 
+                    price = price + (Config.feather_feather3 * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("feather_feather3", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                
+                elseif Player.PlayerData.items[k].name == "provision_meat_gamey_bird" then 
+                    price = price + (Config.provision_meat_gamey_bird * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("provision_meat_gamey_bird", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_goosef" then 
+                    price = price + (Config.beak_goosef * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_goosef", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_vulturef" then 
+                    price = price + (Config.beak_vulturef * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_vulturef", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                
+                elseif Player.PlayerData.items[k].name == "beak_egretf" then 
+                    price = price + (Config.beak_egretf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_egretf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_seagullf" then 
+                    price = price + (Config.beak_seagullf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_seagullf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_boobyf" then 
+                    price = price + (Config.beak_boobyf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_boobyf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                
+                elseif Player.PlayerData.items[k].name == "beak_chickenf" then 
+                    price = price + (Config.beak_chickenf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_chickenf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_pelicanf" then 
+                    price = price + (Config.beak_pelicanf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_pelicanf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_condorf" then 
+                    price = price + (Config.beak_condorf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_condorf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true                
+                elseif Player.PlayerData.items[k].name == "beak_chickenf" then 
+                    price = price + (Config.beak_chickenf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_chickenf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_hawkf" then 
+                    price = price + (Config.beak_hawkf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_hawkf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "beak_loonf" then 
+                    price = price + (Config.beak_loonf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_loonf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                
+                elseif Player.PlayerData.items[k].name == "beak_owlf" then 
+                    price = price + (Config.beak_owlf * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_owlf", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "claws_owlt" then 
+                    price = price + (Config.claws_owlt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("claws_owlt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "claws_hawkt" then 
+                    price = price + (Config.claws_hawkt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("claws_hawkt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                
+                elseif Player.PlayerData.items[k].name == "beak_prairif" then 
+                    price = price + (Config.beak_prairif * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("beak_prairif", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "heart_chicken" then 
+                    price = price + (Config.heart_chicken * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("heart_chicken", Player.PlayerData.items[k].amount, k)
+                    haspelts = true    
+                elseif Player.PlayerData.items[k].name == "claws_eaglet" then 
+                    price = price + (Config.claws_eaglet * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("claws_eaglet", Player.PlayerData.items[k].amount, k)
+                    haspelts = true    
+                end
+            end
+        end
+        if haspelts == true then
+            Player.Functions.AddMoney(Config.PaymentType, price, "pelts-sold")
+            RSGCore.Functions.Notify(source, Lang:t('success.you_have_sold_all_your_carcars_for')..price, 'success')
+            haspelts = false
+        else
+            RSGCore.Functions.Notify(source, Lang:t('error.you_dont_have_any_carcars_to_sell'), 'error')
         end
     end
 end)

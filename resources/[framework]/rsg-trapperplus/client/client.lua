@@ -1,7 +1,5 @@
 local RSGCore = exports['rsg-core']:GetCoreObject()
-
 -----------------------------------------------------------------------------------
-
 -- prompts
 Citizen.CreateThread(function()
     for trapper, v in pairs(Config.TrapperLocations) do
@@ -34,6 +32,15 @@ RegisterNetEvent('rsg-trapperplus:client:menu', function()
             icon = "fas fa-paw",
             params = {
                 event = 'rsg-trapperplus:client:sellpelts',
+                isServer = false,
+            }
+        },
+        {
+            header = Lang:t('menu.sell_stored_carcars'),
+            txt = Lang:t('text.sell_stored_carcars'),
+            icon = "fas fa-paw",
+            params = {
+                event = 'rsg-trapperplus:client:sellcarcars',
                 isServer = false,
             }
         },
@@ -73,13 +80,26 @@ end)
 
 -----------------------------------------------------------------------------------
 
+-- process bar before sell pelts
+RegisterNetEvent('rsg-trapperplus:client:sellcarcars', function()
+    RSGCore.Functions.Progressbar('make-product', Lang:t('progressbar.checking_carcars'), Config.SellTime, false, true, {
+        disableMovement = true,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {}, {}, function() -- Done
+        TriggerServerEvent('rsg-trapperplus:server:sellcarcars')
+    end)
+end)
+
 -- pickup pelt and store in inventory
 Citizen.CreateThread(function()
     while true do
         Wait(1000)
-        local ped = PlayerPedId()
-        local holding = Citizen.InvokeNative(0xD806CD2A4F2C2996, ped)
+        local ped = PlayerPedId()           
+        local holding = Citizen.InvokeNative(0xD806CD2A4F2C2996, ped)                
         local pelthash = Citizen.InvokeNative(0x31FEF6A20F00B963, holding)
+        local modelhash = GetEntityModel(holding)
         if Config.Debug == true then
             print("holding: "..tostring(holding))
             print("pelthash: "..tostring(pelthash))
@@ -90,10 +110,58 @@ Citizen.CreateThread(function()
                     local name = Config.Pelts[i].name
                     local rewarditem1 = Config.Pelts[i].rewarditem1
                     local rewarditem2 = Config.Pelts[i].rewarditem2
+                    
+                    local rewarditem3 = nil
+                    if Config.Pelts[i].rewarditem3 then
+                        rewarditem3 = Config.Pelts[i].rewarditem3
+                    end
+
+                    local rewarditem3 = nil
+                    if Config.Pelts[i].rewarditem4 then
+                        rewarditem4 = Config.Pelts[i].rewarditem4
+                    end
+                    
+                    local rewarditem5 = nil
+                    if Config.Pelts[i].rewarditem5 then
+                        rewarditem5 = Config.Pelts[i].rewarditem5
+                    end
+                    
                     local deleted = DeleteThis(holding)
                     if deleted then
                         RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
-                        TriggerServerEvent('rsg-trapperplus:server:storepelt', rewarditem1, rewarditem2)
+                        TriggerServerEvent('rsg-trapperplus:server:storepelt', rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5)
+                    else
+                        RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
+                    end
+                end
+            end
+            
+            for i = 1, #Config.Animal do
+                if modelhash == Config.Animal[i].model  then
+                    local name = Config.Animal[i].name
+                    local rewarditem1 = Config.Animal[i].rewarditem1
+                    local rewarditem2 = Config.Animal[i].rewarditem2
+                    
+                    local rewarditem3 = nil
+                    if Config.Animal[i].rewarditem3 then
+                        rewarditem3 = Config.Animal[i].rewarditem3
+                    end
+
+                    local rewarditem4 = nil
+                    if Config.Animal[i].rewarditem4 then
+                        rewarditem4 = Config.Animal[i].rewarditem4
+                    end
+                    
+                    local rewarditem5 = nil
+                    if Config.Animal[i].rewarditem5 then
+                        rewarditem5 = Config.Animal[i].rewarditem5
+                    end
+                    
+                    local deleted = DeleteThis(holding)                    
+                    if deleted then                        
+                        RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
+                        TriggerServerEvent('rsg-trapperplus:server:carcars', rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5) 
+                        Wait(1000)                                                                           
                     else
                         RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
                     end
@@ -102,6 +170,8 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+
 
 -----------------------------------------------------------------------------------
 
@@ -122,7 +192,6 @@ function DeleteThis(holding)
 end
 
 -----------------------------------------------------------------------------------
-
 -- trapper shop
 RegisterNetEvent('rsg-trapperplus:client:OpenTrapperShop')
 AddEventHandler('rsg-trapperplus:client:OpenTrapperShop', function()
@@ -134,3 +203,30 @@ AddEventHandler('rsg-trapperplus:client:OpenTrapperShop', function()
 end)
 
 -----------------------------------------------------------------------------------
+RegisterCommand('spawn_animal', function(source, args, rawCommand)
+    local animal = args[1] -- example : mp_a_c_wolf_01
+    local outfit = args[2] -- example : 0
+    local wait = args[3] -- example : 1000
+    local player = PlayerPedId()
+    local playerCoords = GetEntityCoords(player)
+    if animal == nil then
+        animal = 'mp_a_c_wolf_01'
+    end
+    if outfit == nil then
+        outfit = 0
+    end
+    if wait == nil then
+        wait = '10000'
+    end
+    wait = tonumber(wait)
+    if not Config.Debug then
+        RequestModel(animal)
+        while not HasModelLoaded(animal) do
+            Wait(10)
+        end
+        animal = CreatePed(animal, playerCoords.x, playerCoords.y +5, playerCoords.z, true, true, true)
+        Citizen.InvokeNative(0x77FF8D35EEC6BBC4, animal, outfit, false)
+        Wait(wait)
+        FreezeEntityPosition(animal, true)
+    end
+end, false)

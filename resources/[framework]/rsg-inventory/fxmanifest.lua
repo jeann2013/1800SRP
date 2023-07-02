@@ -27,12 +27,15 @@ files {
 	'html/ui.html',
 	'html/css/main.css',
 	'html/js/app.js',
-	'html/images/*.svg',
+	'html/images/*.svg',	
 	'html/images/*.png',
 	'html/images/*.jpg',
 	'html/ammo_images/*.png',
 	'html/attachment_images/*.png',
-	'html/*.ttf'
+	'html/*.ttf',
+	'html/images/images_carcass/*.png',
+	'html/images/images_feathers/*.png',
+	'html/images/images_pelts/*.png',
 }
 
 
