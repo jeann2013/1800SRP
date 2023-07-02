@@ -20,13 +20,13 @@ local Translations = {
     commands = {
         var = 'text goes here',
         wild_horse = 'CABALLO SALVAJE 🐎',
-        Horse_sold_for = ' Horse sold for ',
+        horse_sold_for = ' Horse sold for ',
     },
     progressbar = {
         checking_horse = 'Comprobando caballo ',
     },
     text = {
-        sell_store_horse = 'y mira lo que te doy!'',
+        sell_store_horse = 'y mira lo que te doy!',
         sellwildhorse_shop =  'Vender tienda de caballos salvajes',
     }
 }
