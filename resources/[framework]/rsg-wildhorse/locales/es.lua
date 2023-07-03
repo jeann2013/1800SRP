@@ -25,7 +25,7 @@ local Translations =
         wild_horse = 'CABALLO SALVAJE 🐎',
         horse_sold_for = ' Caballo vendido por ',
         sell_wild_horse_menu = 'Vender caballo salvaje',
-        horse_seller_menu = 'Vendedor de caballos',
+        horse_seller_menu = 'Comprador de caballos',
     },
     commands =
     {

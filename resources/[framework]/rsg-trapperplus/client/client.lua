@@ -219,7 +219,7 @@ RegisterCommand('spawn_animal', function(source, args, rawCommand)
         wait = '10000'
     end
     wait = tonumber(wait)
-    if not Config.Debug then
+    if Config.Debug then
         RequestModel(animal)
         while not HasModelLoaded(animal) do
             Wait(10)
