@@ -8,7 +8,7 @@ RSGCore.Functions.CreateCallback('rsg-wardrobe:server:getPlayerSkin', function(s
     cb(skins[1])
 end)
 
-RSGCore.Commands.Add("removeclothes", "removes all clothing", {}, false, function(source)
+RSGCore.Commands.Add("undress", "removes all clothing", {}, false, function(source)
     local src = source
     TriggerClientEvent('rsg-wardrobe:client:removeAllClothing', src)
 end)
@@ -146,4 +146,22 @@ end)
 RSGCore.Commands.Add("hairaccessories", "hair accessories on/off", {}, false, function(source)
     local src = source
     TriggerClientEvent('rsg-wardrobe:client:OnOffClothing', src, "hair_accessories")
+end)
+
+RSGCore.Commands.Add("dress", Lang:t('commands.wear_all_clothing'), {}, false, function(source)
+    local src = source
+    local User = RSGCore.Functions.GetPlayer(src)
+    local citizenid = User.PlayerData.citizenid
+    local license = RSGCore.Functions.GetIdentifier(source, 'license')
+    local _clothes =  MySQL.Sync.fetchAll('SELECT * FROM playerclothe WHERE citizenid = ? AND license = ?', {citizenid, license})
+
+    if _clothes[1] then
+        _clothes = json.decode(_clothes[1].clothes)
+    else
+        _clothes = {}
+    end
+
+    if _clothes then
+        TriggerClientEvent("rsg-clothes:ApplyClothes", src, _clothes)
+    end
 end)

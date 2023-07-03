@@ -3,28 +3,24 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 game 'rdr3'
 
 author 'RexShack#3041'
-description 'rsg-example'
+description 'rsg-canteen'
 
 client_scripts {
     'client/client.lua'
 }
 
 server_scripts {
-    '@oxmysql/lib/MySQL.lua',
     'server/server.lua'
 }
 
 shared_scripts {
     '@rsg-core/shared/locale.lua',
+    'locales/en.lua', -- preferred language
     'config.lua',
-    'locales/en.lua',
-    'locales/*.lua',
 }
 
 dependencies {
     'rsg-core',
-    'rsg-appearance',
-    'rsg-clothes'
 }
 
 lua54 'yes'

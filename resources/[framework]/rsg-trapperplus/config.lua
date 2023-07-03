@@ -24,6 +24,7 @@ Config.TrapperLocations = {
 Config.TrapperShop = {
     -- trapper shop items    
     [1] = { name = 'poor_deer_pelt', price = 2.5, amount = 50, info = {}, type = 'item', slot = 1, },
+    [2] = { name = 'canteen0', price = 3.5, amount = 50, info = {}, type = 'item', slot = 2, },    
     
 }
 

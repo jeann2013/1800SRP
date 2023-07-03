@@ -12,7 +12,7 @@ local Translations = {
         var = 'text goes here',
     },
     commands = {
-        wear_all_clothing = "Wear all clothing",
+        wear_all_clothing = "Usar toda la ropa",
     },
     progressbar = {
         var = 'text goes here',
@@ -20,9 +20,10 @@ local Translations = {
 }
 
 
-Lang = Locale:new({
-    phrases = Translations,
-    warnOnMissing = true
-})
-
--- Lang:t('error.no_item')
+if GetConvar('rsg_locale', 'en') == 'es' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end
