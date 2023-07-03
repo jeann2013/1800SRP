@@ -50,6 +50,9 @@ local Translations = {
         trainer_carrot = 'Dar Zanahoria',
         check_horse_exp = 'Ver Caballo EXP',
         world_menu = 'Mundo',
+        fix_character = 'Arreglar PJ',
+        dress_menu = 'Vestir',
+        undress_menu = 'Desvestir',
     },
     text = {        
     },

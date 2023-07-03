@@ -157,6 +157,22 @@ Config.MenuItems = {
         icon = 'shirt',
         items = {
             {
+                id = 'dress',
+                title = Lang:t('menu.dress_menu'),
+                icon = 'person-dress',
+                type = 'command',
+                event = 'dress',
+                shouldClose = true
+            },
+            {
+                id = 'undress',
+                title = Lang:t('menu.undress_menu'),
+                icon = 'person-half-dress',
+                type = 'command',
+                event = 'undress',
+                shouldClose = true
+            },
+            {
                 id = 'onoffhat',
                 title = Lang:t('menu.clothing'),
                 icon = 'hat-cowboy',
@@ -227,9 +243,17 @@ Config.MenuItems = {
                 type = 'command',
                 event = 'closedcoat',
                 shouldClose = true
-            },
+            },           
         },
     },
+    [5] = {
+        id = 'loadskin',
+        title = Lang:t('menu.fix_character'),
+        icon = 'recycle',
+        type = 'client',
+        event = 'rsg-appearance:LoadSkinClient',
+        shouldClose = true
+    }
 }
 
 Config.JobInteractions = {

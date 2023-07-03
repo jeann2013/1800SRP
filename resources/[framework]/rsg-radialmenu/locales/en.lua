@@ -50,7 +50,10 @@ local Translations = {
         trainer_brush = 'Trainer Brush',
         trainer_carrot = 'Trainer Carrot',
         check_horse_exp = 'Check Horse EXP',
-        world_menu = 'World'
+        world_menu = 'World',
+        fix_character = 'Fix Character',
+        dress_menu = 'Dress',
+        undress_menu = 'Undress',
     },
     text = {        
     },
