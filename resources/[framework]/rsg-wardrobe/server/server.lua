@@ -10,6 +10,9 @@ end)
 
 RSGCore.Commands.Add("undress", "removes all clothing", {}, false, function(source)
     local src = source
+    local Player = RSGCore.Functions.GetPlayer(src)
+    local jailed = Player.PlayerData.metadata['injail']
+    if jailed > 0 then return end
     TriggerClientEvent('rsg-wardrobe:client:removeAllClothing', src)
 end)
 
@@ -150,18 +153,10 @@ end)
 
 RSGCore.Commands.Add("dress", Lang:t('commands.wear_all_clothing'), {}, false, function(source)
     local src = source
-    local User = RSGCore.Functions.GetPlayer(src)
-    local citizenid = User.PlayerData.citizenid
+    local Player = RSGCore.Functions.GetPlayer(src)
+    local jailed = Player.PlayerData.metadata['injail']
+    if jailed > 0 then return end
+    local citizenid = Player.PlayerData.citizenid
     local license = RSGCore.Functions.GetIdentifier(source, 'license')
     local _clothes =  MySQL.Sync.fetchAll('SELECT * FROM playerclothe WHERE citizenid = ? AND license = ?', {citizenid, license})
-
-    if _clothes[1] then
-        _clothes = json.decode(_clothes[1].clothes)
-    else
-        _clothes = {}
-    end
-
-    if _clothes then
-        TriggerClientEvent("rsg-clothes:ApplyClothes", src, _clothes)
-    end
 end)

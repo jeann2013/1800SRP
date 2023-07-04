@@ -188,56 +188,66 @@ RegisterNUICallback('menu_change', function(data)
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     local PauseMenuState    = false
     local MenusToReOpen     = {}
-    while true do
-        Citizen.Wait(0)
-        if #MenuData.Opened > 0 then
 
-            if ( IsControlJustReleased(0, 0x43DBF61F)  or  IsDisabledControlJustReleased(0, 0x43DBF61F)) then
+    while true do
+        local t = 100
+
+        if #MenuData.Opened > 0 then
+            t = 4
+
+            if ( IsControlJustReleased(0, 0x43DBF61F) or IsDisabledControlJustReleased(0, 0x43DBF61F)) then
                 SendNUIMessage({ak_menubase_action = 'controlPressed', ak_menubase_control = 'ENTER'})
             end
 
-            if (IsControlJustReleased(0, 0x308588E6)  or  IsDisabledControlJustReleased(0, 0x308588E6)) then
+            if (IsControlJustReleased(0, 0x308588E6) or IsDisabledControlJustReleased(0, 0x308588E6)) then
                 SendNUIMessage({ak_menubase_action  = 'controlPressed', ak_menubase_control = 'BACKSPACE'})
             end
 
-            if (IsControlJustReleased(0, 0x911CB09E)  or  IsDisabledControlJustReleased(0, 0x911CB09E)) then
+            if (IsControlJustReleased(0, 0x911CB09E) or IsDisabledControlJustReleased(0, 0x911CB09E)) then
                 SendNUIMessage({ak_menubase_action  = 'controlPressed', ak_menubase_control = 'TOP'})
             end
 
-            if (IsControlJustReleased(0, 0x4403F97F)  or  IsDisabledControlJustReleased(0, 0x4403F97F)) then
+            if (IsControlJustReleased(0, 0x4403F97F) or IsDisabledControlJustReleased(0, 0x4403F97F)) then
                 SendNUIMessage({ak_menubase_action  = 'controlPressed', ak_menubase_control = 'DOWN'})
             end
 
-            if (IsControlJustReleased(0, 0xAD7FCC5B)  or  IsDisabledControlJustReleased(0, 0xAD7FCC5B)) then
+            if (IsControlJustReleased(0, 0xAD7FCC5B) or IsDisabledControlJustReleased(0, 0xAD7FCC5B)) then
                 SendNUIMessage({ak_menubase_action  = 'controlPressed', ak_menubase_control = 'LEFT'})
             end
 
-            if (IsControlJustReleased(0, 0x65F9EC5B)  or  IsDisabledControlJustReleased(0, 0x65F9EC5B)) then
+            if (IsControlJustReleased(0, 0x65F9EC5B) or IsDisabledControlJustReleased(0, 0x65F9EC5B)) then
                 SendNUIMessage({ak_menubase_action  = 'controlPressed', ak_menubase_control = 'RIGHT'})
             end
 
             if IsPauseMenuActive() then
                 if not PauseMenuState then
                     PauseMenuState = true
-                    for k, v in pairs(MenuData.GetOpenedMenus()) do
-                        table.insert(MenusToReOpen, v)
+
+                    for _, v in pairs(MenuData.GetOpenedMenus()) do
+                        MenusToReOpen[#MenusToReOpen + 1] = v
                     end
+
                     MenuData.CloseAll()
-                end               
+                end
             end
         else
             if PauseMenuState and not IsPauseMenuActive() then
                 PauseMenuState = false
-                Citizen.Wait(1000)
-                for k, v in pairs(MenusToReOpen) do
+
+                Wait(1000)
+
+                for _, v in pairs(MenusToReOpen) do
                     MenuData.ReOpen(v)
                 end
-                MenusToReOpen = { }
+
+                MenusToReOpen = {}
             end
         end
+
+        Wait(t)
     end
 end)
 

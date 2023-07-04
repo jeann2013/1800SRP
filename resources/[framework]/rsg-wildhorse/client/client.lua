@@ -201,15 +201,10 @@ AddEventHandler('rsg-sellwildhorse:client:Cooldown', function()
 
         while true do
             Wait(1000)
-
             cooldowntimer = cooldowntimer - 1
-
-            print(cooldowntimer)
-
             if cooldowntimer <= 0 then
                 cooldowntimer = 0
                 cooldown = false
-
                 return
             end
         end

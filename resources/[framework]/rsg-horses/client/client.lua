@@ -968,6 +968,21 @@ RegisterNetEvent('rsg-horses:client:SpawnHorse', function(data)
     RSGCore.Functions.Notify(Lang:t('success.horse_active'), 'success', 7500)
 end)
 
+AddEventHandler('rsg-horses:client:FleeHorse', function()
+    if horsePed then
+        getControlOfEntity(horsePed)
+        if horseBlip then
+            RemoveBlip(horseBlip)
+        end
+        SetEntityAsMissionEntity(horsePed, true, true)
+        DeleteEntity(horsePed)
+        DeletePed(horsePed)
+        SetEntityAsNoLongerNeeded(horsePed)
+        horsePed = 0
+        HorseCalled = false
+    end
+end)
+
 -- flee horse
 local function Flee()
     TaskAnimalFlee(horsePed, PlayerPedId(), -1)
