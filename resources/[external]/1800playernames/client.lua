@@ -109,11 +109,11 @@ Citizen.CreateThread(function(source)
 	while true do
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
 			TriggerServerEvent('1800:returnPlayerName')
-			statusPlayer = 1
+			statusPlayer = 0
 		end		
 		if IsControlPressed(0, `INPUT_MP_TEXT_CHAT_ALL`) then			
 			TriggerServerEvent('1800:returnPlayerName')			
-			statusPlayer = 1
+			statusPlayer = 0
 		end		
 		if IsControlPressed(0, `INPUT_PUSH_TO_TALK`) or IsControlPressed(0, `INPUT_MOVE_RIGHT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_LEFT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_UP_ONLY`) or IsControlPressed(0, `INPUT_MOVE_DOWN_ONLY`)  then						
 			TriggerServerEvent('1800:returnPlayerName')			
