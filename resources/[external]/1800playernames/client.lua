@@ -126,8 +126,7 @@ end)
 
 RegisterNetEvent('1800:client:showNames', function(players)
 	local curCoords = GetEntityCoords(PlayerPedId())
-	local name = ''
-	local allActivePlayers = GetActivePlayers()	
+	local name = ''	
 	for _,i in pairs(players) do		
 	  local playeridx = GetPlayerFromServerId(i.id)
 	  local targetPed = GetPlayerPed(playeridx)	 
@@ -152,8 +151,7 @@ RegisterNetEvent('1800:client:showNames', function(players)
 end)	
 
 Citizen.CreateThread(function()
-	while true do		
-		ActivePlayers = GetActivePlayers()
+	while true do				
 		MyCoords = GetEntityCoords(PlayerPedId())
 		Citizen.Wait(500)
 	end
