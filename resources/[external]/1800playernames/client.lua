@@ -8,8 +8,10 @@ local TagDrawDistance = 20
 local HudIsRevealed = false
 local ActivePlayers = {}
 local MyCoords = vector3(0, 0, 0)
-local playerName = nil
+local playerWithName = nil
 local names = {}
+local players = {}
+local statusPlayer = 0
 
 local entityEnumerator = {
 	__gc = function(enum)
@@ -77,18 +79,6 @@ function OnRevealHud()
 	end)
 end
 
-function callNamePlayer()
-	RSGCore.Functions.TriggerCallback('1800:returnPlayerName', function(Player)		
-		if Player ~= nil then
-			local PlayerData = Player.PlayerData
-			local firstname = PlayerData.charinfo.firstname			
-			local lastname = PlayerData.charinfo.lastname
-			local idPlayer = GetPlayerServerId(PlayerId())
-			playerName = idPlayer .. ' - ' .. firstname .. ' ' .. lastname				
-		end
-	end)
-end
-
 function VoiceChatIsPlayerSpeaking(player)
 	return Citizen.InvokeNative(0xEF6F2A35FAAF2ED7, player)
 end
@@ -96,7 +86,6 @@ end
 function DrawTags()
 	
 	if ShowPlayerNames or HudIsRevealed then
-
 		for _, playerId in ipairs(ActivePlayers) do
 			local ped = GetPlayerPed(playerId)						
 			local pedCoords = GetEntityCoords(ped)			
@@ -119,45 +108,50 @@ Citizen.CreateThread(function(source)
 	local src = source	
 	while true do
 		if IsControlJustPressed(0, `INPUT_REVEAL_HUD`) then
-			OnRevealHud()
+			TriggerServerEvent('1800:returnPlayerName')
+			statusPlayer = 1
 		end		
 		if IsControlPressed(0, `INPUT_MP_TEXT_CHAT_ALL`) then			
-			showNames(false)
+			TriggerServerEvent('1800:returnPlayerName')			
+			statusPlayer = 1
 		end		
-		if IsControlPressed(0, `INPUT_PUSH_TO_TALK`) or IsControlPressed(0, `INPUT_MOVE_RIGHT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_LEFT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_UP_ONLY`) or IsControlPressed(0, `INPUT_MOVE_DOWN_ONLY`)  then			
-			showNames(true)
+		if IsControlPressed(0, `INPUT_PUSH_TO_TALK`) or IsControlPressed(0, `INPUT_MOVE_RIGHT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_LEFT_ONLY`) or IsControlPressed(0, `INPUT_MOVE_UP_ONLY`) or IsControlPressed(0, `INPUT_MOVE_DOWN_ONLY`)  then						
+			TriggerServerEvent('1800:returnPlayerName')			
+			statusPlayer = 0
 		end
 		
 		Citizen.Wait(0)
 	end
 end)
 
-showNames = function(typeMessage)
+RegisterNetEvent('1800:client:showNames', function(players)
 	local curCoords = GetEntityCoords(PlayerPedId())
-	local playerStr = ""
-	local allActivePlayers = RSGCore.Functions.GetPlayers()	
-	
-	for _,v in pairs(allActivePlayers) do
-	  local targetPed = GetPlayerPed(v)	  
-	  
-	  playerStr = '[' .. GetPlayerServerId(v) .. ']' 	  
-	 
-	  if not names[v] or not IsMpGamerTagActive(names[v].gamerTag) then
-		names[v] = {
-		  gamerTag = CreateFakeMpGamerTag(targetPed, playerStr, false, false, 0),
+	local name = ''
+	local allActivePlayers = GetActivePlayers()	
+	for _,i in pairs(players) do		
+	  local playeridx = GetPlayerFromServerId(i.id)
+	  local targetPed = GetPlayerPed(playeridx)	  
+	  if not names[i.id] or not IsMpGamerTagActive(names[i.id].gamerTag) then
+		if statusPlayer == 0 then
+			name = i.name
+		else
+			name = '[...]'
+		end
+		names[i.id] = {			
+		  gamerTag = CreateFakeMpGamerTag(targetPed, name, false, false, 0),
 		  ped = targetPed
 		}
 	  end
   
-	  local targetTag = names[v].gamerTag
+	  local targetTag = names[i.id].gamerTag
 	  local targetPedCoords = GetEntityCoords(targetPed)
 	end
-  end
+end)	
 
-Citizen.CreateThread(function()
-	while true do		
-		ActivePlayers = GetActivePlayers()
-		MyCoords = GetEntityCoords(PlayerPedId())
-		Citizen.Wait(500)
-	end
-end)
+-- Citizen.CreateThread(function()
+-- 	while true do		
+-- 		ActivePlayers = GetActivePlayers()
+-- 		MyCoords = GetEntityCoords(PlayerPedId())
+-- 		Citizen.Wait(500)
+-- 	end
+-- end)
