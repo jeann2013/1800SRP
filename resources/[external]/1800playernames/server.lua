@@ -14,7 +14,7 @@ CreateThread(function()
             local targetped = GetPlayerPed(v)
             local ped = RSGCore.Functions.GetPlayer(v)			
             tempPlayers[#tempPlayers + 1] = {
-                name = v .. '-' .. (ped.PlayerData.charinfo.firstname or '') .. ' ' .. (ped.PlayerData.charinfo.lastname or '') .. ' | (' .. (GetPlayerName(v) or '') .. ')',
+                name = v .. '-' .. (ped.PlayerData.charinfo.firstname or '') .. ' ' .. (ped.PlayerData.charinfo.lastname or ''),
                 id = v,
                 coords = GetEntityCoords(targetped),
                 cid = ped.PlayerData.charinfo.firstname .. ' ' .. ped.PlayerData.charinfo.lastname,
