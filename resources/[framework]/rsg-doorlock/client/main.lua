@@ -6,6 +6,14 @@ local lockPrompt = nil
 local doorStatus = ''
 local createdEntries = {}
 
+-- lock jail front gates
+Citizen.CreateThread(function()
+    for k,v in pairs(Config.JailDoors) do
+        Citizen.InvokeNative(0xD99229FE93B46286,v,1,1,0,0,0,0)
+        Citizen.InvokeNative(0x6BAB9442830C7F53,v,1)
+    end
+end)
+
 local DoorLockPrompt = function()
     local str = 'Use'
     local stra = CreateVarString(10, 'LITERAL_STRING', str)

@@ -435,3 +435,11 @@ Config.DoorList = {
         distance = 1.5
     },
 }
+
+Config.JailDoors = {
+    -- main front gates
+    906662604, -- -1819721708 : p_sis_frontgateb_r
+    1121239638, -- -1819721708 : p_sis_frontgateb_r
+    2617210026, -- 1692000954 : p_sis_frontgateb_l
+    3984556459, -- 1692000954 : p_sis_frontgateb_l
+}
