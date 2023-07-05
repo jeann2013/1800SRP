@@ -55,13 +55,13 @@ RegisterNetEvent('rsg-medic:server:deathactions', function()
 
         MySQL.Async.execute('UPDATE players SET inventory = ? WHERE citizenid = ?', { json.encode({}), Player.PlayerData.citizenid })
 
-        TriggerClientEvent('RSGCore:Notify', src, 'you lost all your possessions!', 'primary')
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('primary.you_lost_all_your_possessions'), 'primary')
     end
 
     if Config.WipeCashOnRespawn then
         Player.Functions.SetMoney('cash', 0)
 
-        TriggerClientEvent('RSGCore:Notify', src, 'you lost all your cash!', 'primary')
+        TriggerClientEvent('RSGCore:Notify', src,  Lang:t('primary.you_lost_all_your_cash'), 'primary')
     end
 end)
 

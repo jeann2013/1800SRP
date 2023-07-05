@@ -201,7 +201,7 @@ CreateThread(function()
     for i = 1, #Config.MedicJobLocations do
         local loc = Config.MedicJobLocations[i]
 
-        exports['rsg-core']:createPrompt(loc.prompt, loc.coords, RSGCore.Shared.Keybinds['J'], 'Open '..loc.name,
+        exports['rsg-core']:createPrompt(loc.prompt, loc.coords, RSGCore.Shared.Keybinds['J'], Lang:t('menu.open_menu')..loc.name,
         {
             type = 'client',
             event = 'rsg-medic:client:mainmenu',
@@ -260,18 +260,18 @@ CreateThread(function()
             t = 4
 
             if deathTimerStarted and deathSecondsRemaining > 0 then
-                DrawTxt('RESPAWN IN '..deathSecondsRemaining..' SECONDS..', 0.50, 0.80, 0.5, 0.5, true, 104, 244, 120, 200, true)
+                DrawTxt(Lang:t('text.respawn_in_text')..deathSecondsRemaining..Lang:t('text.seconds_text'), 0.50, 0.80, 0.5, 0.5, true, 104, 244, 120, 200, true)
             end
 
             if deathTimerStarted and deathSecondsRemaining == 0 and medicsonduty == 0 then
-                DrawTxt('PRESS [E] TO RESPAWN', 0.50, 0.85, 0.5, 0.5, true, 104, 244, 120, 200, true)
+                DrawTxt(Lang:t('text.press_e_to_respawn'), 0.50, 0.85, 0.5, 0.5, true, 104, 244, 120, 200, true)
             end
 
             if deathTimerStarted and deathSecondsRemaining < Config.DeathTimer and medicsonduty > 0 and not medicCalled then
                 if deathSecondsRemaining == 0 then
-                    DrawTxt('PRESS [E] TO RESPAWN - PRESS [J] TO CALL FOR ASSISTANCE', 0.50, 0.85, 0.5, 0.5, true, 104, 244, 120, 200, true)
+                    DrawTxt(Lang:t('text.press_e_ro_respwn_press_j_call'), 0.50, 0.85, 0.5, 0.5, true, 104, 244, 120, 200, true)
                 else
-                    DrawTxt('PRESS [J] TO CALL FOR ASSISTANCE', 0.50, 0.85, 0.5, 0.5, true, 104, 244, 120, 200, true)
+                    DrawTxt(Lang:t('text.press_j_to_call_assis'), 0.50, 0.85, 0.5, 0.5, true, 104, 244, 120, 200, true)
                 end
             end
 
@@ -291,11 +291,11 @@ CreateThread(function()
                     goto continue
                 end
 
-                local text = 'A person needs medical help!'
+                local text = Lang:t('text.a_person_needs_medical_help')
 
                 TriggerServerEvent('rsg-medic:server:medicAlert', text)
 
-                RSGCore.Functions.Notify('Medic has been called!', 'success', 5000)
+                RSGCore.Functions.Notify(Lang:t('success.medic_has_been_called'), 'success', 5000)
 
                 MedicCalled()
 
@@ -344,7 +344,7 @@ AddEventHandler('rsg-medic:client:mainmenu', function(location, name)
     local job = RSGCore.Functions.GetPlayerData().job.name
 
     if job ~= Config.JobRequired then
-        RSGCore.Functions.Notify('You are not a Medic!', 'error')
+        RSGCore.Functions.Notify(Lang:t('error.not_medic'), 'error')
 
         return
     end
@@ -359,7 +359,7 @@ AddEventHandler('rsg-medic:client:mainmenu', function(location, name)
             isMenuHeader = true
         },
         {
-            header = "Toggle Duty",
+            header = Lang:t('menu.toggle_duty_menu'),
             txt = "",
             icon = "fas fa-user-circle",
             params =
@@ -369,7 +369,7 @@ AddEventHandler('rsg-medic:client:mainmenu', function(location, name)
             }
         },
         {
-            header = "Medical Supplies",
+            header = Lang:t('menu.medical_supplies_menu'),
             txt = "",
             icon = "fas fa-heartbeat",
             params =
@@ -379,7 +379,7 @@ AddEventHandler('rsg-medic:client:mainmenu', function(location, name)
             }
         },
         {
-            header = "Medic Storage",
+            header = Lang:t('menu.medic_storage_menu'),
             txt = "",
             icon = "fas fa-box",
             params =
@@ -389,7 +389,7 @@ AddEventHandler('rsg-medic:client:mainmenu', function(location, name)
             }
         },
         {
-            header = "Job Management",
+            header = Lang:t('menu.job_management'),
             txt = "",
             icon = "fas fa-building",
             params =
@@ -399,7 +399,7 @@ AddEventHandler('rsg-medic:client:mainmenu', function(location, name)
             }
         },
         {
-            header = "Close Menu",
+            header = Lang:t('menu.close_menu_menu'),
             txt = '',
             icon = "fas fa-xmark",
             params =

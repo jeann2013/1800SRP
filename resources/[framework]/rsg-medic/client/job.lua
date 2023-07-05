@@ -84,7 +84,7 @@ AddEventHandler('rsg-medic:client:RevivePlayer', function()
 
     ExecuteCommand('me Reviving')
 
-    RSGCore.Functions.Progressbar("reviving", "Reviving...", Config.MedicReviveTime, false, true,
+    RSGCore.Functions.Progressbar("reviving", Lang:t('progressbar.reviving_progressbar'), Config.MedicReviveTime, false, true,
     {
         disableMovement = true,
         disableCarMovement = true,
@@ -133,7 +133,7 @@ AddEventHandler('rsg-medic:client:TreatWounds', function()
 
     ExecuteCommand('me Treating Wounds')
 
-    RSGCore.Functions.Progressbar("treating", "Treating Wounds...", Config.MedicTreatTime, false, true,
+    RSGCore.Functions.Progressbar("treating", Lang:t('progressbar.treating_wounds'), Config.MedicTreatTime, false, true,
     {
         disableMovement = true,
         disableCarMovement = true,
