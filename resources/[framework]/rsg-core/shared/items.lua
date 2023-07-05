@@ -500,5 +500,7 @@ RSGShared.Items = {
     ['canteen50']    = {['name'] = 'canteen50',    ['label'] = 'Canteen',       ['weight'] = 300, ['type'] = 'item', ['image'] = 'canteen.png',      ['unique'] = true,  ['useable'] = true,  ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Canteen 50% Full'},
     ['canteen25']    = {['name'] = 'canteen25',    ['label'] = 'Canteen',       ['weight'] = 200, ['type'] = 'item', ['image'] = 'canteen.png',      ['unique'] = true,  ['useable'] = true,  ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Canteen 25% Full'},
     ['canteen0']     = {['name'] = 'canteen0',     ['label'] = 'Empty Canteen', ['weight'] = 100, ['type'] = 'item', ['image'] = 'canteenempty.png', ['unique'] = true,  ['useable'] = true,  ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Empty Canteen'},
+    
+    ['lootbag']      = {['name'] = 'lootbag',      ['label'] = 'Loot Bag',      ['weight'] = 1000,['type'] = 'item', ['image'] = 'lootbag.png',      ['unique'] = true,  ['useable'] = true,  ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Use loot bag to find out whats inside!'},
 
 }
