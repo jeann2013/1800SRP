@@ -12,6 +12,7 @@ local Translations = {
     menu = {
         check = 'cheque ',
         open_lootbag = 'Abriendo bolsa de botín',
+        loot_crate_menu = 'Caja de botín',
     },
 }
 
