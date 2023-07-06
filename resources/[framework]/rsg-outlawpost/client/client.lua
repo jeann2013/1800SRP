@@ -15,7 +15,7 @@ CreateThread(function()
             if isPointInside then
                 inHostileZone = true
                 zonename = Zones[k].name
-                RSGCore.Functions.Notify('you have entered a hostle zone!', 'primary')
+                RSGCore.Functions.Notify(Lang:t('primary.you_have_entered_a_hostle_zone'), 'primary')
                 TriggerEvent('rsg-outlawpost:client:hostilezone', name)
             else
                 inHostileZone = false
@@ -56,7 +56,7 @@ end)
 
 Citizen.CreateThread(function()
     for outlaw, v in pairs(Config.OutlawLocations) do
-        exports['rsg-core']:createPrompt(v.location, v.coords, 0xF3830D8E, 'Open ' .. v.name, {
+        exports['rsg-core']:createPrompt(v.location, v.coords, 0xF3830D8E, Lang:t('menu.open_menu') .. v.name, {
             type = 'client',
             event = 'rsg-outlawpost:cient:openMenu',
             args = {},
@@ -74,12 +74,12 @@ end)
 RegisterNetEvent('rsg-outlawpost:cient:openMenu', function(data)
     exports['rsg-menu']:openMenu({
         {
-            header = "| Outlaw Menu |",
+            header =  Lang:t('menu.outlaw_menu'),
             isMenuHeader = true,
         },
         {
-            header = "Blood Money Wash",
-            txt = "wash the blood off your money",
+            header = Lang:t('menu.blood_money_wash'),
+            txt = Lang:t('text.wash_the_blood_off_your_money'),
             params = {
                 event = 'rsg-outlawpost:client:sellbloodmoney',
                 isServer = false,
@@ -87,8 +87,8 @@ RegisterNetEvent('rsg-outlawpost:cient:openMenu', function(data)
             }
         },
         {
-            header = "Sell Gold Bars",
-            txt = "sell your gold bars here",
+            header = Lang:t('menu.sell_gold_bars'),
+            txt = Lang:t('text.sell_your_gold_bars_here'),
             params = {
                 event = 'rsg-outlawpost:client:sellgoldbars',
                 isServer = false,
@@ -96,8 +96,8 @@ RegisterNetEvent('rsg-outlawpost:cient:openMenu', function(data)
             }
         },
         {
-            header = "Open Outlaw Shop",
-            txt = "buy outlawed items",
+            header = Lang:t('menu.open_outlaw_shop'),
+            txt = Lang:t('text.buy_outlawed_items'),
             params = {
                 event = 'rsg-outlawpost:client:OpenOutlawShop',
                 isServer = false,
@@ -105,7 +105,7 @@ RegisterNetEvent('rsg-outlawpost:cient:openMenu', function(data)
             }
         },
         {
-            header = "Close Menu",
+            header = Lang:t('menu.close_menu'),
             txt = '',
             params = {
                 event = 'rsg-menu:closeMenu',
@@ -122,7 +122,7 @@ AddEventHandler('rsg-outlawpost:client:sellbloodmoney', function()
         header = "<center><p><img src=nui://"..Config.BloodMoneyImage.." width=100px></p>"..Config.BloodMoneyLabel,
         inputs = {
             {
-                text = "Amount to Wash ($)",
+                text = Lang:t('menu.amount_to_wash'),
                 input = "amount",
                 type = "number",
                 isRequired = true
@@ -146,7 +146,7 @@ AddEventHandler('rsg-outlawpost:client:sellgoldbars', function()
         header = "<center><p><img src=nui://"..Config.GoldBarImage.." width=100px></p>"..Config.GoldBarLabel,
         inputs = {
             {
-                text = "Amount of Bars",
+                text = Lang:t('text.amount_of_bars'),
                 input = "amount",
                 type = "number",
                 isRequired = true
@@ -165,7 +165,7 @@ end)
 RegisterNetEvent('rsg-outlawpost:client:OpenOutlawShop')
 AddEventHandler('rsg-outlawpost:client:OpenOutlawShop', function()
     local ShopItems = {}
-    ShopItems.label = "Outlaw Shop"
+    ShopItems.label = Lang:t('text.outlaw_shop')
     ShopItems.items = Config.OutlawShop
     ShopItems.slots = #Config.OutlawShop
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "OutlawShop_"..math.random(1, 99), ShopItems)
