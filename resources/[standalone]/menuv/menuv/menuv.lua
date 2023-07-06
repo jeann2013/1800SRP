@@ -16,6 +16,7 @@ local rawget = assert(rawget)
 local rawset = assert(rawset)
 local traceback = assert(debug.traceback)
 local setmetatable = assert(setmetatable)
+local MenuOpened = false
 
 --- FiveM globals
 local GetInvokingResource = assert(GetInvokingResource)
@@ -212,12 +213,12 @@ local function TriggerResourceCallback(name, info, cb)
 end
 
 RegisterNUICallback('submit', function(info, cb) TriggerResourceCallback('submit', info, cb) end)
-RegisterNUICallback('close', function(info, cb) TriggerResourceCallback('close', info, cb) end)
+RegisterNUICallback('close', function(info, cb) TriggerResourceCallback('close', info, cb) MenuOpened = false end)
 RegisterNUICallback('switch', function(info, cb) TriggerResourceCallback('switch', info, cb) end)
 RegisterNUICallback('update', function(info, cb) TriggerResourceCallback('update', info, cb) end)
 RegisterNUICallback('open', function(info, cb) TriggerResourceCallback('open', info, cb) end)
-RegisterNUICallback('opened', function(info, cb) TriggerResourceCallback('opened', info, cb) end)
-RegisterNUICallback('close_all', function(info, cb) TriggerResourceCallback('close_all', info, cb) end)
+RegisterNUICallback('opened', function(info, cb) TriggerResourceCallback('opened', info, cb) MenuOpened = true end)
+RegisterNUICallback('close_all', function(info, cb) TriggerResourceCallback('close_all', info, cb) MenuOpened = false end)
 
 --- MenuV exports
 exports('IsLoaded', function(cb)
@@ -252,12 +253,12 @@ exports('SendNUIMessage', function(input)
 end)
 
 --- Register `MenuV` keybinds
-MenuV:RegisterKey('UP', T('keybind_key_up'), 'KEYBOARD', 'UP')
-MenuV:RegisterKey('DOWN', T('keybind_key_down'), 'KEYBOARD', 'DOWN')
-MenuV:RegisterKey('LEFT', T('keybind_key_left'), 'KEYBOARD', 'LEFT')
-MenuV:RegisterKey('RIGHT', T('keybind_key_right'), 'KEYBOARD', 'RIGHT')
-MenuV:RegisterKey('ENTER', T('keybind_key_enter'), 'KEYBOARD', 'RETURN')
-MenuV:RegisterKey('CLOSE', T('keybind_key_close'), 'KEYBOARD', 'BACK')
+MenuV:RegisterKey('UP', T('keybind_key_up'), 'KEYBOARD', 'INPUT_FRONTEND_UP')
+MenuV:RegisterKey('DOWN', T('keybind_key_down'), 'KEYBOARD', 'INPUT_FRONTEND_DOWN')
+MenuV:RegisterKey('LEFT', T('keybind_key_left'), 'KEYBOARD', 'INPUT_FRONTEND_LEFT')
+MenuV:RegisterKey('RIGHT', T('keybind_key_right'), 'KEYBOARD', 'INPUT_FRONTEND_NAV_RIGHT')
+MenuV:RegisterKey('ENTER', T('keybind_key_enter'), 'KEYBOARD', 'INPUT_FRONTEND_ACCEPT')
+MenuV:RegisterKey('CLOSE', T('keybind_key_close'), 'KEYBOARD', 'INPUT_FRONTEND_CANCEL')
 MenuV:RegisterKey('CLOSE_ALL', T('keybind_key_close_all'), 'KEYBOARD', 'PLUS')
 
 MenuV:RegisterKey('UP', ('%s - %s'):format(T('controller'), T('keybind_key_up')), 'PAD_ANALOGBUTTON', 'LUP_INDEX')
@@ -284,6 +285,42 @@ CreateThread(function()
         MenuV.Hidden = new_state
 
         Wait(MenuV.ThreadWait)
+    end
+end)
+
+CreateThread(function()
+    while true do
+        local WaitTime = 300
+        if MenuOpened then
+            WaitTime = 0
+            if IsControlJustReleased(0, 0x6319DB71) then
+                SendNUIMessage({ action = 'KEY_RELEASED', key = 'UP' })
+            elseif IsControlJustReleased(0, 0x05CA7C52) then
+                SendNUIMessage({ action = 'KEY_RELEASED', key = 'DOWN' })
+            elseif IsControlJustReleased(0, 0xA65EBAB4) then
+                SendNUIMessage({ action = 'KEY_RELEASED', key = 'LEFT' })
+            elseif IsControlJustReleased(0, 0xDEB34313) then
+                SendNUIMessage({ action = 'KEY_RELEASED', key = 'RIGHT' })
+            elseif IsControlJustReleased(0, 0xC7B5340A) then
+                SendNUIMessage({ action = 'KEY_RELEASED', key = 'ENTER' })
+            elseif IsControlJustReleased(0, 0x156F7119) then
+                SendNUIMessage({ action = 'KEY_RELEASED', key = 'CLOSE' })
+            end
+            if IsControlJustPressed(0, 0x6319DB71) then
+                SendNUIMessage({ action = 'KEY_PRESSED', key = 'UP' })
+            elseif IsControlJustPressed(0, 0x05CA7C52) then
+                SendNUIMessage({ action = 'KEY_PRESSED', key = 'DOWN' })
+            elseif IsControlJustPressed(0, 0xA65EBAB4) then
+                SendNUIMessage({ action = 'KEY_PRESSED', key = 'LEFT' })
+            elseif IsControlJustPressed(0, 0xDEB34313) then
+                SendNUIMessage({ action = 'KEY_PRESSED', key = 'RIGHT' })
+            elseif IsControlJustPressed(0, 0xC7B5340A) then
+                SendNUIMessage({ action = 'KEY_PRESSED', key = 'ENTER' })
+            elseif IsControlJustPressed(0, 0x156F7119) then
+                SendNUIMessage({ action = 'KEY_PRESSED', key = 'CLOSE' })
+            end
+        end
+        Wait(WaitTime)
     end
 end)
 
