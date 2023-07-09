@@ -503,4 +503,9 @@ RSGShared.Items = {
     
     ['lootbag']      = {['name'] = 'lootbag',      ['label'] = 'Loot Bag',      ['weight'] = 1000,['type'] = 'item', ['image'] = 'lootbag.png',      ['unique'] = true,  ['useable'] = true,  ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Use loot bag to find out whats inside!'},
 
+    ['pocket_watch']	= {['name'] = 'pocket_watch',	['label'] = 'Pocket Watch',		['weight'] = 0,		['type'] = 'item',	['image'] = 'pocket_watch.png',	['unique'] = false,		['useable'] = true,		['shouldClose'] = true,	['combinable'] = nil,	['level'] = 0,	['description'] = 'A pocket watch'},
+    ['pocket_watch_gold']	= {['name'] = 'pocket_watch_gold',	['label'] = ' Gold Pocket Watch',		['weight'] = 0,		['type'] = 'item',	['image'] = 'pocket_watch_gold.png',	['unique'] = false,		['useable'] = true,		['shouldClose'] = true,	['combinable'] = nil,	['level'] = 0,	['description'] = 'A pocket watch'},
+    ['pocket_watch_silver']	= {['name'] = 'pocket_watch_silver',	['label'] = 'Silver Pocket Watch',		['weight'] = 0,		['type'] = 'item',	['image'] = 'pocket_watch_silver.png',	['unique'] = false,		['useable'] = true,		['shouldClose'] = true,	['combinable'] = nil,	['level'] = 0,	['description'] = 'A pocket watch'},
+    ['pocket_watch_platinum']	= {['name'] = 'pocket_watch_platinum',	['label'] = 'Pocket Watch Platinum',		['weight'] = 0,		['type'] = 'item',	['image'] = 'pocket_watch_platinum.png',	['unique'] = false,		['useable'] = true,		['shouldClose'] = true,	['combinable'] = nil,	['level'] = 0,	['description'] = 'A pocket watch'},
+
 }
