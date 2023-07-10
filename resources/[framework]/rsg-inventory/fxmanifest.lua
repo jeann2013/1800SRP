@@ -29,7 +29,11 @@ files {
     'html/images/*.jpg',
     'html/ammo_images/*.png',
     'html/attachment_images/*.png',
-    'html/*.ttf'
+    'html/*.ttf',
+    'html/images/*.png',
+    'html/images/images_carcass/*.png',
+    'html/images/images_feathers/*.png',
+    'html/images/images_pelts/*.png',
 }
 
 lua54 'yes'
