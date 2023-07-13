@@ -1,4 +1,4 @@
-local RSGcore = exports['rsg-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 
 local canAdvertise = true
 
@@ -13,11 +13,11 @@ end
 
 if Config.AllowStaffsToClearEveryonesChat then
     RegisterCommand(Config.ClearEveryonesChatCommand, function(source, args, rawCommand)
-        local Player = RSGcore.Functions.GetPlayer(source)
+        local Player = RSGCore.Functions.GetPlayer(source)
         local time = os.date(Config.DateFormat)
         local src = source
 
-        if RSGcore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
+        if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
             TriggerClientEvent('chat:client:ClearChat', -1)
             TriggerClientEvent('chat:addMessage', -1, {
                 template = '<div class="chat-message system"><i class="fas fa-cog"></i> <b><span style="color: #df7b00">SYSTEM</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{0}</span></b><div style="margin-top: 5px; font-weight: 300;">The chat has been cleared!</div></div>',
@@ -29,14 +29,14 @@ end
 
 if Config.EnableStaffCommand then
     RegisterCommand(Config.StaffCommand, function(source, args, rawCommand)
-        local Player = RSGcore.Functions.GetPlayer(source)
+        local Player = RSGCore.Functions.GetPlayer(source)
         local length = string.len(Config.StaffCommand)
         local message = rawCommand:sub(length + 1)
         local time = os.date(Config.DateFormat)
         playerName = Player.PlayerData.name
         local src = source
 
-        if RSGcore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
+        if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
             TriggerClientEvent('chat:addMessage', -1, {
                 template = '<div class="chat-message staff"><i class="fas fa-shield-alt"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
                 args = { message, time }
@@ -47,14 +47,14 @@ end
 
 if Config.EnableStaffOnlyCommand then
     RegisterCommand(Config.StaffOnlyCommand, function(source, args, rawCommand)
-        local Player = RSGcore.Functions.GetPlayer(source)
+        local Player = RSGCore.Functions.GetPlayer(source)
         local length = string.len(Config.StaffOnlyCommand)
         local message = rawCommand:sub(length + 2)
         local time = os.date(Config.DateFormat)
         local playerName = Player.PlayerData.name
         local src = source
 
-        if RSGcore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
+        if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
             local players = getPlayersWithStaffRoles()
             for k, v in ipairs(players) do
                 TriggerClientEvent('chat:addMessage', v, {
@@ -72,7 +72,7 @@ end
 
 if Config.EnableAdvertisementCommand then
     RegisterCommand(Config.AdvertisementCommand, function(source, args, rawCommand)
-        local Player = RSGcore.Functions.GetPlayer(source)
+        local Player = RSGCore.Functions.GetPlayer(source)
         local length = string.len(Config.AdvertisementCommand)
         local message = rawCommand:sub(length + 1)
         local time = os.date(Config.DateFormat)
@@ -90,7 +90,7 @@ if Config.EnableAdvertisementCommand then
                     args = { playerName, message, time }
                 })
 
-                RSGcore.Functions.Notify("Advertisement successfully made for "..Config.AdvertisementPrice..'$', success, 5000)
+                RSGCore.Functions.Notify("Advertisement successfully made for "..Config.AdvertisementPrice..'$', success, 5000)
 
                 local time = Config.AdvertisementCooldown * 60
                 local pastTime = 0
@@ -103,10 +103,10 @@ if Config.EnableAdvertisementCommand then
                 end
                 canAdvertise = true
             else
-                RSGcore.Functions.Notify("You don't have enough money to make an advertisement", 'error')
+                RSGCore.Functions.Notify("You don't have enough money to make an advertisement", 'error')
             end
         else
-            RSGcore.Functions.Notify("You can only advertise once every "..Config.AdvertisementCooldown.." minutes.", 'error', 5000)
+            RSGCore.Functions.Notify("You can only advertise once every "..Config.AdvertisementCooldown.." minutes.", 'error', 5000)
         end
     end)
 end
@@ -114,7 +114,7 @@ end
 
 if Config.EnableValentineCommand then
     RegisterCommand(Config.ValentineCommand, function(source, args, rawCommand)
-        local xPlayer = RSGcore.Functions.GetPlayer(source)
+        local xPlayer = RSGCore.Functions.GetPlayer(source)
         local length = string.len(Config.ValentineCommand)
         local message = rawCommand:sub(length + 1)
         local time = os.date(Config.DateFormat)
@@ -132,7 +132,7 @@ end
 
 if Config.EnableRhodesCommand then
     RegisterCommand(Config.RhodesCommand, function(source, args, rawCommand)
-        local xPlayer = RSGcore.Functions.GetPlayer(source)
+        local xPlayer = RSGCore.Functions.GetPlayer(source)
         local length = string.len(Config.RhodesCommand)
         local message = rawCommand:sub(length + 1)
         local time = os.date(Config.DateFormat)
@@ -166,55 +166,55 @@ RegisterNetEvent('ip-chat:server:SendReport', function(name, targetSrc, msg)
 	end
 end)
 
-RegisterCommand('reply', function(source, args, rawCommand)
-    local player = RSGcore.Functions.GetPlayer(source)
-    local playerName = player.PlayerData.name
-    local message = table.concat(args, ' ')
-    local time = os.date(Config.DateFormat)
-    local src = source
+-- RegisterCommand('reply', function(source, args, rawCommand)
+--     local player = RSGCore.Functions.GetPlayer(source)
+--     local playerName = player.PlayerData.name
+--     local message = table.concat(args, ' ')
+--     local time = os.date(Config.DateFormat)
+--     local src = source
 
-    if RSGcore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
-        -- Check if the user provided an ID and a message
-        if #args < 2 then
-            RSGCore.Functions.Notify('Usage: /reply [report ID] [message]', 'error')
-            return
-        end
+--     if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
+--         -- Check if the user provided an ID and a message
+--         if #args < 2 then
+--             RSGCore.Functions.Notify('Usage: /reply [report ID] [message]', 'error')
+--             return
+--         end
         
-        -- Get the report ID and message
-        local reportId = tonumber(args[1])
-        local replyMessage = table.concat(args, ' ', 2)
+--         -- Get the report ID and message
+--         local reportId = tonumber(args[1])
+--         local replyMessage = table.concat(args, ' ', 2)
         
-        -- Get the report from the ID
-        local report = reportCooldown[reportId]
-        if not report then
-            RSGCore.Functions.Notify('Invalid report ID.', 'error')
-            return
-        end
+--         -- Get the report from the ID
+--         local report = reportCooldown[reportId]
+--         if not report then
+--             RSGCore.Functions.Notify('Invalid report ID.', 'error')
+--             return
+--         end
         
-        -- Get the player who made the report
-        local reportedPlayer = RSGcore.Functions.GetPlayer(report.reporter)
-        if not reportedPlayer then
-            RSGCore.Functions.Notify('Reported player is not online.', 'error')
-            return
-        end
+--         -- Get the player who made the report
+--         local reportedPlayer = RSGCore.Functions.GetPlayer(report.reporter)
+--         if not reportedPlayer then
+--             RSGCore.Functions.Notify('Reported player is not online.', 'error')
+--             return
+--         end
         
-        -- Send the reply message to the player who made the report
-        TriggerClientEvent('chat:addMessage', reportedPlayer.PlayerData.source, {
-            template = '<div class="chat-message report-reply"><i class="fas fa-comment"></i> <b><span style="color: #feca57">[REPORT REPLY] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
-            args = { playerName, replyMessage, time }
-        })
+--         -- Send the reply message to the player who made the report
+--         TriggerClientEvent('chat:addMessage', reportedPlayer.PlayerData.source, {
+--             template = '<div class="chat-message report-reply"><i class="fas fa-comment"></i> <b><span style="color: #feca57">[REPORT REPLY] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+--             args = { playerName, replyMessage, time }
+--         })
         
-        -- Notify the admin that the message was sent
-        RSGCore.Functions.Notify(string.format('Your message was sent to %s.', reportedPlayer.PlayerData.name))
+--         -- Notify the admin that the message was sent
+--         RSGCore.Functions.Notify(string.format('Your message was sent to %s.', reportedPlayer.PlayerData.name))
         
-        -- Add the reply message to the report log
-        table.insert(report.log, {
-            author = playerName,
-            message = replyMessage,
-            time = os.date(Config.DateFormat)
-        })
-    end
-end)
+--         -- Add the reply message to the report log
+--         table.insert(report.log, {
+--             author = playerName,
+--             message = replyMessage,
+--             time = os.date(Config.DateFormat)
+--         })
+--     end
+-- end)
 
 RegisterCommand('rumor', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
@@ -228,7 +228,7 @@ end)
 
 RegisterCommand('ooc', function(source, args, rawCommand)
     
-    local Player = RSGcore.Functions.GetPlayer(source)
+    local Player = RSGCore.Functions.GetPlayer(source)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
     local PlayerData = Player.PlayerData
@@ -244,7 +244,7 @@ end)
 
 if Config.EnableWhisperCommand then
     RegisterCommand(Config.WhisperCommand, function(source, args, rawCommand)
-        local xPlayer = RSGcore.Functions.GetPlayer(source)
+        local xPlayer = RSGCore.Functions.GetPlayer(source)
         local length = string.len(Config.WhisperCommand)
         local message = rawCommand:sub(length + 1)
         local time = os.date(Config.DateFormat)
@@ -284,9 +284,9 @@ end)
 
 function getPlayersWithStaffRoles()
     local players = {}
-    for k, v in ipairs(RSGcore.Functions.GetPlayers()) do
+    for k, v in ipairs(RSGCore.Functions.GetPlayers()) do
         for k, x in ipairs(Config.StaffGroups) do
-            if RSGcore.Functions.GetPermission(v) == x then
+            if RSGCore.Functions.GetPermission(v) == x then
                 table.insert(players, v)
                 break
             end
