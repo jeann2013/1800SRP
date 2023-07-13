@@ -176,7 +176,7 @@ RegisterCommand('reply', function(source, args, rawCommand)
     if RSGcore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
         -- Check if the user provided an ID and a message
         if #args < 2 then
-            player.Functions.Notify('Usage: /reply [report ID] [message]', 'error')
+            RSGCore.Functions.Notify('Usage: /reply [report ID] [message]', 'error')
             return
         end
         
@@ -187,14 +187,14 @@ RegisterCommand('reply', function(source, args, rawCommand)
         -- Get the report from the ID
         local report = reportCooldown[reportId]
         if not report then
-            player.Functions.Notify('Invalid report ID.', 'error')
+            RSGCore.Functions.Notify('Invalid report ID.', 'error')
             return
         end
         
         -- Get the player who made the report
         local reportedPlayer = RSGcore.Functions.GetPlayer(report.reporter)
         if not reportedPlayer then
-            player.Functions.Notify('Reported player is not online.', 'error')
+            RSGCore.Functions.Notify('Reported player is not online.', 'error')
             return
         end
         
@@ -205,7 +205,7 @@ RegisterCommand('reply', function(source, args, rawCommand)
         })
         
         -- Notify the admin that the message was sent
-        player.Functions.Notify(string.format('Your message was sent to %s.', reportedPlayer.PlayerData.name))
+        RSGCore.Functions.Notify(string.format('Your message was sent to %s.', reportedPlayer.PlayerData.name))
         
         -- Add the reply message to the report log
         table.insert(report.log, {
@@ -216,12 +216,12 @@ RegisterCommand('reply', function(source, args, rawCommand)
     end
 end)
 
-RegisterCommand('gossip', function(source, args, rawCommand)
+RegisterCommand('rumor', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message gossip"><i class="fas fa-comment"></i> <b><span style="color: #ffc107">[GOSSIP]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message gossip"><i class="fas fa-comment"></i> <b><span style="color: #ffc107">[RUMOR]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
