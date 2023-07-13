@@ -18,8 +18,8 @@ local Translations = {
     commands = {
         var = 'text goes here',
     },
-    progressbar = {
-        var = 'text goes here',
+    progressbar = {        
+        mining_progressbar = "Buscando materiales...",
     },
 }
 

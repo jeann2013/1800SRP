@@ -18,12 +18,12 @@ local Translations = {
         new_call = 'Nueva llamada',
     },
     menu = {
-        open_menu = 'Open ',
-        toggle_duty_menu = "Toggle Duty",
-        medical_supplies_menu = "Medical Supplies",
-        medic_storage_menu = "Medic Storage",
-        job_management = "Job Management",
-        close_menu_menu = "Close Menu",
+        open_menu = 'Abrir ',
+        toggle_duty_menu = "Menu servicio",
+        medical_supplies_menu = "Suministros médicos",
+        medic_storage_menu = "Almacenamiento médico",
+        job_management = "Gestión de trabajo",
+        close_menu_menu = "Cerrar menú",
     },
     text = {
         respawn_in_text = 'REPARECER EN ',

@@ -70,7 +70,7 @@ AddEventHandler('rsg-mining:client:StartMining', function()
 
                 TriggerEvent('rsg-mining:client:MiningAnimation')
 
-                RSGCore.Functions.Progressbar("mining", "Mining...", 18000, false, true,
+                RSGCore.Functions.Progressbar("mining", Lang:t('progressbar.mining_progressbar'), 18000, false, true,
                 {
                     disableMovement = true,
                     disableCarMovement = true,
