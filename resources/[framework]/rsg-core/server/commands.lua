@@ -336,25 +336,25 @@ RSGCore.Commands.Add("level", "Check Which Level You Are", {{name="skill", help=
 end, 'user')
 
 -- Me command
-RSGCore.Commands.Add('me', Lang:t("command.me.help"), {{name = Lang:t("command.me.params.message.name"), help = Lang:t("command.me.params.message.help")}}, false, function(source, args)
-    local text = ''
-    for i = 1,#args do
-        text = text .. ' ' .. args[i]
-    end
-    text = text .. ' '
-   TriggerClientEvent('RSGCore:triggerDisplay', -1, text, source , "me")
-   TriggerClientEvent("sendProximityMessage", -1, source, "Citizen [" .. source .. "]", text, { 255, 255, 255 })
-end, 'user')
+-- RSGCore.Commands.Add('me', Lang:t("command.me.help"), {{name = Lang:t("command.me.params.message.name"), help = Lang:t("command.me.params.message.help")}}, false, function(source, args)
+--     local text = ''
+--     for i = 1,#args do
+--         text = text .. ' ' .. args[i]
+--     end
+--     text = text .. ' '
+--    TriggerClientEvent('RSGCore:triggerDisplay', -1, text, source , "me")
+--    TriggerClientEvent("sendProximityMessage", -1, source, "Citizen [" .. source .. "]", text, { 255, 255, 255 })
+-- end, 'user')
 
-RSGCore.Commands.Add('do', Lang:t("command.me.help"), {{name = Lang:t("command.me.params.message.name"), help = Lang:t("command.me.params.message.help")}}, false, function(source, args)
-    local text = ''
-    for i = 1,#args do
-        text = text .. ' ' .. args[i]
-    end
-    text = text .. ' '
-   TriggerClientEvent('RSGCore:triggerDisplay', -1, text, source , "do")
-   TriggerClientEvent("sendProximityMessage", -1, source, "Citizen [" .. source .. "]", text, { 145, 209, 144 })
-end, 'user')
+-- RSGCore.Commands.Add('do', Lang:t("command.me.help"), {{name = Lang:t("command.me.params.message.name"), help = Lang:t("command.me.params.message.help")}}, false, function(source, args)
+--     local text = ''
+--     for i = 1,#args do
+--         text = text .. ' ' .. args[i]
+--     end
+--     text = text .. ' '
+--    TriggerClientEvent('RSGCore:triggerDisplay', -1, text, source , "do")
+--    TriggerClientEvent("sendProximityMessage", -1, source, "Citizen [" .. source .. "]", text, { 145, 209, 144 })
+-- end, 'user')
 
 RSGCore.Commands.Add('try', Lang:t("command.me.help"), {{name = Lang:t("command.me.params.message.name"), help = Lang:t("command.me.params.message.help")}}, false, function(source, args)
     local text = ''
