@@ -132,7 +132,7 @@ RegisterNetEvent('1800:client:showNames', function(source,players)
 	  local playeridx = GetPlayerFromServerId(i.id)
 	  local targetPed = GetPlayerPed(playeridx)	 
 	  local pedCoords = GetEntityCoords(targetPed)	 	 
-	  if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(targetPed) and i ~= src then 
+	  if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(targetPed)  then 
 		if not names[i.id] or not IsMpGamerTagActive(names[i.id].gamerTag) then
 			if statusPlayer == 0 then
 				name = i.name
