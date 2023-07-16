@@ -194,7 +194,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #9c70de;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END TWITTER */
@@ -271,7 +271,7 @@ input:focus {
 /* START OOC */
 
 .ooc {
-    background: linear-gradient(90deg, rgba(194, 194, 194, 0.9) 0%, rgba(194, 194, 194, 0.9) 100%);
+    /* background: linear-gradient(90deg, rgba(194, 194, 194, 0.9) 0%, rgba(194, 194, 194, 0.9) 100%); */
 }
 
 .fa-door-open {
