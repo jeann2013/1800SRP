@@ -14,21 +14,13 @@ Config.MenuItems = {
         id = 'horse',
         title = Lang:t('menu.horse'),
         icon = 'horse-head',
-        items = {
+        items = {           
             {
                 id = 'horselantern',
                 title = Lang:t('menu.horse_lantern'),
                 icon = 'lightbulb',
                 type = 'client',
                 event = 'rsg-horses:client:equipHorseLantern',
-                shouldClose = true
-            },
-            {
-                id = 'horseinventory',
-                title = Lang:t('menu.inventory'),
-                icon = 'box',
-                type = 'client',
-                event = 'rsg-horses:client:inventoryHorse',
                 shouldClose = true
             },
         },
@@ -253,7 +245,16 @@ Config.MenuItems = {
         type = 'client',
         event = 'rsg-appearance:LoadSkinClient',
         shouldClose = true
-    }
+    },
+    [6] = {
+        id = 'horseinventory',
+        title = Lang:t('menu.inventory'),
+        icon = 'box',
+        type = 'client',
+        event = 'rsg-horses:client:inventoryHorse',
+        shouldClose = true
+    },
+   
 }
 
 Config.JobInteractions = {
