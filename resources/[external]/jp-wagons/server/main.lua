@@ -56,7 +56,7 @@ RegisterServerEvent('jp-wagons:server:activatewagon', function(data)
     MySQL.update('UPDATE player_wagons SET active = ? WHERE wagonid = ?', {
         currentActive, data.wagonid
     }, function(affectedRows)
-        RSGCore.Functions.Notify(src, 'Your wagon is now active, press J to call it!, 'success', 3000)
+        RSGCore.Functions.Notify(src, 'Your wagon is now active, press J to call it!', 'success', 3000)
     end)
 end)
 
