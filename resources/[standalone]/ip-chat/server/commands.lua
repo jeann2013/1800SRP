@@ -231,7 +231,7 @@ RegisterCommand('me', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da">/me * </span></b>{0}</div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}</div>',
         args = { message, time }
     })
 end)
