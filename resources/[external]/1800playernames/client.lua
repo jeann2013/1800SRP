@@ -148,7 +148,7 @@ RegisterNetEvent('1800:client:showNames', function(players)
 
 		local targetTag = names[i.id].gamerTag
 		local targetPedCoords = GetEntityCoords(targetPed)
-	end
+	-- end
 	-- end
 end)	
 
