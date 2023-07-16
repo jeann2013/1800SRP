@@ -184,21 +184,6 @@ input:focus {
 
 /* END YOUTUBE */
 
-/* START ME */
-
-.me {
-    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(47, 81, 96, 0.9) 100%);
-}
-
-.fa-twitter {
-    color: rgba(42, 42, 42, 0.9);
-    background-color: #e02a57;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* END ME */
-
 /* START TWITTER */
 
 .twitter {
@@ -211,6 +196,15 @@ input:focus {
     padding: 5px;
     border-radius: 5px;
 }
+
+/* END TWITTER */
+
+/* START TWITTER */
+
+.twitter2 {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(18, 42, 52, 0.9) 100%);
+}
+
 
 /* END TWITTER */
 
