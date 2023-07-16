@@ -23,15 +23,15 @@ RSGCore.Commands.Add('bank', 'Check Bank Balance', {}, false, function(source, a
     end
 end)
 
-RSGCore.Commands.Add('bloodmoney', 'Check Bloodmoney Balance', {}, false, function(source, args)
-    local Player = RSGCore.Functions.GetPlayer(source)
-    local bloodmoneyamount = Player.PlayerData.money.bloodmoney
-    if bloodmoneyamount ~= nil then
-        TriggerClientEvent('hud:client:ShowAccounts', source, 'bloodmoney', bloodmoneyamount)
-    else
-        return
-    end
-end)
+-- RSGCore.Commands.Add('bloodmoney', 'Check Bloodmoney Balance', {}, false, function(source, args)
+--     local Player = RSGCore.Functions.GetPlayer(source)
+--     local bloodmoneyamount = Player.PlayerData.money.bloodmoney
+--     if bloodmoneyamount ~= nil then
+--         TriggerClientEvent('hud:client:ShowAccounts', source, 'bloodmoney', bloodmoneyamount)
+--     else
+--         return
+--     end
+-- end)
 
 RegisterNetEvent('hud:server:GainStress', function(amount)
     local src = source

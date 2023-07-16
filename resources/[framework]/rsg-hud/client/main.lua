@@ -52,18 +52,18 @@ RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', function()
     isLoggedIn = true
 end)
 
-RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst)
-    hunger = newHunger
-    thirst = newThirst
-end)
+-- RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst)
+--     hunger = newHunger
+--     thirst = newThirst
+-- end)
 
-RegisterNetEvent('hud:client:UpdateThirst', function(newThirst)
-    thirst = newThirst
-end)
+-- RegisterNetEvent('hud:client:UpdateThirst', function(newThirst)
+--     thirst = newThirst
+-- end)
 
-RegisterNetEvent('hud:client:UpdateStress', function(newStress)
-    stress = newStress
-end)
+-- RegisterNetEvent('hud:client:UpdateStress', function(newStress)
+--     stress = newStress
+-- end)
 
 -- Player HUD
 CreateThread(function()
@@ -213,33 +213,33 @@ end)
 
 -- Stress Gain
 
-CreateThread(function() -- Speeding
-    while true do
-        if RSGCore ~= nil --[[ and isLoggedIn ]] then
-            local ped = PlayerPedId()
-            if IsPedInAnyVehicle(ped, false) then
-                speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * 2.237 --mph
-                if speed >= Config.MinimumSpeed then
-                    TriggerServerEvent('hud:server:GainStress', math.random(1, 3))
-                end
-            end
-        end
-        Wait(20000)
-    end
-end)
+-- CreateThread(function() -- Speeding
+--     while true do
+--         if RSGCore ~= nil --[[ and isLoggedIn ]] then
+--             local ped = PlayerPedId()
+--             if IsPedInAnyVehicle(ped, false) then
+--                 speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * 2.237 --mph
+--                 if speed >= Config.MinimumSpeed then
+--                     TriggerServerEvent('hud:server:GainStress', math.random(1, 3))
+--                 end
+--             end
+--         end
+--         Wait(20000)
+--     end
+-- end)
 
-CreateThread(function() -- Shooting
-    while true do
-        if RSGCore ~= nil --[[ and isLoggedIn ]] then
-            if IsPedShooting(PlayerPedId()) then
-                if math.random() < Config.StressChance then
-                    TriggerServerEvent('hud:server:GainStress', math.random(1, 3))
-                end
-            end
-        end
-        Wait(6)
-    end
-end)
+-- CreateThread(function() -- Shooting
+--     while true do
+--         if RSGCore ~= nil --[[ and isLoggedIn ]] then
+--             if IsPedShooting(PlayerPedId()) then
+--                 if math.random() < Config.StressChance then
+--                     TriggerServerEvent('hud:server:GainStress', math.random(1, 3))
+--                 end
+--             end
+--         end
+--         Wait(6)
+--     end
+-- end)
 
 -- Stress Screen Effects
 CreateThread(function()
