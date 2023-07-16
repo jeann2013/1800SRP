@@ -229,6 +229,7 @@ end)
 RegisterCommand('me', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
+    local Player = RSGCore.Functions.GetPlayer(source)
     local PlayerData = Player.PlayerData
     local firstname = PlayerData.charinfo.firstname
     local lastname = PlayerData.charinfo.lastname
@@ -243,6 +244,7 @@ end)
 RegisterCommand('do', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
+    local Player = RSGCore.Functions.GetPlayer(source)
     local PlayerData = Player.PlayerData
     local firstname = PlayerData.charinfo.firstname
     local lastname = PlayerData.charinfo.lastname
