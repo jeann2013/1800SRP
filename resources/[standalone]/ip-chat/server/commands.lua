@@ -20,7 +20,7 @@ if Config.AllowStaffsToClearEveryonesChat then
         if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
             TriggerClientEvent('chat:client:ClearChat', -1)
             TriggerClientEvent('chat:addMessage', -1, {
-                template = '<div class="chat-message system"><i class="fas fa-cog"></i> <b><span style="color: #df7b00">SYSTEM</span><span style="font-size: 14px; color: #e1e1e1;">{0}</span></b><div style="margin-top: 5px; font-weight: 300;">The chat has been cleared!</div></div>',
+                template = '<div class="chat-message system"><i class="fas fa-cog"></i> <b><span style="color: #df7b00">SYSTEM</span><span style="font-size: 14px; color: #e1e1e1;">{0}</span></b>Thehas been cleared!</div></div>',
                 args = { time }
             })
         end
@@ -38,7 +38,7 @@ if Config.EnableStaffCommand then
 
         if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
             TriggerClientEvent('chat:addMessage', -1, {
-                template = '<div class="chat-message staff"><i class="fas fa-shield-alt"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+                template = '<div class="chat-message staff"><i class="fas fa-shield-alt"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
                 args = { message, time }
             })
         end
@@ -58,12 +58,12 @@ if Config.EnableStaffOnlyCommand then
             local players = getPlayersWithStaffRoles()
             for k, v in ipairs(players) do
                 TriggerClientEvent('chat:addMessage', v, {
-                    template = '<div class="chat-message staffonly"><i class="fas fa-eye-slash"></i> <b><span style="color: #1ebc62">[ADMIN] {0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b><div style="margin-top: 5px; font-weight: 300;">{1}</div></div>',
+                    template = '<div class="chat-message staffonly"><i class="fas fa-eye-slash"></i> <b><span style="color: #1ebc62">[ADMIN] {0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b>{1}</div>',
                     args = { playerName, message, time }
                 })
             end
             TriggerClientEvent('chat:addMessage', src, {
-                template = '<div class="chat-message staffonly"><i class="fas fa-eye-slash"></i> <b><span style="color: #1ebc62">[ADMIN] {0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b><div style="margin-top: 5px; font-weight: 300;">{1}</div></div>',
+                template = '<div class="chat-message staffonly"><i class="fas fa-eye-slash"></i> <b><span style="color: #1ebc62">[ADMIN] {0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b>{1}</div>',
                 args = { playerName, message, time }
             })
         end
@@ -86,7 +86,7 @@ if Config.EnableAdvertisementCommand then
             if bankMoney >= Config.AdvertisementPrice then
                 Player.Functions.RemoveMoney('bank', Config.AdvertisementPrice)
                 TriggerClientEvent('chat:addMessage', -1, {
-                    template = '<div class="chat-message advertisement"><i class="fas fa-ad"></i> <b><span style="color: #81db44">{0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b><div style="margin-top: 5px; font-weight: 300;">{1}</div></div>',
+                    template = '<div class="chat-message advertisement"><i class="fas fa-ad"></i> <b><span style="color: #81db44">{0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b>{1}</div>',
                     args = { playerName, message, time }
                 })
 
@@ -160,7 +160,7 @@ RegisterNetEvent('ip-chat:server:SendReport', function(name, targetSrc, msg)
 	if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
 		TriggerClientEvent('chat:addMessage', src, {
 			template =
-			'<div class="chat-message report"> <b><span style="color: #e1e1e1">[REPORT] {0}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+			'<div class="chat-message report"> <b><span style="color: #e1e1e1">[REPORT] {0}</span></b>{2}</div>',
 			args = { name, targetSrc, msg }
 		})
 	end
@@ -200,7 +200,7 @@ end)
         
 --         -- Send the reply message to the player who made the report
 --         TriggerClientEvent('chat:addMessage', reportedPlayer.PlayerData.source, {
---             template = '<div class="chat-message report-reply"> <b><span style="color: #feca57">[REPORT REPLY] {0}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+--             template = '<div class="chat-message report-reply"> <b><span style="color: #feca57">[REPORT REPLY] {0}</span></b>{2}</div>',
 --             args = { playerName, replyMessage, time }
 --         })
         
@@ -221,7 +221,7 @@ end)
 --     local time = os.date(Config.DateFormat)
 
 --     TriggerClientEvent('chat:addMessage', -1, {
---         template = '<div class="chat-message gossip"> <b><span style="color: #ffc107">[RUMOR]</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+--         template = '<div class="chat-message gossip"> <b><span style="color: #ffc107">[RUMOR]</span></b>{0}</div>',
 --         args = { message, time }
 --     })
 -- end)
@@ -231,7 +231,7 @@ RegisterCommand('me', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/me * </span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/me * </span></b>{0}</div>',
         args = { message, time }
     })
 end)
@@ -241,7 +241,7 @@ RegisterCommand('do', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/do * </span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/do * </span></b>{0}</div>',
         args = { message, time }
     })
 end)
@@ -257,7 +257,7 @@ RegisterCommand('ooc', function(source, args, rawCommand)
     local lastname = PlayerData.charinfo.lastname
     local playerName = firstname .. ' ' .. lastname
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message ooc"> <b><span style="color: #ffc107">[OOC] {0}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+        template = '<div class="chat-message ooc"> <b><span style="color: #ffc107">[OOC] {0}</span></b>{2}</div>',
         args = {playerName, time, message}
     })
     TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
@@ -290,7 +290,7 @@ local times = {
 AddEventHandler('txAdmin:events:announcement', function(data)
 	local time = os.date(Config.DateFormat)
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
         args = { data.message, time }
     })
 end)
@@ -298,7 +298,7 @@ end)
 AddEventHandler('txAdmin:events:scheduledRestart', function(data)
 	local time = os.date(Config.DateFormat)
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
         args = { 'This server is scheduled to restart in ' .. times[data.secondsRemaining], time }
     })
 end)
