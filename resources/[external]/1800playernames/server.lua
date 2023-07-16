@@ -2,16 +2,17 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 local players = {}
 local names = {}
 
-RegisterNetEvent('1800:returnPlayerName', function()	
-    TriggerClientEvent('1800:client:showNames', players)
+RegisterNetEvent('1800:returnPlayerName', function()
+	local src = source
+    TriggerClientEvent('1800:client:showNames', src, players)
 end)
 
-CreateThread(function()    
+CreateThread(function()
     while true do
         local tempPlayers = {}
         for _, v in pairs(RSGCore.Functions.GetPlayers()) do
             local targetped = GetPlayerPed(v)
-            local ped = RSGCore.Functions.GetPlayer(v)		            
+            local ped = RSGCore.Functions.GetPlayer(v)			
             tempPlayers[#tempPlayers + 1] = {
                 name = v .. '-' .. (ped.PlayerData.charinfo.firstname or '') .. ' ' .. (ped.PlayerData.charinfo.lastname or ''),
                 id = v,
@@ -20,7 +21,7 @@ CreateThread(function()
                 citizenid = ped.PlayerData.citizenid,
                 sources = GetPlayerPed(ped.PlayerData.source),
                 sourceplayer = ped.PlayerData.source
-            }            
+            }
         end        
         table.sort(tempPlayers, function(a, b)
             return a.id < b.id
