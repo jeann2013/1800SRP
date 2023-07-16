@@ -263,7 +263,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #e3a71b;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END AMBULANCE */
@@ -278,7 +278,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #bbbbbb;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END OOC */
