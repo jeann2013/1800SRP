@@ -124,8 +124,7 @@ Citizen.CreateThread(function(source)
 	end
 end)
 
-RegisterNetEvent('1800:client:showNames', function(source,players)
-	local src = source	
+RegisterNetEvent('1800:client:showNames', function(players)	
 	local curCoords = GetEntityCoords(PlayerPedId())
 	local name = ''	
 	for _,i in pairs(players) do		
