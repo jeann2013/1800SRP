@@ -272,6 +272,7 @@ input:focus {
 
 .ooc {
     /* background: linear-gradient(90deg, rgba(194, 194, 194, 0.9) 0%, rgba(194, 194, 194, 0.9) 100%); */
+    background-color: #bbbbbb;
 }
 
 .fa-door-open {
