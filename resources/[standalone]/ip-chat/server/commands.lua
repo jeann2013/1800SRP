@@ -86,7 +86,7 @@ if Config.EnableAdvertisementCommand then
             if bankMoney >= Config.AdvertisementPrice then
                 Player.Functions.RemoveMoney('bank', Config.AdvertisementPrice)
                 TriggerClientEvent('chat:addMessage', -1, {
-                    template = '<div class="chat-message advertisement"><i class="fas fa-ad"></i> <b><span style="color: #81db44">{0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b>{1}</div>',
+                    template = '<div class="chat-message advertisement"><b><span style="color: #81db44">{0}</span><span style="font-size: 14px; color: #e1e1e1;">{2}</span></b>{1}</div>',
                     args = { playerName, message, time }
                 })
 
@@ -300,7 +300,7 @@ local times = {
 AddEventHandler('txAdmin:events:announcement', function(data)
 	local time = os.date(Config.DateFormat)
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
+        template = '<div class="chat-message staff"> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
         args = { data.message, time }
     })
 end)
@@ -308,7 +308,7 @@ end)
 AddEventHandler('txAdmin:events:scheduledRestart', function(data)
 	local time = os.date(Config.DateFormat)
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message staff"><i class="fa-solid fa-desktop"></i> <b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
+        template = '<div class="chat-message staff"><b><span style="color: #1ebc62">[ANNOUNCEMENT]</span></b>{0}</div>',
         args = { 'This server is scheduled to restart in ' .. times[data.secondsRemaining], time }
     })
 end)
