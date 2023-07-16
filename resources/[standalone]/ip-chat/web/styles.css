@@ -5,7 +5,7 @@
     font-family: 'Old Standard TT', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 #app {
@@ -113,10 +113,10 @@ input:focus {
 
 .chat-message {
     display: block !important;
-    padding: 0.6vw;
-    padding-top: 0.6vw;
-    padding-bottom: 0.7vw;
-    border-radius: 10px;
+    /* padding: 0.6vw; */
+    /* padding-top: 0.6vw; */
+    /* padding-bottom: 0.7vw; */
+    /* border-radius: 10px; */
     width: 100%;
     overflow: hidden;
     word-break: break-word;
