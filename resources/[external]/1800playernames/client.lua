@@ -124,13 +124,15 @@ Citizen.CreateThread(function(source)
 	end
 end)
 
-RegisterNetEvent('1800:client:showNames', function(players)		
+RegisterNetEvent('1800:client:showNames', function(source,players)	
+	local src = source
 	local curCoords = GetEntityCoords(PlayerPedId())
 	local name = ''	
 	for _,i in pairs(players) do		
-		local playeridx = GetPlayerFromServerId(i.id)
-		local targetPed = GetPlayerPed(playeridx)	 
-		local pedCoords = GetEntityCoords(targetPed)	 	  
+	  local playeridx = GetPlayerFromServerId(i.id)
+	  local targetPed = GetPlayerPed(playeridx)	 
+	  local pedCoords = GetEntityCoords(targetPed)	 
+	  if src ~= i.id then	 
 		if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(targetPed)  then 
 			if not names[i.id] or not IsMpGamerTagActive(names[i.id].gamerTag) then
 				if statusPlayer == 0 then
@@ -144,8 +146,10 @@ RegisterNetEvent('1800:client:showNames', function(players)
 				}
 			end
 		end
+
 		local targetTag = names[i.id].gamerTag
-		local targetPedCoords = GetEntityCoords(targetPed)	
+		local targetPedCoords = GetEntityCoords(targetPed)
+	end
 	end
 end)	
 
