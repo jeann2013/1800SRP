@@ -14,7 +14,7 @@ CreateThread(function(source)
         for _, v in pairs(RSGCore.Functions.GetPlayers()) do
             local targetped = GetPlayerPed(v)
             local ped = RSGCore.Functions.GetPlayer(v)		
-            if src ~= v then	
+            -- if src ~= v then	
                 tempPlayers[#tempPlayers + 1] = {
                     name = v .. '-' .. (ped.PlayerData.charinfo.firstname or '') .. ' ' .. (ped.PlayerData.charinfo.lastname or ''),
                     id = v,
@@ -24,7 +24,7 @@ CreateThread(function(source)
                     sources = GetPlayerPed(ped.PlayerData.source),
                     sourceplayer = ped.PlayerData.source
                 }
-            end
+            -- end
         end        
         table.sort(tempPlayers, function(a, b)
             return a.id < b.id
