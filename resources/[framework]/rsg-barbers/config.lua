@@ -3,7 +3,7 @@ Config = {}
 Config.DistanceSpawn = 20.0 -- Distance before spawning/despawning the ped. (GTA Units.)
 Config.FadeIn = true
 
-Config.BarberCost = 2
+Config.BarberCost = 0.25
 
 Config.barberlocations =
 {

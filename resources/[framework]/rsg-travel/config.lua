@@ -1,3 +1,3 @@
 Config = {}
 
-Config.TicketCost = 10
+Config.TicketCost = 0.75

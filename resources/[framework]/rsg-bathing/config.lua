@@ -1,7 +1,7 @@
 Config = {}
 
-Config.NormalBathPrice = 1
-Config.DeluxeBathPrice = 5
+Config.NormalBathPrice = 0.35
+Config.DeluxeBathPrice = 1.50
 
 Config.BathingZones = {
     ["SaintDenis"] = {

@@ -2,15 +2,15 @@ Config = {}
 
 -- list of common items / add more as required (must be in your shared inventory items)
 Config.CommonItems = {
-    "bread", -- example
-    "water", -- example
+    "pocket_watch_platinum", -- example
+    "pocket_watch_gold", -- example
     "carrot", -- example
 }
 
 -- list of rare items / add more as required (must be in your shared inventory items)
 Config.RareItems = {
-    "bread", -- example
-    "water", -- example
+    "pocket_watch_platinum", -- example
+    "pocket_watch", -- example
     "carrot", -- example
 }
 
