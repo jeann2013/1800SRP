@@ -149,7 +149,7 @@ RegisterNetEvent('RSGCore:Server:SetMetaData', function(meta, data)
         end
     end
     Player.Functions.SetMetaData(meta, data)
-    TriggerClientEvent('hud:client:UpdateNeeds', src, Player.PlayerData.metadata['hunger'], Player.PlayerData.metadata['thirst'])
+    -- TriggerClientEvent('hud:client:UpdateNeeds', src, Player.PlayerData.metadata['hunger'], Player.PlayerData.metadata['thirst'])
 end)
 
 RegisterNetEvent('RSGCore:ToggleDuty', function()
