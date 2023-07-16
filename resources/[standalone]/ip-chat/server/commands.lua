@@ -231,7 +231,7 @@ RegisterCommand('me', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"><i class="fas fa-comment"></i> <b><span style="color: #ffc107">[ME]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"><i class="fas fa-comment"></i> <b><span style="color: #bb144e">[ME]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
@@ -241,7 +241,7 @@ RegisterCommand('do', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"><i class="fas fa-comment"></i> <b><span style="color: #df7b00">[DO]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"><i class="fas fa-comment"></i> <b><span style="color: #1a0fdb">[DO]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
