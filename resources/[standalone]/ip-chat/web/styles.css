@@ -260,8 +260,7 @@ input:focus {
 }
 
 .fa-ambulance {
-    color: rgba(42, 42, 42, 0.9);
-    background-color: #e3a71b;
+    color: rgba(42, 42, 42, 0.9);    
     padding: 5px;
     /* border-radius: 5px; */
 }
@@ -272,7 +271,7 @@ input:focus {
 
 .ooc {
     /* background: linear-gradient(90deg, rgba(194, 194, 194, 0.9) 0%, rgba(194, 194, 194, 0.9) 100%); */
-    background-color: #bbbbbb;
+    color: #bbbbbb;
 }
 
 .fa-door-open {
