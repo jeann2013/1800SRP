@@ -187,10 +187,10 @@ input:focus {
 /* START ME */
 
 .me {
-    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(25, 107, 143, 0.9) 100%);
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(47, 81, 96, 0.9) 100%);
 }
 
-.fa-me {
+.fa-twitter {
     color: rgba(42, 42, 42, 0.9);
     background-color: #e02a57;
     padding: 5px;
