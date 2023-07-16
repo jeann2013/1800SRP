@@ -259,6 +259,8 @@ RegisterNetEvent('jp-wagons:client:wagoninfo', function(data)
             }
         }
     })
+    
+    print("log", info.name ...''... price ...''... model ...''... storage ...''... weight);
 
     TriggerServerEvent('jp-wagons:server:buywagon', info.name, price, model, storage, weight)
 end)
