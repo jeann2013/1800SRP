@@ -231,7 +231,7 @@ RegisterCommand('me', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/me * </span></b>{0}</div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da">/me * </span></b>{0}</div>',
         args = { message, time }
     })
 end)
@@ -241,7 +241,7 @@ RegisterCommand('do', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/do * </span></b>{0}</div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}</div>',
         args = { message, time }
     })
 end)
@@ -257,7 +257,7 @@ RegisterCommand('ooc', function(source, args, rawCommand)
     local lastname = PlayerData.charinfo.lastname
     local playerName = firstname .. ' ' .. lastname
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message ooc"> <b><span style="color: #ffc107">/ooc * {0}</span></b> {2}</div>',
+        template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> * {0}</span></b> {2}</div>',
         args = {playerName, time, message}
     })
     TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
