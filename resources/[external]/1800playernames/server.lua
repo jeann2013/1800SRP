@@ -2,7 +2,7 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 local players = {}
 local names = {}
 
-RegisterNetEvent('1800:returnPlayerName', function()
+RegisterNetEvent('1800:returnPlayerName', function(source)
 	local src = source
     TriggerClientEvent('1800:client:showNames', src, players)
 end)
