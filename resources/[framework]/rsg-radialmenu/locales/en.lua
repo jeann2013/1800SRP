@@ -57,7 +57,7 @@ local Translations = {
     },
     text = {        
     },
-    commands = {        
+    commands = {            
     },
     progressbar = {        
     },

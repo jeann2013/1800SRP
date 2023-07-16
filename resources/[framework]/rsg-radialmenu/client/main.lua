@@ -116,7 +116,7 @@ end
 CreateThread(function()
     while true do
         Citizen.Wait(7)
-if IsControlJustPressed(0, RSGCore.Shared.Keybinds['F6']) then
+    if IsControlJustPressed(0, RSGCore.Shared.Keybinds['F6']) then
         setRadialState(true, true)
         SetCursorLocation(0.5, 0.5)
         end
