@@ -267,7 +267,7 @@ RegisterCommand('ooc', function(source, args, rawCommand)
     local lastname = PlayerData.charinfo.lastname
     local playerName = firstname .. ' ' .. lastname
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> * (({0})): </span></b> {2}</div>',
+        template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> (({0}: </span></b> {2}))</div>',
         args = {playerName, time, message}
     })
     TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
