@@ -160,7 +160,7 @@ RegisterNetEvent('ip-chat:server:SendReport', function(name, targetSrc, msg)
 	if RSGCore.Functions.HasPermission(src, 'admin') or IsPlayerAceAllowed(src, 'command') then
 		TriggerClientEvent('chat:addMessage', src, {
 			template =
-			'<div class="chat-message report"><i class="fas fa-comment"></i> <b><span style="color: #e1e1e1">[REPORT] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+			'<div class="chat-message report"> <b><span style="color: #e1e1e1">[REPORT] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
 			args = { name, targetSrc, msg }
 		})
 	end
@@ -200,7 +200,7 @@ end)
         
 --         -- Send the reply message to the player who made the report
 --         TriggerClientEvent('chat:addMessage', reportedPlayer.PlayerData.source, {
---             template = '<div class="chat-message report-reply"><i class="fas fa-comment"></i> <b><span style="color: #feca57">[REPORT REPLY] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+--             template = '<div class="chat-message report-reply"> <b><span style="color: #feca57">[REPORT REPLY] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
 --             args = { playerName, replyMessage, time }
 --         })
         
@@ -216,22 +216,22 @@ end)
 --     end
 -- end)
 
-RegisterCommand('rumor', function(source, args, rawCommand)
-    local message = table.concat(args, ' ')
-    local time = os.date(Config.DateFormat)
+-- RegisterCommand('rumor', function(source, args, rawCommand)
+--     local message = table.concat(args, ' ')
+--     local time = os.date(Config.DateFormat)
 
-    TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message gossip"><i class="fas fa-comment"></i> <b><span style="color: #ffc107">[RUMOR]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
-        args = { message, time }
-    })
-end)
+--     TriggerClientEvent('chat:addMessage', -1, {
+--         template = '<div class="chat-message gossip"> <b><span style="color: #ffc107">[RUMOR]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+--         args = { message, time }
+--     })
+-- end)
 
 RegisterCommand('me', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"><i class="fas fa-comment"></i> <b><span style="color: #bb144e">[ME]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #bb144e">/me * </span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
@@ -241,7 +241,7 @@ RegisterCommand('do', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter2"><i class="fas fa-comment"></i> <b><span style="color: #1a0fdb">[DO]</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #1a0fdb">/do * </span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
@@ -257,7 +257,7 @@ RegisterCommand('ooc', function(source, args, rawCommand)
     local lastname = PlayerData.charinfo.lastname
     local playerName = firstname .. ' ' .. lastname
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message ooc"><i class="fas fa-comment"></i> <b><span style="color: #ffc107">[OOC] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
+        template = '<div class="chat-message ooc"> <b><span style="color: #ffc107">[OOC] {0}</span>&nbsp;<span style="font-size: 14px; color: #e1e1e1;">{1}</span></b><div style="margin-top: 5px; font-weight: 300;">{2}</div></div>',
         args = {playerName, time, message}
     })
     TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
