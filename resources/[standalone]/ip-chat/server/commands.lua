@@ -231,7 +231,7 @@ RegisterCommand('me', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #bb144e">/me * </span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/me * </span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
@@ -241,7 +241,7 @@ RegisterCommand('do', function(source, args, rawCommand)
     local time = os.date(Config.DateFormat)
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #1a0fdb">/do * </span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
+        template = '<div class="chat-message twitter"> <b><span style="color: #bbbbbb">/do * </span></b><div style="margin-top: 5px; font-weight: 300;">{0}</div></div>',
         args = { message, time }
     })
 end)
