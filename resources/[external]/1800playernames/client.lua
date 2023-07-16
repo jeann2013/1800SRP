@@ -130,26 +130,24 @@ RegisterNetEvent('1800:client:showNames', function(players)
 	for _,i in pairs(players) do		
 	  local playeridx = GetPlayerFromServerId(i.id)
 	  local targetPed = GetPlayerPed(playeridx)	 
-	  local pedCoords = GetEntityCoords(targetPed)	 
-	--   if src ~= i.id then	 
-		if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(targetPed)  then 
-			if not names[i.id] or not IsMpGamerTagActive(names[i.id].gamerTag) then
-				if statusPlayer == 0 then
-					name = i.name
-				else
-					name = '[...]'
-				end
-				names[i.id] = {			
-				gamerTag = CreateFakeMpGamerTag(targetPed, name, false, false, 0),
-				ped = targetPed
-				}
+	  local pedCoords = GetEntityCoords(targetPed)	 	 
+	  if #(MyCoords - pedCoords) <= TagDrawDistance and not GetPedCrouchMovement(targetPed)  then 
+		if not names[i.id] or not IsMpGamerTagActive(names[i.id].gamerTag) then
+			if statusPlayer == 0 then
+				name = i.name
+			else
+				name = '[...]'
 			end
+			names[i.id] = {			
+			gamerTag = CreateFakeMpGamerTag(targetPed, name, false, false, 0),
+			ped = targetPed
+			}
 		end
-
-		local targetTag = names[i.id].gamerTag
-		local targetPedCoords = GetEntityCoords(targetPed)
-	-- end
-	-- end
+	  end
+  
+	  local targetTag = names[i.id].gamerTag
+	  local targetPedCoords = GetEntityCoords(targetPed)
+	end
 end)	
 
 Citizen.CreateThread(function()
