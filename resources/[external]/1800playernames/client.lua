@@ -139,7 +139,7 @@ RegisterNetEvent('1800:client:showNames', function(players)
 				name = '[...]'
 			end
 			names[i.id] = {			
-			gamerTag = CreateFakeMpGamerTag(targetPed, name, false, false, 1),
+			gamerTag = CreateFakeMpGamerTag(targetPed, name, true, false, 0),
 			ped = targetPed
 			}
 		end
