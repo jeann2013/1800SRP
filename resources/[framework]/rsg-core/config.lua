@@ -14,8 +14,8 @@ RSGConfig.Money.PayCheckSociety = false -- If true paycheck will come from the s
 
 RSGConfig.Player = {}
 RSGConfig.Player.RevealMap = true
-RSGConfig.Player.HungerRate = 4.2 -- Rate at which hunger goes down.
-RSGConfig.Player.ThirstRate = 3.8 -- Rate at which thirst goes down.
+RSGConfig.Player.HungerRate = 0 -- Rate at which hunger goes down.
+RSGConfig.Player.ThirstRate = 0 -- Rate at which thirst goes down.
 RSGConfig.Player.Bloodtypes = {
     "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-",
 }
