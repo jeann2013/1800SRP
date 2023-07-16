@@ -229,20 +229,28 @@ end)
 RegisterCommand('me', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
+    local PlayerData = Player.PlayerData
+    local firstname = PlayerData.charinfo.firstname
+    local lastname = PlayerData.charinfo.lastname
+    local playerName = firstname .. ' ' .. lastname
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}</div>',
-        args = { message, time }
+        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * {2} </span></b>{0}</div>',
+        args = { message, time, playerName }
     })
 end)
 
 RegisterCommand('do', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
     local time = os.date(Config.DateFormat)
+    local PlayerData = Player.PlayerData
+    local firstname = PlayerData.charinfo.firstname
+    local lastname = PlayerData.charinfo.lastname
+    local playerName = firstname .. ' ' .. lastname
 
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}</div>',
-        args = { message, time }
+        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}. (({2}))</div>',
+        args = { message, time, playerName }
     })
 end)
 
@@ -257,7 +265,7 @@ RegisterCommand('ooc', function(source, args, rawCommand)
     local lastname = PlayerData.charinfo.lastname
     local playerName = firstname .. ' ' .. lastname
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> * {0}</span></b> {2}</div>',
+        template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> * (({0})): </span></b> {2}</div>',
         args = {playerName, time, message}
     })
     TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
