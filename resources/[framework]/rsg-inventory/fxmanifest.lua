@@ -23,8 +23,8 @@ ui_page {
 
 files {
     'html/ui.html',
-    'html/css/main.css',
-    'html/js/app.js',
+    'html/css/*.css',
+    'html/js/*.js',
     'html/images/*.png',
     'html/images/*.jpg',
     'html/ammo_images/*.png',
