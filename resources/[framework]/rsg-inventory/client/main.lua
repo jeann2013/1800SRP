@@ -637,7 +637,7 @@ CreateThread(function()
 			end
         end
 
-        if IsDisabledControlJustPressed(0, RSGCore.Shared.Keybinds['Z']) and IsInputDisabled(0) then -- z  Hotbar
+        if IsDisabledControlJustPressed(0, RSGCore.Shared.Keybinds['K']) and IsInputDisabled(0) then -- z  Hotbar
             isHotbar = not isHotbar
             ToggleHotbar(isHotbar)
         end
