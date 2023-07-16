@@ -2,9 +2,8 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 local players = {}
 local names = {}
 
-RegisterNetEvent('1800:returnPlayerName', function(source)
-	local src = source
-    TriggerClientEvent('1800:client:showNames', src, players)
+RegisterNetEvent('1800:returnPlayerName', function()	
+    TriggerClientEvent('1800:client:showNames', players)
 end)
 
 CreateThread(function(source)
