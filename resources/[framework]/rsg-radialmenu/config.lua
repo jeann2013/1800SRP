@@ -166,7 +166,7 @@ Config.MenuItems = {
             },
             {
                 id = 'onoffhat',
-                title = Lang:t('menu.clothing'),
+                title = Lang:t('menu.hat'),
                 icon = 'hat-cowboy',
                 type = 'command',
                 event = 'hat',
