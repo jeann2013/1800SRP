@@ -18,6 +18,10 @@ local Translations = {
         no_waypoint = 'No se ha fijado ningún punto de referencia.',
         tp_error = 'Error al teletransportarse.',
     },
+    items ={
+        tool_bag = 'Bolso',
+        a_bag_for_holding_tools = 'Bolso para cosas',
+    },
     success = {
         server_opened = 'El servidor ha sido abierto',
         server_closed = 'El servidor ha sido cerrado',

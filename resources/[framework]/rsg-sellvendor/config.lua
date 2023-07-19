@@ -14,19 +14,13 @@ Config.VendorShops = {
         showblip = true,
         shopdata = { -- shop data
             {
-                title = "Bread",
-                description = "sell bread",
-                price = 0.03,
-                item = "bread",
-            image = "bread.png"
+                title = "Bolso",
+                description = "Vender Bolso",
+                price = 15,
+                item = "tool_bag",
+                image = "tool_bag.png"
             },
-            {
-                title = "Water",
-                description = "sell water",
-                price = 0.03,
-                item = "water",
-                image = "water.png"
-            },
+            
         },
     },
     -- mining vendor

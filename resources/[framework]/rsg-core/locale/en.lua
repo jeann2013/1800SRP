@@ -18,6 +18,10 @@ local Translations = {
         no_waypoint = 'No Waypoint Set.',
         tp_error = 'Error While Teleporting.',
     },
+    items ={
+        tool_bag = 'Tool Bag',
+        a_bag_for_holding_tools = 'A Bag for holding tools',
+    },
     success = {
         server_opened = 'The server has been opened',
         server_closed = 'The server has been closed',
