@@ -912,7 +912,7 @@ RevivePlayer = function()
   SetEntityHealth(ped, 600)
   ClearPedBloodDamage(ped)
   TriggerServerEvent('hud:server:RelieveStress', 100)
-  TriggerEvent('rsg-medic:clent:adminRevive')
+  TriggerEvent('rsg-medic:clent:playerRevive')
   --RSGCore.Functions.Notify(Lang:t('info.health'), 'primary')
 end
 
