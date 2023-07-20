@@ -141,31 +141,31 @@ Citizen.CreateThread(function()
     Citizen.InvokeNative(0x9CB1A1623062F402, dealerBlip, 'Wagon Store')
 end)
 
-Citizen.CreateThread(function()
-    while true do
-        Wait(0)
-        if IsControlJustPressed(0, RSGCore.Shared.Keybinds['J']) then
-            local playerCoords = GetEntityCoords(PlayerPedId())
-            local wagonPos = GetEntityCoords(spawnedWagon)
-            local distance = GetDistanceBetweenCoords(playerCoords.x, playerCoords.y, playerCoords.z, wagonPos.x, wagonPos.y, wagonPos.z, true)
+-- Citizen.CreateThread(function()
+--     while true do
+--         Wait(0)
+--         if IsControlJustPressed(0, RSGCore.Shared.Keybinds['J']) then
+--             local playerCoords = GetEntityCoords(PlayerPedId())
+--             local wagonPos = GetEntityCoords(spawnedWagon)
+--             local distance = GetDistanceBetweenCoords(playerCoords.x, playerCoords.y, playerCoords.z, wagonPos.x, wagonPos.y, wagonPos.z, true)
             
-            if not isSpawned or (isSpawned and distance > 50) then
-                TriggerServerEvent('jp-wagons:server:spawnwagon')
-            end
+--             if not isSpawned or (isSpawned and distance > 50) then
+--                 TriggerServerEvent('jp-wagons:server:spawnwagon')
+--             end
 
-            if isSpawned and distance <= 50 then
-                TaskGoToEntity(spawnedWagon, PlayerPedId(), 30000, 5)
-            end
-        end
+--             if isSpawned and distance <= 50 then
+--                 TaskGoToEntity(spawnedWagon, PlayerPedId(), 30000, 5)
+--             end
+--         end
 
-        if IsControlJustPressed(0, RSGCore.Shared.Keybinds['B']) then
-            local currentVehicle = GetVehiclePedIsIn(PlayerPedId(), false)
-            if currentVehicle == spawnedWagon then
-                HorseInventory()
-            end
-        end
-    end
-end)
+--         if IsControlJustPressed(0, RSGCore.Shared.Keybinds['B']) then
+--             local currentVehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--             if currentVehicle == spawnedWagon then
+--                 HorseInventory()
+--             end
+--         end
+--     end
+-- end)
 
 RegisterNetEvent('jp-wagons:client:spawnwagon', function(model, ownedCid, spawnedwagonid, storage, weight)
     local PlayerData = RSGCore.Functions.GetPlayerData()
