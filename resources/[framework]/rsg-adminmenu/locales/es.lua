@@ -203,7 +203,7 @@ local Translations = {
         ["entity_view_vehicles_desc"] = "Habilitar/Deshabilitar información de vehículos en el mundo",
         ["entity_view_objects_desc"] = "Habilitar/Deshabilitar la información del objeto en el mundo",
         ["entity_view_freeaim_copy_desc"] = "Copia la información de la entidad Free Aim al portapapeles",
-        ["spawn_weapons_desc"] = "Generar cualquier arma".,
+        ["spawn_weapons_desc"] = "Generar cualquier arma",
         ["max_mod_desc"] = "Modifica al máximo tu vehículo actual",
     },
     time = {
