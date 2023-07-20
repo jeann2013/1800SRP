@@ -12,14 +12,36 @@ Config.VendorShops = {
             blipName = "Valentine Vendor",
         },
         showblip = true,
-        shopdata = { -- shop data
+        shopdata = { -- shop data           
             {
-                title = "Bolso",
-                description = "Vender Bolso",
-                price = 15,
-                item = "tool_bag",
-                image = "tool_bag.png"
+                title = "Semilla de Tabaco",
+                description = "Tabaco Indio",
+                price = 0.10,
+                item = "indtobaccoseed",
+                image = "indtobaccoseed.png"
             },
+            {
+                title = "Pepita Grande",
+                description = "Oro",
+                price = 0.90,
+                item = "largenugget",
+                image = "largenugget.png"
+            },
+            {
+                title = "Pepita Mediana",
+                description = "Oro",
+                price = 0.70,
+                item = "mediumnugget",
+                image = "mediumnugget.png"
+            },
+            {
+                title = "Pepita Chica",
+                description = "Oro",
+                price = 0.25,
+                item = "smallnugget",
+                image = "smallnugget.png"
+            },
+            
             
         },
     },
@@ -83,6 +105,34 @@ Config.VendorShops = {
                 price = 20,
                 item = "cigarbox",
                 image = "cigarbox.png"
+            },
+            {
+                title = "Reloj",
+                description = "Reloj de Bolsillo",
+                price = 6,
+                item = "pocket_watch",
+                image = "pocket_watch.png"
+            },
+            {
+                title = "Reloj Platino",
+                description = "Platino",
+                price = 9,
+                item = "pocket_watch_platinum",
+                image = "pocket_watch_platinum.png"
+            },
+            {
+                title = "Reloj oro",
+                description = "Oro",
+                price = 11,
+                item = "pocket_watch_gold",
+                image = "pocket_watch_gold.png"
+            },
+            {
+                title = "Catimplora",
+                description = "Cantimplora",
+                price = 0.65,
+                item = "canteen100",
+                image = "canteen100.png"
             },
         },
     },

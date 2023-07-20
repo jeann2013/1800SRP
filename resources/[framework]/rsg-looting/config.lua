@@ -4,7 +4,17 @@ Config = {}
 Config.CommonItems = {
     "bread", 
 	"water", 
-    "pocket_watch",    
+    "indtobaccoseed",
+    "pocket_watch",
+    "copper",
+    "iron",
+    "smallnugget",
+    "mediumnugget",
+    "largenugget",
+    "cooked_fish",    
+    "cooked_meat",
+    "indtobacco",
+    "canteen100",
 }
 
 -- list of rare items / add more as required (must be in your shared inventory items)
