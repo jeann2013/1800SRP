@@ -67,7 +67,7 @@ RegisterNetEvent('admin:server:revive', function(player)
     local src = source
     if RSGCore.Functions.HasPermission(src, permissions['revive']) or IsPlayerAceAllowed(src, 'command')  then
         --TriggerClientEvent('admin:client:revivePlayer', player.id)
-        TriggerClientEvent('rsg-medic:clent:playerRevive', src)
+        TriggerClientEvent('rsg-medic:client:playerRevive', src)
         --RevivePlayer()
     else
         BanPlayer(src)
