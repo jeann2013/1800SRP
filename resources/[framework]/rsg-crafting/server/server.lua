@@ -272,6 +272,32 @@ AddEventHandler('rsg-crafting:server:machete', function()
     end
 end)
 
+-- craft bag 
+RegisterServerEvent('rsg-crafting:server:bag')
+AddEventHandler('rsg-crafting:server:bag', function()
+    local src = source
+    local Player = RSGCore.Functions.GetPlayer(src)
+    local craftingRep = Player.PlayerData.metadata["craftingrep"]
+    if craftingRep >= Config.AxeRepRequired then
+        -- remove items        
+        Player.Functions.RemoveItem('steel', 4)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['steel'], "remove")
+        Player.Functions.RemoveItem('wood', 4)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['wood'], "remove")
+        Player.Functions.RemoveItem('poor_deer_pelt', 2)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['poor_deer_pelt'], "remove")
+        -- add items
+        Player.Functions.AddItem('tool_bag', 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items['tool_bag'], "add")
+        Player.Functions.SetMetaData("craftingrep", Player.PlayerData.metadata["craftingrep"] + 1)
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.crafting_successful'), 'success')
+        Wait(5000)
+        TriggerEvent('rsg-crafting:server:craftingrep', src)
+    else
+        TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.not_enough_crafting_reputation_to_make_this'), 'success')
+    end
+end)
+
 --------------------------------------------------------------------------
 
 -- give blueprint copy

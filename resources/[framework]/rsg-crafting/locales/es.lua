@@ -24,6 +24,7 @@ local Translations = {
         craft_bow = 'Elaborar Arco',
         craft_knife = 'Elaborar Cuchillo',
         craft_machete = 'Elaborar Machete',
+        craft_bag = 'Elaborar Bolso',
     },
     commands = {
         get_your_crafting_reputation = 'Consigue tu reputación como artesano',
@@ -38,13 +39,15 @@ local Translations = {
       crafting_bow = 'Creando un Arco..',
       crafting_weapon_melee_knife = 'Creando un Cuchillo..',
       crafting_weapon_melee_machete = 'Creando un Machete..',
+      crafting_bag = 'Creando un Bolso..',
     },
     text = {
-      xbpc_xsteel_xwood = '1 x BPC / 3 x Acero / 2 x Madera',
-      xbpc_weapon_bow_improved = '1 x Arco / 1 x Acero / 1 x Madera',
-      xbpc_weapon_bow = '1 x Piel de ciervo * / 1 x Acero / 1 x Madera',      
-      xbpc_weapon_melee_knife = '5 x Aceros / 1 x Madera',
-      xbpc_weapon_melee_machete = '7 x Aceros / 2 x Maderas',
+      xbpc_xsteel_xwood = '1x BPC / 3x Acero / 2x Madera',
+      xbpc_weapon_bow_improved = '1 x Arco / 1x Acero / 1x Madera',
+      xbpc_weapon_bow = '1x Piel de ciervo * / 1x Acero / 1x Madera',      
+      xbpc_weapon_melee_knife = '5x Aceros / 1x Madera',
+      xbpc_weapon_melee_machete = '7x Aceros / 2x Maderas',
+      text_bag = '4x Aceros / 4x Madera / 2x Pieles de ciervo',
     }
 }
 

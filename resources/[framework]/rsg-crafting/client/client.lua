@@ -157,6 +157,14 @@ RegisterNetEvent('rsg-crafting:client:OpenMenu', function()
                 event = "rsg-crafting:client:craftmachete"
             }
         },
+        {
+            header = Lang:t('menu.craft_bag'),
+            icon = "fas fa-cog",
+            txt = Lang:t('text.text_bag'),
+            params = {
+                event = "rsg-crafting:client:craftmachete"
+            }
+        },
     })
 end)
 
@@ -321,6 +329,26 @@ AddEventHandler('rsg-crafting:client:craftmachete', function()
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
             TriggerServerEvent('rsg-crafting:server:machete')
+        end)
+    else
+        RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
+    end
+end)
+
+-- Bag crafting
+RegisterNetEvent('rsg-crafting:client:craftbag')
+AddEventHandler('rsg-crafting:client:craftbag', function()        
+    local hasItem1 = RSGCore.Functions.HasItem('steel', 4)
+    local hasItem2 = RSGCore.Functions.HasItem('wood', 4)    
+    local hasItem3 = RSGCore.Functions.HasItem('poor_deer_pelt', 2)    
+    if hasItem1 and hasItem2 and hasItem3 then
+        RSGCore.Functions.Progressbar("crafting-machete", Lang:t('progressbar.crafting_bag'), Config.PickAxeCraftTime, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('rsg-crafting:server:bag')
         end)
     else
         RSGCore.Functions.Notify(Lang:t('error.need_more_crafting_items'), 'error')
