@@ -52,6 +52,7 @@ Config.WeaponPartsCrafting = {
     ['hammer'] = {
         name = 'hammer',
         lable = 'Hammer',
+        text = '1x Steel',
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -62,6 +63,7 @@ Config.WeaponPartsCrafting = {
     ['barrel'] = {
         name = 'barrel',
         lable = 'Barrel',
+        text = '1x Steel',
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -72,6 +74,7 @@ Config.WeaponPartsCrafting = {
     ['spring'] = {
         name = 'spring',
         lable = 'Spring',
+        text = '1x Steel',
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -82,6 +85,7 @@ Config.WeaponPartsCrafting = {
     ['frame'] = {
         name = 'frame',
         lable = 'Frame',
+        text = '1x Steel',
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -92,6 +96,7 @@ Config.WeaponPartsCrafting = {
     ['grip'] = {
         name = 'grip',
         lable = 'Grip',
+        text = '1x Steel 1x Wood',
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -103,6 +108,7 @@ Config.WeaponPartsCrafting = {
     ['cylinder'] = {
         name = 'cylinder',
         lable = 'Cylinder',
+        text = '1x Steel',
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
