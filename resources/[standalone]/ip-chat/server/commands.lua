@@ -284,6 +284,17 @@ if Config.EnableWhisperCommand then
     end)
 end
 
+if Config.EnableMeCommand then
+    RegisterCommand(Config.MeCommand, function(source, args, rawCommand)
+        local xPlayer = RSGCore.Functions.GetPlayer(source)
+        local length = string.len(Config.MeCommand)
+        local message = rawCommand:sub(length + 1)
+        local time = os.date(Config.DateFormat)
+        playerName = xPlayer.PlayerData.name
+        TriggerClientEvent('chat:me', -1, source, playerName, message, time)
+    end)
+end
+
 if Config.EnableDoCommand then
     RegisterCommand(Config.DoCommand, function(source, args, rawCommand)
         local xPlayer = RSGCore.Functions.GetPlayer(source)
