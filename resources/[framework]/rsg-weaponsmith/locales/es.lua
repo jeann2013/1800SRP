@@ -33,6 +33,12 @@ local Translations = {
     text = {
         txt_steel = ' Acero',
         txt_wood = ' Madera',
+        txt_trigger = ' Gatillo',
+        txt_hammer = ' Martillo',
+        txt_barrel = ' Barril',
+        txt_frame = ' Recamara',
+        txt_grip = ' Agarre',
+        txt_cylinder = ' Cilindro',      
     }
 }
 

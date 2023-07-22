@@ -33,6 +33,12 @@ local Translations = {
     text = {
         txt_steel = ' Steel',
         txt_wood = ' Wood',
+        txt_trigger = ' Trigger',
+        txt_hammer = ' Hammer',
+        txt_barrel = ' Barrel',
+        txt_frame = ' frame',
+        txt_grip = ' grip',
+        txt_cylinder = ' cylinder',        
     }
 }
 

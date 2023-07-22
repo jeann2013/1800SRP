@@ -124,6 +124,7 @@ Config.RevloverCrafting = {
     ['weapon_revolver_navy'] = {
         name = 'weapon_revolver_navy',
         lable = 'Navy Revolver',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'trigger',  amount = 1 },
