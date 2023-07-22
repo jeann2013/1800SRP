@@ -16,6 +16,7 @@ shared_script 'config.lua'
 client_scripts {
     'client/client.lua',
     'client/whisper.lua',
+    'client/me.lua',
 }
 
 server_scripts {

@@ -70,10 +70,12 @@ Config.RhodesCommand = 'rhodes'
 Config.RhodesJobName = 'rhodes'
 
 
+-- [me]
+Config.EnableMeCommand = true
+Config.MeCommand = 'me'
+Config.MeDistance = 10
+
 -- [whisper]
-
 Config.EnableWhisperCommand = true
-
 Config.WhisperCommand = 'mp'
-
 Config.WhisperDistance = 10

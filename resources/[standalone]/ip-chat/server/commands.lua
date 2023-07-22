@@ -226,20 +226,20 @@ end)
 --     })
 -- end)
 
-RegisterCommand('me', function(source, args, rawCommand)
-    local message = table.concat(args, ' ')
-    local time = os.date(Config.DateFormat)
-    local Player = RSGCore.Functions.GetPlayer(source)
-    local PlayerData = Player.PlayerData
-    local firstname = PlayerData.charinfo.firstname
-    local lastname = PlayerData.charinfo.lastname
-    local playerName = firstname .. ' ' .. lastname
+-- RegisterCommand('me', function(source, args, rawCommand)
+--     local message = table.concat(args, ' ')
+--     local time = os.date(Config.DateFormat)
+--     local Player = RSGCore.Functions.GetPlayer(source)
+--     local PlayerData = Player.PlayerData
+--     local firstname = PlayerData.charinfo.firstname
+--     local lastname = PlayerData.charinfo.lastname
+--     local playerName = firstname .. ' ' .. lastname
 
-    TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * {2} </span></b>{0}</div>',
-        args = { message, time, playerName }
-    })
-end)
+--     TriggerClientEvent('chat:addMessage', -1, {
+--         template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * {2} </span></b>{0}</div>',
+--         args = { message, time, playerName }
+--     })
+-- end)
 
 RegisterCommand('do', function(source, args, rawCommand)
     local message = table.concat(args, ' ')
@@ -281,6 +281,17 @@ if Config.EnableWhisperCommand then
         local time = os.date(Config.DateFormat)
         playerName = xPlayer.PlayerData.name
         TriggerClientEvent('chat:whisper', -1, source, playerName, message, time)
+    end)
+end
+
+if Config.EnableMeCommand then
+    RegisterCommand(Config.MeCommand, function(source, args, rawCommand)
+        local xPlayer = RSGCore.Functions.GetPlayer(source)
+        local length = string.len(Config.MeCommand)
+        local message = rawCommand:sub(length + 1)
+        local time = os.date(Config.DateFormat)
+        playerName = xPlayer.PlayerData.name
+        TriggerClientEvent('chat:me', -1, source, playerName, message, time)
     end)
 end
 

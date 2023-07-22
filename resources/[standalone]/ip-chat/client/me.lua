@@ -15,7 +15,7 @@ AddEventHandler('chat:me', function(id, name, message, time)
         -- Check the distance and broadcast the message if it's within the bisikDistance limit
         if id2 == id1 or GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(id1)), GetEntityCoords(GetPlayerPed(id2)), true) < Config.WhisperDistance then
             TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message ooc"> <b><span style="color: #0b0d0b"> * {0}</span>&nbsp;<span style="font-size: 14px; color: #0b0d0b;">{2}</span></b><div style="margin-top: 5px; font-weight: 300;">{1}</div></div>',
+                template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * {2} </span></b>{0}</div>',
                 args = {playerName, message, time}
             })
         end
