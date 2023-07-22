@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+/* @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css'); */
 
 * {
-    font-family: 'Old Standard TT', sans-serif;
+    font-family: 'Verdana', 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 1.2rem;
+    text-shadow: 0 0 0.5px #000000, 0 0 1px #000000, 0 0 2px #000000 , 0 0 4px #000000 , 0 0 6px #000000;
+    font-weight:bold;
 }
 
 #app {
-    font-family: 'Old Standard TT', sans-serif;
+    font-family: 'Verdana', 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #9c70de;
@@ -79,7 +80,7 @@ input:focus {
 }
 
 .msg {
-    font-family: 'Old Standard TT', sans-serif;
+    font-family: 'Verdana', 'Lato', sans-serif;
     font-weight: normal;
     vertical-align: baseline;
     padding-right: 11px;
