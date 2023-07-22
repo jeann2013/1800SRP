@@ -41,6 +41,7 @@ Config.WeaponPartsCrafting = {
     ['trigger'] = {
         name = 'trigger',
         lable = 'Trigger',
+        text = '1x Stell'
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },

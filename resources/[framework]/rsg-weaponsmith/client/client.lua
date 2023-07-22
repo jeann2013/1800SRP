@@ -116,7 +116,7 @@ RegisterNetEvent('rsg-weaponsmith:client:partsmenu', function()
     for k, v in pairs(Config.WeaponPartsCrafting) do
         partsMenu[#partsMenu + 1] = {
             header = v.lable,
-            txt = text,
+            txt = v.text,
             icon = 'fas fa-cog',
             params = {
                 event = 'rsg-weaponsmith:client:partscheckitems',
