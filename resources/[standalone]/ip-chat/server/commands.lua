@@ -241,37 +241,37 @@ end)
 --     })
 -- end)
 
-RegisterCommand('do', function(source, args, rawCommand)
-    local message = table.concat(args, ' ')
-    local time = os.date(Config.DateFormat)
-    local Player = RSGCore.Functions.GetPlayer(source)
-    local PlayerData = Player.PlayerData
-    local firstname = PlayerData.charinfo.firstname
-    local lastname = PlayerData.charinfo.lastname
-    local playerName = firstname .. ' ' .. lastname
+-- RegisterCommand('do', function(source, args, rawCommand)
+--     local message = table.concat(args, ' ')
+--     local time = os.date(Config.DateFormat)
+--     local Player = RSGCore.Functions.GetPlayer(source)
+--     local PlayerData = Player.PlayerData
+--     local firstname = PlayerData.charinfo.firstname
+--     local lastname = PlayerData.charinfo.lastname
+--     local playerName = firstname .. ' ' .. lastname
 
-    TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}. (({2}))</div>',
-        args = { message, time, playerName }
-    })
-end)
+--     TriggerClientEvent('chat:addMessage', -1, {
+--         template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * </span></b>{0}. (({2}))</div>',
+--         args = { message, time, playerName }
+--     })
+-- end)
 
 
-RegisterCommand('ooc', function(source, args, rawCommand)
+-- RegisterCommand('ooc', function(source, args, rawCommand)
     
-    local Player = RSGCore.Functions.GetPlayer(source)
-    local message = table.concat(args, ' ')
-    local time = os.date(Config.DateFormat)
-    local PlayerData = Player.PlayerData
-    local firstname = PlayerData.charinfo.firstname
-    local lastname = PlayerData.charinfo.lastname
-    local playerName = firstname .. ' ' .. lastname
-    TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> (({0}: </span></b> {2}))</div>',
-        args = {playerName, time, message}
-    })
-    TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
-end)
+--     local Player = RSGCore.Functions.GetPlayer(source)
+--     local message = table.concat(args, ' ')
+--     local time = os.date(Config.DateFormat)
+--     local PlayerData = Player.PlayerData
+--     local firstname = PlayerData.charinfo.firstname
+--     local lastname = PlayerData.charinfo.lastname
+--     local playerName = firstname .. ' ' .. lastname
+--     TriggerClientEvent('chat:addMessage', -1, {
+--         template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> (({0}: </span></b> {2}))</div>',
+--         args = {playerName, time, message}
+--     })
+--     TriggerEvent('rsg-log:server:CreateLog', 'ooc', 'OOC', 'white', '**' .. GetPlayerName(source) .. '** (CitizenID: ' .. Player.PlayerData.citizenid .. ' | ID: ' .. source .. ') **Message:** ' .. message, false)
+-- end)
 
 if Config.EnableWhisperCommand then
     RegisterCommand(Config.WhisperCommand, function(source, args, rawCommand)
@@ -284,14 +284,25 @@ if Config.EnableWhisperCommand then
     end)
 end
 
-if Config.EnableMeCommand then
-    RegisterCommand(Config.MeCommand, function(source, args, rawCommand)
+if Config.EnableDoCommand then
+    RegisterCommand(Config.DoCommand, function(source, args, rawCommand)
         local xPlayer = RSGCore.Functions.GetPlayer(source)
-        local length = string.len(Config.MeCommand)
+        local length = string.len(Config.DoCommand)
         local message = rawCommand:sub(length + 1)
         local time = os.date(Config.DateFormat)
         playerName = xPlayer.PlayerData.name
-        TriggerClientEvent('chat:me', -1, source, playerName, message, time)
+        TriggerClientEvent('chat:do', -1, source, playerName, message, time)
+    end)
+end
+
+if Config.EnableOocCommand then
+    RegisterCommand(Config.OocCommand, function(source, args, rawCommand)
+        local xPlayer = RSGCore.Functions.GetPlayer(source)
+        local length = string.len(Config.OocCommand)
+        local message = rawCommand:sub(length + 1)
+        local time = os.date(Config.DateFormat)
+        playerName = xPlayer.PlayerData.name
+        TriggerClientEvent('chat:ooc', -1, source, playerName, message, time)
     end)
 end
 

@@ -17,6 +17,8 @@ client_scripts {
     'client/client.lua',
     'client/whisper.lua',
     'client/me.lua',
+    'client/do.lua',
+    'client/ooc.lua',
 }
 
 server_scripts {

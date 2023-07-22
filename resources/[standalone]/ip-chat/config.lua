@@ -75,6 +75,16 @@ Config.EnableMeCommand = true
 Config.MeCommand = 'me'
 Config.MeDistance = 10
 
+-- [do]
+Config.EnableDoCommand = true
+Config.DoCommand = 'do'
+Config.DoDistance = 10
+
+-- [ooc]
+Config.EnableOocCommand = true
+Config.OocCommand = 'ooc'
+Config.OocDistance = 10
+
 -- [whisper]
 Config.EnableWhisperCommand = true
 Config.WhisperCommand = 'mp'

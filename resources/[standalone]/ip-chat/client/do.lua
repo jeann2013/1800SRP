@@ -1,7 +1,7 @@
 local RSGcore = exports['rsg-core']:GetCoreObject()
 
-RegisterNetEvent('chat:me')
-AddEventHandler('chat:me', function(id, name, message, time)
+RegisterNetEvent('chat:do')
+AddEventHandler('chat:do', function(id, name, message, time)
     local id1 = PlayerId()
     local id2 = GetPlayerFromServerId(id)
     local sourcePlayer = GetPlayerFromServerId(id1) 
@@ -13,9 +13,9 @@ AddEventHandler('chat:me', function(id, name, message, time)
         local playerName = firstname .. ' ' .. lastname
 
         -- Check the distance and broadcast the message if it's within the bisikDistance limit
-        if id2 == id1 or GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(id1)), GetEntityCoords(GetPlayerPed(id2)), true) < Config.MeDistance then
-            TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message twitter"> <b><span style="color: #c2a3da"> * {2} </span></b>{0}</div>',
+        if id2 == id1 or GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(id1)), GetEntityCoords(GetPlayerPed(id2)), true) < Config.OocDistance then
+            TriggerEvent('chat:addMessage', {                
+                template = '<div class="chat-message ooc"> <b><span style="color: #bbbbbb"> (({0}: </span></b> {2}))</div>',
                 args = {playerName, message, time}
             })
         end
