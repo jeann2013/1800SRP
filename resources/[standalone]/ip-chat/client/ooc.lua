@@ -1,7 +1,7 @@
 local RSGcore = exports['rsg-core']:GetCoreObject()
 
-RegisterNetEvent('chat:do')
-AddEventHandler('chat:do', function(id, name, message, time)
+RegisterNetEvent('chat:ooc')
+AddEventHandler('chat:ooc', function(id, name, message, time)
     local id1 = PlayerId()
     local id2 = GetPlayerFromServerId(id)
     local sourcePlayer = GetPlayerFromServerId(id1) 
