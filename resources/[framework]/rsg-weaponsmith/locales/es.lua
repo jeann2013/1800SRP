@@ -36,7 +36,7 @@ local Translations = {
         txt_trigger = ' Gatillo',
         txt_hammer = ' Martillo',
         txt_barrel = ' Barril',
-        txt_frame = ' Recamara',
+        txt_frame = ' Marco',
         txt_grip = ' Agarre',
         txt_cylinder = ' Cilindro',      
     }

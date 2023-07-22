@@ -136,6 +136,96 @@ Config.RevloverCrafting = {
         },
         receive = 'weapon_revolver_navy'
     },
+    ['weapon_revolver_cattleman'] = {
+        name = 'weapon_revolver_cattleman',
+        lable = 'Cattleman',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
+        crafttime = 20000,
+        craftitems = {
+            [1] = { item = 'trigger',  amount = 1 },
+            [2] = { item = 'hammer',   amount = 1 },
+            [3] = { item = 'barrel',   amount = 1 },
+            [4] = { item = 'frame',    amount = 1 },
+            [5] = { item = 'grip',     amount = 1 },
+            [6] = { item = 'cylinder', amount = 1 },
+        },
+        receive = 'weapon_revolver_cattleman'
+    },
+    ['weapon_revolver_cattleman_mexican'] = {
+        name = 'weapon_revolver_cattleman_mexican',
+        lable = 'Cattleman Mexican',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
+        crafttime = 20000,
+        craftitems = {
+            [1] = { item = 'trigger',  amount = 1 },
+            [2] = { item = 'hammer',   amount = 1 },
+            [3] = { item = 'barrel',   amount = 1 },
+            [4] = { item = 'frame',    amount = 1 },
+            [5] = { item = 'grip',     amount = 1 },
+            [6] = { item = 'cylinder', amount = 1 },
+        },
+        receive = 'weapon_revolver_cattleman_mexican'
+    },
+    ['weapon_revolver_doubleaction_gambler'] = {
+        name = 'weapon_revolver_doubleaction_gambler',
+        lable = 'Gambler',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
+        crafttime = 20000,
+        craftitems = {
+            [1] = { item = 'trigger',  amount = 1 },
+            [2] = { item = 'hammer',   amount = 1 },
+            [3] = { item = 'barrel',   amount = 1 },
+            [4] = { item = 'frame',    amount = 1 },
+            [5] = { item = 'grip',     amount = 1 },
+            [6] = { item = 'cylinder', amount = 1 },
+        },
+        receive = 'weapon_revolver_doubleaction_gambler'
+    },
+    ['weapon_revolver_schofield'] = {
+        name = 'weapon_revolver_schofield',
+        lable = 'Schofield',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
+        crafttime = 20000,
+        craftitems = {
+            [1] = { item = 'trigger',  amount = 1 },
+            [2] = { item = 'hammer',   amount = 1 },
+            [3] = { item = 'barrel',   amount = 1 },
+            [4] = { item = 'frame',    amount = 1 },
+            [5] = { item = 'grip',     amount = 1 },
+            [6] = { item = 'cylinder', amount = 1 },
+        },
+        receive = 'weapon_revolver_schofield'
+    },
+    ['weapon_revolver_lemat'] = {
+        name = 'weapon_revolver_lemat',
+        lable = 'LeMat',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
+        crafttime = 20000,
+        craftitems = {
+            [1] = { item = 'trigger',  amount = 1 },
+            [2] = { item = 'hammer',   amount = 1 },
+            [3] = { item = 'barrel',   amount = 1 },
+            [4] = { item = 'frame',    amount = 1 },
+            [5] = { item = 'grip',     amount = 1 },
+            [6] = { item = 'cylinder', amount = 1 },
+        },
+        receive = 'weapon_revolver_lemat'
+    },
+    ['weapon_revolver_navy_crossover'] = {
+        name = 'weapon_revolver_navy_crossover',
+        lable = 'Navy Crossover',
+        text = '1x'..Lang:t('text.txt_trigger')..' 1x'..Lang:t('text.txt_hammer')..' 1x'..Lang:t('text.txt_barrel')..' 1x'..Lang:t('text.txt_frame')..' 1x'..Lang:t('text.txt_grip')..' 1x'..Lang:t('text.txt_cylinder'),
+        crafttime = 20000,
+        craftitems = {
+            [1] = { item = 'trigger',  amount = 1 },
+            [2] = { item = 'hammer',   amount = 1 },
+            [3] = { item = 'barrel',   amount = 1 },
+            [4] = { item = 'frame',    amount = 1 },
+            [5] = { item = 'grip',     amount = 1 },
+            [6] = { item = 'cylinder', amount = 1 },
+        },
+        receive = 'weapon_revolver_navy_crossover'
+    },
     
 }
 
