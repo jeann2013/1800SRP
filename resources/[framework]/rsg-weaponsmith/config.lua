@@ -41,7 +41,7 @@ Config.WeaponPartsCrafting = {
     ['trigger'] = {
         name = 'trigger',
         lable = 'Trigger',
-        text = '1x Steel',
+        text = '1x'..Lang:t('text.txt_steel'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -52,7 +52,7 @@ Config.WeaponPartsCrafting = {
     ['hammer'] = {
         name = 'hammer',
         lable = 'Hammer',
-        text = '1x Steel',
+        text = '1x'..Lang:t('text.txt_steel'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -63,7 +63,7 @@ Config.WeaponPartsCrafting = {
     ['barrel'] = {
         name = 'barrel',
         lable = 'Barrel',
-        text = '1x Steel',
+        text = '1x'..Lang:t('text.txt_steel'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -74,7 +74,7 @@ Config.WeaponPartsCrafting = {
     ['spring'] = {
         name = 'spring',
         lable = 'Spring',
-        text = '1x Steel',
+        text = '1x'..Lang:t('text.txt_steel'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -85,7 +85,7 @@ Config.WeaponPartsCrafting = {
     ['frame'] = {
         name = 'frame',
         lable = 'Frame',
-        text = '1x Steel',
+        text = '1x'..Lang:t('text.txt_steel'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -96,7 +96,7 @@ Config.WeaponPartsCrafting = {
     ['grip'] = {
         name = 'grip',
         lable = 'Grip',
-        text = '1x Steel 1x Wood',
+        text = '1x'..Lang:t('text.txt_steel')..' 1x'..Lang:t('text.txt_wood'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -108,7 +108,7 @@ Config.WeaponPartsCrafting = {
     ['cylinder'] = {
         name = 'cylinder',
         lable = 'Cylinder',
-        text = '1x Steel',
+        text = '1x'..Lang:t('text.txt_steel'),
         crafttime = 20000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },

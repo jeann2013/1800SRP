@@ -31,7 +31,8 @@ local Translations = {
         crafting_a = 'Elaborando un(a) ',
     },
     text = {
-        var = 'text goes here',
+        txt_steel = ' Acero',
+        txt_wood = ' Madera',
     }
 }
 
