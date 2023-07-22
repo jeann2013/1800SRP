@@ -85,7 +85,7 @@ input:focus {
     vertical-align: baseline;
     padding-right: 11px;
     line-height: 1;
-    font-size: calc(2.7vh);
+    /* font-size: calc(1.4vh); */
 }
 
 .suggestions {
@@ -122,7 +122,7 @@ input:focus {
     overflow: hidden;
     word-break: break-word;
     box-sizing: border-box;
-    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+    /* box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1); */
 }
 
 /* START STAFF */
@@ -150,7 +150,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #1ebc62;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END ONLY STAFF */
@@ -165,7 +165,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #9c70de;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END TWITCH */
@@ -180,7 +180,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #ff0000;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END YOUTUBE */
@@ -219,7 +219,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #df7b00;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END SYSTEM */
@@ -249,7 +249,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #4a6cfd;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /* END POLICE */
@@ -292,7 +292,7 @@ input:focus {
     color: rgba(42, 42, 42, 0.9);
     background-color: #df7b00;
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 .valentine {
