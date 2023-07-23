@@ -28,7 +28,7 @@
                     <div>
                         <span class="prefix"><i class="fas fa-pencil fa-lg"></i></span>
                         <input 
-                        onkeypress="(this.value.length >= 10)? this.style.width = ((this.value.length + 1) * 8) + 'px'; : ''"
+                        onkeypress="(this.value.length >= 10)? this.style.width = ((this.value.length + 1) * 8) + 'px'; : console.log(this.value.length)"
                         v-model="message"
                             ref="input"
                             type="text"
