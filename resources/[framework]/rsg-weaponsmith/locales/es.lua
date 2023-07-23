@@ -53,7 +53,7 @@ local Translations = {
         txt_spring = ' Resorte',   
         txt_stock = ' Culata',  
         txt_bolt = ' Tornillo',      
-        txt_gives_you = ',te da ',
+        txt_gives_you = ' te da ',
     }
 }
 
