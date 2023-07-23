@@ -27,7 +27,9 @@
                 <div class="chat-input" v-show="showInput">
                     <div>
                         <span class="prefix"><i class="fas fa-pencil fa-lg"></i></span>
-                        <input v-model="message"
+                        <input 
+                        onkeypress="this.style.height = ((this.value.length + 1) * 8) + 'px';"
+                        v-model="message"
                             ref="input"
                             type="text"
                             placeholder="Escribe un comando"

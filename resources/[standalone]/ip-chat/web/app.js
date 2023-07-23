@@ -221,9 +221,9 @@ window.APP = {
         },
         keyDown(e) {
             
-            var input = document.querySelector('input');
-            input.addEventListener('input', this.resizeInput);
-            this.resizeInput.call(input);
+            // var input = document.querySelector('input');
+            // input.addEventListener('input', this.resizeInput);
+            // this.resizeInput.call(input);
 
             if (e.which === 38 || e.which === 40) {
                 e.preventDefault();
@@ -236,9 +236,9 @@ window.APP = {
                 buf.scrollTop = buf.scrollTop + 100;
             }
         },
-        resizeInput() {
-            this.style.height = this.value.length + "ch";
-        },
+        // resizeInput() {
+        //     this.style.height = this.value.length + "ch";
+        // },
         moveOldMessageIndex(up) {
             if (up && this.oldMessages.length > this.oldMessagesIndex + 1) {
                 this.oldMessagesIndex += 1;
