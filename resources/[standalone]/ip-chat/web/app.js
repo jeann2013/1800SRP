@@ -222,8 +222,8 @@ window.APP = {
         keyDown(e) {
             
             var input = document.querySelector('input');
-            input.addEventListener('input', resizeInput);
-            resizeInput.call(input);
+            input.addEventListener('input', this.resizeInput);
+            this.resizeInput.call(input);
 
             if (e.which === 38 || e.which === 40) {
                 e.preventDefault();
