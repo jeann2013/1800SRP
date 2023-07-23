@@ -123,8 +123,8 @@ Config.WeaponPartsCrafting = {
     },
     ['stock'] = {
         name = 'stock',
-        lable = Lang:t('menu.menu_cylinder'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        lable = Lang:t('menu.menu_stock'),
+        text = '1x'..Lang:t('text.txt_stock'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -135,8 +135,8 @@ Config.WeaponPartsCrafting = {
     },
     ['bolt'] = {
         name = 'bolt',
-        lable = Lang:t('menu.menu_stock'),
-        text = '1x'..Lang:t('text.txt_stock'),
+        lable = Lang:t('menu.menu_bolt'),
+        text = '1x'..Lang:t('text.txt_bolt'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },            
@@ -491,7 +491,8 @@ Config.ShotgunCrafting = {
             [4] = { item = 'frame',    amount = 1 },
             [5] = { item = 'grip',     amount = 1 },            
             [6] = { item = 'spring',   amount = 1 },
-            [7] = { item = 'wood',     amount = 2 },
+            [7] = { item = 'bolt',     amount = 6 },
+            [8] = { item = 'stock',    amount = 1 },
         },
         receive = 'weapon_shotgun_doublebarrel'
     },
@@ -507,7 +508,8 @@ Config.ShotgunCrafting = {
             [4] = { item = 'frame',    amount = 1 },
             [5] = { item = 'grip',     amount = 1 },            
             [6] = { item = 'spring',   amount = 1 },
-            [7] = { item = 'wood',     amount = 2 },
+            [7] = { item = 'bolt',     amount = 6 },
+            [8] = { item = 'stock',    amount = 1 },
         },
         receive = 'weapon_shotgun_doublebarrel_exotic'
     },
@@ -523,7 +525,8 @@ Config.ShotgunCrafting = {
             [4] = { item = 'frame',    amount = 1 },
             [5] = { item = 'grip',     amount = 1 },            
             [6] = { item = 'spring',   amount = 1 },
-            [7] = { item = 'wood',     amount = 2 },
+            [7] = { item = 'bolt',     amount = 6 },
+            [8] = { item = 'stock',    amount = 1 },
         },
         receive = 'weapon_shotgun_sawedoff'
     },
@@ -539,7 +542,8 @@ Config.ShotgunCrafting = {
             [4] = { item = 'frame',    amount = 1 },
             [5] = { item = 'grip',     amount = 1 },            
             [6] = { item = 'spring',   amount = 1 },
-            [7] = { item = 'wood',     amount = 2 },
+            [7] = { item = 'bolt',     amount = 6 },
+            [8] = { item = 'stock',    amount = 1 },
         },
         receive = 'weapon_shotgun_semiauto'
     },
@@ -555,7 +559,8 @@ Config.ShotgunCrafting = {
             [4] = { item = 'frame',    amount = 1 },
             [5] = { item = 'grip',     amount = 1 },            
             [6] = { item = 'spring',   amount = 1 },
-            [7] = { item = 'wood',     amount = 2 },
+            [7] = { item = 'bolt',     amount = 6 },
+            [8] = { item = 'stock',    amount = 1 },
         },
         receive = 'weapon_shotgun_pump'
     },
@@ -571,7 +576,8 @@ Config.ShotgunCrafting = {
             [4] = { item = 'frame',    amount = 1 },
             [5] = { item = 'grip',     amount = 1 },            
             [6] = { item = 'spring',   amount = 1 },
-            [7] = { item = 'wood',     amount = 2 },
+            [7] = { item = 'bolt',     amount = 6 },
+            [8] = { item = 'stock',    amount = 1 },
         },
         receive = 'weapon_shotgun_repeating'
     },
