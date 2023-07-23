@@ -102,6 +102,22 @@ Config.MenuItems = {
                 shouldClose = true
             },
             {
+                id = 'Id card',
+                title = 'Identificación',
+                icon = 'id-badge',
+                type = 'client',
+                event = 'menu:id:start',
+                shouldClose = true
+            },
+		    {
+                id= 'Giv Id-card',
+                title = 'Dar Identificacion',
+                icon = 'address-book',
+                type = 'client',
+                event = 'menu:id:get',
+                shouldClose = true
+             },
+            {
                 id = 'contraband',
                 title = Lang:t('menu.contraband'),
                 icon = 'skull-crossbones',
