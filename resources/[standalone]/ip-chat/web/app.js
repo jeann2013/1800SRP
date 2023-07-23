@@ -220,7 +220,11 @@ window.APP = {
             this.resize();
         },
         keyDown(e) {
-            console.log("test test");
+            
+            var input = document.querySelector('input');
+            input.addEventListener('input', resizeInput);
+            resizeInput.call(input);
+
             if (e.which === 38 || e.which === 40) {
                 e.preventDefault();
                 this.moveOldMessageIndex(e.which === 38);
@@ -231,6 +235,9 @@ window.APP = {
                 var buf = document.getElementsByClassName('chat-messages')[0];
                 buf.scrollTop = buf.scrollTop + 100;
             }
+        },
+        resizeInput() {
+            this.style.height = this.value.length + "ch";
         },
         moveOldMessageIndex(up) {
             if (up && this.oldMessages.length > this.oldMessagesIndex + 1) {
