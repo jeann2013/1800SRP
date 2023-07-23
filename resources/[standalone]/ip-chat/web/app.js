@@ -220,6 +220,7 @@ window.APP = {
             this.resize();
         },
         keyDown(e) {
+            console.log("test test");
             if (e.which === 38 || e.which === 40) {
                 e.preventDefault();
                 this.moveOldMessageIndex(e.which === 38);
