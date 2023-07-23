@@ -161,7 +161,7 @@ Citizen.CreateThread(function()
                     if deleted then                        
                         RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
                         TriggerServerEvent('rsg-trapperplus:server:carcars', rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5) 
-                        Wait(1000)                                                                           
+                        Wait(1500)                                                                           
                     else
                         RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
                     end
