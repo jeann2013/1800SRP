@@ -21,6 +21,7 @@ local Translations = {
     items ={
         tool_bag = 'Tool Bag',
         a_bag_for_holding_tools = 'A Bag for holding tools',
+        a_bag_big_for_holding_tools = 'A Big Bag for holding tools',
         items_steel = 'Steel',
         items_wood = 'Wood',
         items_trigger = 'Trigger',

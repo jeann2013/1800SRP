@@ -6,7 +6,8 @@ local Translations = {
   primary = {      
   },
   menu = {
-    tool_bag = "Tool Bag",      
+    tool_bag = "Tool Bag",  
+    tool_bag_big = 'Tool Big Bag',
   },
   commands = {      
   },  
