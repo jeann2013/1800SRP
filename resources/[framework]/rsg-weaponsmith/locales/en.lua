@@ -32,6 +32,8 @@ local Translations = {
         menu_grip = 'Grip',
         menu_cylinder = 'Cylinder',        
         menu_spring = 'Spring',   
+        menu_stock = 'Stock',  
+        menu_bolt = 'Bolt'  
     },
     commands = {
         var = 'text goes here',
@@ -48,7 +50,9 @@ local Translations = {
         txt_frame = ' Frame',
         txt_grip = ' Grip',
         txt_cylinder = ' Cylinder',        
-        txt_spring = ' Spring',        
+        txt_spring = ' Spring',   
+        txt_stock = ' Stock',  
+        txt_bolt = ' Bolt'       
     }
 }
 

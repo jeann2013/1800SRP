@@ -32,6 +32,8 @@ local Translations = {
         menu_grip = 'Agarre',
         menu_cylinder = 'Cilindro',        
         menu_spring = 'Resorte',   
+        menu_stock = 'Agarre',  
+        menu_bolt = 'Tornillo'  
     },
     commands = {
         var = 'text goes here',
@@ -48,7 +50,9 @@ local Translations = {
         txt_frame = ' Carcasa',
         txt_grip = ' Agarre',
         txt_cylinder = ' Cilindro',     
-        txt_spring = ' Resorte',         
+        txt_spring = ' Resorte',   
+        txt_stock = ' Agarre',  
+        txt_bolt = ' Tornillo',      
     }
 }
 
