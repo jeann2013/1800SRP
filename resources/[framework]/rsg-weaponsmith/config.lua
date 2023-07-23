@@ -42,78 +42,85 @@ Config.WeaponPartsCrafting = {
         name = 'trigger',
         lable = 'Trigger',
         text = '1x'..Lang:t('text.txt_steel'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
         },
-        receive = 'trigger'
+        receive = 'trigger',
+        quantity = 4
     },
     
     ['hammer'] = {
         name = 'hammer',
         lable = 'Hammer',
         text = '1x'..Lang:t('text.txt_steel'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
         },
-        receive = 'hammer'
+        receive = 'hammer',
+        quantity = 3,
     },
     
     ['barrel'] = {
         name = 'barrel',
         lable = 'Barrel',
         text = '1x'..Lang:t('text.txt_steel'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
         },
-        receive = 'barrel'
+        receive = 'barrel',
+        quantity = 3,
     },
     
     ['spring'] = {
         name = 'spring',
         lable = 'Spring',
         text = '1x'..Lang:t('text.txt_steel'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
         },
-        receive = 'spring'
+        receive = 'spring',
+        quantity = 4,
     },
     
     ['frame'] = {
         name = 'frame',
         lable = 'Frame',
         text = '1x'..Lang:t('text.txt_steel'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
         },
-        receive = 'frame'
+        receive = 'frame',
+        quantity = 2,
     },
 
     ['grip'] = {
         name = 'grip',
         lable = 'Grip',
         text = '1x'..Lang:t('text.txt_steel')..' 1x'..Lang:t('text.txt_wood'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
             [2] = { item = 'wood', amount = 1 },
         },
-        receive = 'grip'
+        receive = 'grip',
+        quantity = 3,
     },
 
     ['cylinder'] = {
         name = 'cylinder',
         lable = 'Cylinder',
         text = '1x'..Lang:t('text.txt_steel'),
-        crafttime = 6000,
+        crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
         },
-        receive = 'cylinder'
+        receive = 'cylinder',
+        quantity = 3,
     },
     
 }

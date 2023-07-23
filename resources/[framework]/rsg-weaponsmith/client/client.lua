@@ -496,13 +496,14 @@ end)
 -- start parts crafting
 RegisterNetEvent('rsg-weaponsmith:client:startpartscrafting', function(name, lable, item, crafttime, receive)
     local craftitems = Config.WeaponPartsCrafting[item].craftitems
+    local quantity = Config.WeaponPartsCrafting[item].quantity
     RSGCore.Functions.Progressbar('craft-parts', Lang:t('progressbar.crafting_a')..lable, crafttime, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive)
+        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive, quantity)
     end)
 end)
 
@@ -515,7 +516,7 @@ RegisterNetEvent('rsg-weaponsmith:client:startrevlovercrafting', function(name, 
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive)
+        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive, 1)
     end)
 end)
 
@@ -528,7 +529,7 @@ RegisterNetEvent('rsg-weaponsmith:client:startpistolcrafting', function(name, la
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive)
+        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive,1)
     end)
 end)
 
@@ -541,7 +542,7 @@ RegisterNetEvent('rsg-weaponsmith:client:startrepeatercrafting', function(name, 
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive)
+        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive,1)
     end)
 end)
 
@@ -554,7 +555,7 @@ RegisterNetEvent('rsg-weaponsmith:client:startriflecrafting', function(name, lab
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive)
+        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive,1)
     end)
 end)
 
@@ -567,7 +568,7 @@ RegisterNetEvent('rsg-weaponsmith:client:startshotguncrafting', function(name, l
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive)
+        TriggerServerEvent('rsg-weaponsmith:server:finishcrafting', craftitems, receive,1)
     end)
 end)
 

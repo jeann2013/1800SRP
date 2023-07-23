@@ -35,7 +35,7 @@ end)
 
 -- finish crafting
 RegisterServerEvent('rsg-weaponsmith:server:finishcrafting')
-AddEventHandler('rsg-weaponsmith:server:finishcrafting', function(craftitems, receive)
+AddEventHandler('rsg-weaponsmith:server:finishcrafting', function(craftitems, receive, quantity)
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     -- remove craftitems
@@ -48,7 +48,7 @@ AddEventHandler('rsg-weaponsmith:server:finishcrafting', function(craftitems, re
         TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[v.item], "remove")
     end
     -- add items
-    Player.Functions.AddItem(receive, 1)
+    Player.Functions.AddItem(receive, quantity)
     TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[receive], "add")
     TriggerClientEvent('RSGCore:Notify', src, Lang:t('success.crafting_finished'), 'success')
 end)
