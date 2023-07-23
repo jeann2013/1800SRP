@@ -1,7 +1,7 @@
 Config = {}
 
 -- settings
-Config.Debug = true
+Config.Debug = false
 Config.SellTime = 10000
 
 -- blip settings

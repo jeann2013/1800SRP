@@ -134,40 +134,8 @@ Citizen.CreateThread(function()
                         RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
                     end
                 end
-            end
+            end            
             
-            -- for i = 1, #Config.Animal do
-            --     if modelhash == Config.Animal[i].model  then
-            --         local name = Config.Animal[i].name
-            --         local rewarditem1 = Config.Animal[i].rewarditem1
-            --         local rewarditem2 = Config.Animal[i].rewarditem2
-                    
-            --         local rewarditem3 = nil
-            --         if Config.Animal[i].rewarditem3 then
-            --             rewarditem3 = Config.Animal[i].rewarditem3
-            --         end
-
-            --         local rewarditem4 = nil
-            --         if Config.Animal[i].rewarditem4 then
-            --             rewarditem4 = Config.Animal[i].rewarditem4
-            --         end
-                    
-            --         local rewarditem5 = nil
-            --         if Config.Animal[i].rewarditem5 then
-            --             rewarditem5 = Config.Animal[i].rewarditem5
-            --         end
-                    
-            --         local deleted = DeleteThis(holding)
-            --         Wait(1000)
-            --         if deleted then                        
-            --             RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
-            --             TriggerServerEvent('rsg-trapperplus:server:carcars', rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5) 
-            --             Wait(2200)
-            --         else
-            --             RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
-            --         end
-            --     end
-            -- end
         end
     end
 end)
