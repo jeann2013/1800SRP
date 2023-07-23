@@ -21,6 +21,17 @@ local Translations = {
     items ={
         tool_bag = 'Tool Bag',
         a_bag_for_holding_tools = 'A Bag for holding tools',
+        items_steel = 'Steel',
+        items_wood = 'Wood',
+        items_trigger = 'Trigger',
+        items_hammer = 'Hammer',
+        items_barrel = 'Barrel',
+        items_frame = 'Frame',
+        items_grip = 'Grip',
+        items_cylinder = 'Cylinder',        
+        items_spring = 'Spring',     
+        items_stock = 'Stock',  
+        items_bolt = 'Bolt'   
     },
     success = {
         server_opened = 'The server has been opened',
