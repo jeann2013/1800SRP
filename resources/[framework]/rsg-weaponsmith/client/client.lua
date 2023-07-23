@@ -252,7 +252,7 @@ RegisterNetEvent('rsg-weaponsmith:client:pistolmenu', function()
     for k, v in pairs(Config.PistolCrafting) do
         pistolMenu[#pistolMenu + 1] = {
             header = v.lable,
-            txt = '',
+            txt = v.text,
             icon = 'fas fa-cog',
             params = {
                 event = 'rsg-weaponsmith:client:checkpistolitems',
@@ -289,7 +289,7 @@ RegisterNetEvent('rsg-weaponsmith:client:repeatermenu', function()
     for k, v in pairs(Config.RepeaterCrafting) do
         repeaterMenu[#repeaterMenu + 1] = {
             header = v.lable,
-            txt = '',
+            txt = v.text,
             icon = 'fas fa-cog',
             params = {
                 event = 'rsg-weaponsmith:client:checkrepeateritems',
@@ -326,7 +326,7 @@ RegisterNetEvent('rsg-weaponsmith:client:riflemenu', function()
     for k, v in pairs(Config.RifleCrafting) do
         rifleMenu[#rifleMenu + 1] = {
             header = v.lable,
-            txt = '',
+            txt = v.text,
             icon = 'fas fa-cog',
             params = {
                 event = 'rsg-weaponsmith:client:checkrifleitems',
@@ -363,7 +363,7 @@ RegisterNetEvent('rsg-weaponsmith:client:shotgunmenu', function()
     for k, v in pairs(Config.ShotgunCrafting) do
         shotgunMenu[#shotgunMenu + 1] = {
             header = v.lable,
-            txt = '',
+            txt = v.text,
             icon = 'fas fa-cog',
             params = {
                 event = 'rsg-weaponsmith:client:checkshotgunitems',

@@ -36,9 +36,10 @@ local Translations = {
         txt_trigger = ' Trigger',
         txt_hammer = ' Hammer',
         txt_barrel = ' Barrel',
-        txt_frame = ' frame',
-        txt_grip = ' grip',
-        txt_cylinder = ' cylinder',        
+        txt_frame = ' Frame',
+        txt_grip = ' Grip',
+        txt_cylinder = ' Cylinder',        
+        txt_spring = ' Spring',        
     }
 }
 

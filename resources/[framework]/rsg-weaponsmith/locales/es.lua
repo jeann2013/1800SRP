@@ -35,10 +35,11 @@ local Translations = {
         txt_wood = ' Madera',
         txt_trigger = ' Gatillo',
         txt_hammer = ' Martillo',
-        txt_barrel = ' Barril',
-        txt_frame = ' Marco',
+        txt_barrel = ' Cañon',
+        txt_frame = ' Carcasa',
         txt_grip = ' Agarre',
-        txt_cylinder = ' Cilindro',      
+        txt_cylinder = ' Cilindro',     
+        txt_spring = ' Resorte',         
     }
 }
 
