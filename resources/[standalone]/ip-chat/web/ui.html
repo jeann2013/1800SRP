@@ -27,19 +27,18 @@
                 <div class="chat-input" v-show="showInput">
                     <div>
                         <span class="prefix"><i class="fas fa-pencil fa-lg"></i></span>
-                        <input 
-                        onkeypress="(this.value.length >= 10)? this.style.width = ((this.value.length + 1) * 8) + 'px'; : console.log(this.value.length)"
+                        <textarea                          
                         v-model="message"
-                            ref="input"
-                            type="text"
+                            ref="input"                            
                             placeholder="Escribe un comando"
                             autofocus
                             spellcheck="false"
                             @keyup.esc="hideInput"
+                            rows="1"
                             @keyup="keyUp"
                             @keydown="keyDown"
                             @keypress.enter.prevent="send">
-                        </input>
+                        />
                     </div>
                     <suggestions :message="message" :suggestions="suggestions"></suggestions>
                 </div>
