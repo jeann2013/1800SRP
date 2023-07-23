@@ -40,8 +40,8 @@ Config.WeaponPartsCrafting = {
     -- base weapon items
     ['trigger'] = {
         name = 'trigger',
-        lable = Lang:t('menu.menu_trigger'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        lable = Lang:t('menu.menu_trigger'),        
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 4x'..Lang:t('menu.menu_trigger'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -52,8 +52,8 @@ Config.WeaponPartsCrafting = {
     
     ['hammer'] = {
         name = 'hammer',
-        lable = Lang:t('menu.menu_hammer'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        lable = Lang:t('menu.menu_hammer'),        
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 3x'..Lang:t('menu.menu_hammer'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -65,7 +65,7 @@ Config.WeaponPartsCrafting = {
     ['barrel'] = {
         name = 'barrel',
         lable = Lang:t('menu.menu_barrel'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 3x'..Lang:t('menu.menu_barrel'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -77,7 +77,7 @@ Config.WeaponPartsCrafting = {
     ['spring'] = {
         name = 'spring',
         lable = Lang:t('menu.menu_spring'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 4x'..Lang:t('menu.menu_spring'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -89,7 +89,7 @@ Config.WeaponPartsCrafting = {
     ['frame'] = {
         name = 'frame',
         lable = Lang:t('menu.menu_frame'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 2x'..Lang:t('menu.menu_frame'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -101,7 +101,7 @@ Config.WeaponPartsCrafting = {
     ['grip'] = {
         name = 'grip',
         lable = Lang:t('menu.menu_grip'),
-        text = '1x'..Lang:t('text.txt_steel')..' 1x'..Lang:t('text.txt_wood'),
+        text = '1x'..Lang:t('text.txt_steel')..' 1x'..Lang:t('text.txt_wood')..Lang:t('text.txt_gives_you')..' 3x'..Lang:t('menu.menu_grip'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -113,7 +113,7 @@ Config.WeaponPartsCrafting = {
     ['cylinder'] = {
         name = 'cylinder',
         lable = Lang:t('menu.menu_cylinder'),
-        text = '1x'..Lang:t('text.txt_steel'),
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 3x'..Lang:t('menu.menu_cylinder'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -124,7 +124,7 @@ Config.WeaponPartsCrafting = {
     ['stock'] = {
         name = 'stock',
         lable = Lang:t('menu.menu_stock'),
-        text = '1x'..Lang:t('text.txt_stock'),
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 4x'..Lang:t('menu.menu_stock'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },
@@ -136,7 +136,7 @@ Config.WeaponPartsCrafting = {
     ['bolt'] = {
         name = 'bolt',
         lable = Lang:t('menu.menu_bolt'),
-        text = '1x'..Lang:t('text.txt_bolt'),
+        text = '1x'..Lang:t('text.txt_steel')..Lang:t('text.txt_gives_you')..' 15x'..Lang:t('menu.menu_bolt'),
         crafttime = 4000,
         craftitems = {
             [1] = { item = 'steel', amount = 1 },            

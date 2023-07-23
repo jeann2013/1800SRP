@@ -53,6 +53,7 @@ local Translations = {
         txt_spring = ' Spring',   
         txt_stock = ' Stock',  
         txt_bolt = ' Bolt'       
+        txt_gives_you = ',gives you ',
     }
 }
 
