@@ -701,6 +701,8 @@ Config.Animal = {
         rewarditem1 = 'pelt_good_possum',
         rewarditem2 = 'claws_opossumc', 
         rewarditem3 = 'meat_small', 
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =  true
     }, 
     { -- A_C_RABBIT_01 / p_cs_rabbit02x
@@ -709,6 +711,8 @@ Config.Animal = {
          rewarditem1 = 'pelt_good_rabbit',
          rewarditem2 = 'tail_rabbitpaw', 
          rewarditem3 = 'meat_small', 
+         rewarditem4 = nil,       
+         rewarditem5 = nil,       
          vendible    =  true,
     },      
     { -- A_C_HERON_01 / S_CS_HERON_01_PLUMES_01X --> sin config rewards
@@ -716,6 +720,9 @@ Config.Animal = {
         name        = 'Garza azulada',
         rewarditem1 = 'feather_feather',
         rewarditem2 = 'provision_meat_gamey_bird',
+        rewarditem3 = nil,       
+        rewarditem4 = nil,       
+        rewarditem5 = nil,
         vendible    =  true,
     },  
     { -- Water snake a_c_snakewater_01
@@ -725,6 +732,7 @@ Config.Animal = {
 		rewarditem2 = 'tooth_snaket',         
         rewarditem3 = 'animal_snake', 
         rewarditem4 = 'meat_small',
+        rewarditem5 = nil,       
         vendible    =  true,
     },  
     { -- Snake Red Boa A_C_SNAKEREDBOA_01
@@ -775,6 +783,7 @@ Config.Animal = {
         rewarditem2 =   'feather_duckf',
         rewarditem3 =   'heart_chicken',
         rewarditem4 =   'provision_meat_gamey_bird',
+        rewarditem5 = nil,       
         vendible    =   true,
     },
     {-- A_C_EAGLE_01
@@ -784,7 +793,7 @@ Config.Animal = {
         rewarditem2 =   'feather_eaglef',
         rewarditem3 =   'beak_eaglef',
         rewarditem4 =   'heart_chicken',
-        rewarditem4 =   'provision_meat_gamey_bird',
+        rewarditem5 =   'provision_meat_gamey_bird',
         vendible    =   true,
     },
     {-- A_C_EGRET_01
@@ -794,6 +803,7 @@ Config.Animal = {
         rewarditem2 =   'feather_egretf',
         rewarditem3 =   'heart_chicken',
         rewarditem4 =   'provision_meat_gamey_bird',
+        rewarditem5 = nil,       
         vendible    =   true,
     },
     {-- A_C_VULTURE_01
@@ -803,6 +813,7 @@ Config.Animal = {
         rewarditem2 =   'feather_feather',
         rewarditem3 =   'heart_chicken',
         rewarditem4 =   'provision_meat_gamey_bird',
+        rewarditem5 = nil,       
         vendible    =   true,
     },     
     { -- A_C_TURKEYWILD_01 / p_cs_trkybreastmeat01x
@@ -812,6 +823,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather',
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_turkeyf',        
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- A_C_TURKEYWILD_01 / p_cs_trkybreastmeat01x
@@ -821,6 +833,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_turkeyf',
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- A_C_TURKEYWILD_01 / a_c_turkey_02
@@ -839,6 +852,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_seagullf',
+        rewarditem5 = nil,       
         vendible    =   true
     }, 
     { -- Roseate Spoonbill
@@ -847,6 +861,8 @@ Config.Animal = {
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Dominique Rooster
@@ -855,6 +871,8 @@ Config.Animal = {
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Red-Footed Booby
@@ -864,6 +882,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_boobyf',        
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Wester Raven 
@@ -873,6 +892,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_ravenf',        
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Greater Prairie Chicken A_C_Prairiechicken_01
@@ -882,6 +902,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_chickenf',      
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Ring-Necked Pheasant  A_C_Pheasant_01
@@ -889,7 +910,9 @@ Config.Animal = {
         name        = 'Ring-Necked Pheasant',
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather', 
-        rewarditem3 = 'provision_meat_gamey_bird',            
+        rewarditem3 = 'provision_meat_gamey_bird',  
+        rewarditem4 = nil,       
+        rewarditem5 = nil,                 
         vendible    =   true,
     }, 
     { -- American White Pelican  A_C_Pelican_01
@@ -899,6 +922,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_pelicanf',
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Blue And Yellow Macaw  A_C_Parrot_01
@@ -907,6 +931,8 @@ Config.Animal = {
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Californian Condor A_C_CaliforniaCondor_01
@@ -916,6 +942,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_condorf',
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Dominique Chicken  a_c_chicken_01
@@ -925,6 +952,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_chickenf',
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Double-Crested Cormorant a_c_cormorant_01
@@ -932,7 +960,9 @@ Config.Animal = {
         name        = 'Double-Crested Cormorant',
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather2', 
-        rewarditem3 = 'provision_meat_gamey_bird',        
+        rewarditem3 = 'provision_meat_gamey_bird',   
+        rewarditem4 = nil,       
+        rewarditem5 = nil,            
         vendible    =   true,
     }, 
     { -- Whooping Crane  A_C_CraneWhooping_01
@@ -941,6 +971,8 @@ Config.Animal = {
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Canada Goose A_C_GooseCanada_01
@@ -950,6 +982,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_goosef',
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Ferruinous Hawk A_C_Hawk_01
@@ -968,6 +1001,8 @@ Config.Animal = {
         rewarditem1 = 'heart_chicken',
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Common Loon A_C_Loon_01
@@ -977,6 +1012,7 @@ Config.Animal = {
         rewarditem2 = 'feather_feather2', 
         rewarditem3 = 'provision_meat_gamey_bird',
         rewarditem4 = 'beak_loonf',
+        rewarditem5 = nil,       
         vendible    =   true,
     }, 
     { -- Great Horned Owl A_C_Owl_01
@@ -995,6 +1031,8 @@ Config.Animal = {
         rewarditem1 =   'beak_ravenf',
         rewarditem2 =   'feather_ravenf',
         rewarditem3 =   'heart_chicken',
+        rewarditem4 = nil,       
+        rewarditem5 = nil,       
         vendible    =   true,
     },
     -- {-- A_C_HAWK_01

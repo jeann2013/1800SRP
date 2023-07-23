@@ -136,35 +136,76 @@ Citizen.CreateThread(function()
                 end
             end
             
-            for i = 1, #Config.Animal do
-                if modelhash == Config.Animal[i].model  then
-                    local name = Config.Animal[i].name
-                    local rewarditem1 = Config.Animal[i].rewarditem1
-                    local rewarditem2 = Config.Animal[i].rewarditem2
+            -- for i = 1, #Config.Animal do
+            --     if modelhash == Config.Animal[i].model  then
+            --         local name = Config.Animal[i].name
+            --         local rewarditem1 = Config.Animal[i].rewarditem1
+            --         local rewarditem2 = Config.Animal[i].rewarditem2
                     
-                    local rewarditem3 = nil
-                    if Config.Animal[i].rewarditem3 then
-                        rewarditem3 = Config.Animal[i].rewarditem3
-                    end
+            --         local rewarditem3 = nil
+            --         if Config.Animal[i].rewarditem3 then
+            --             rewarditem3 = Config.Animal[i].rewarditem3
+            --         end
 
-                    local rewarditem4 = nil
-                    if Config.Animal[i].rewarditem4 then
-                        rewarditem4 = Config.Animal[i].rewarditem4
-                    end
+            --         local rewarditem4 = nil
+            --         if Config.Animal[i].rewarditem4 then
+            --             rewarditem4 = Config.Animal[i].rewarditem4
+            --         end
                     
-                    local rewarditem5 = nil
-                    if Config.Animal[i].rewarditem5 then
-                        rewarditem5 = Config.Animal[i].rewarditem5
-                    end
+            --         local rewarditem5 = nil
+            --         if Config.Animal[i].rewarditem5 then
+            --             rewarditem5 = Config.Animal[i].rewarditem5
+            --         end
                     
-                    local deleted = DeleteThis(holding)
-                    Wait(1000)
-                    if deleted then                        
-                        RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
-                        TriggerServerEvent('rsg-trapperplus:server:carcars', rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5) 
-                        Wait(2200)
-                    else
-                        RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
+            --         local deleted = DeleteThis(holding)
+            --         Wait(1000)
+            --         if deleted then                        
+            --             RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
+            --             TriggerServerEvent('rsg-trapperplus:server:carcars', rewarditem1, rewarditem2, rewarditem3, rewarditem4, rewarditem5) 
+            --             Wait(2200)
+            --         else
+            --             RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
+            --         end
+            --     end
+            -- end
+        end
+    end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(2)
+        local size = GetNumberOfEvents(0)
+        if size > 0 then
+            for index = 0, size - 1 do
+                local event = GetEventAtIndex(0, index)
+                if event == 1376140891 then
+                    local view = exports["rsg-trapperplus"]:DataViewNativeGetEventData(0, index, 3)
+                    local pedGathered = view['2']
+                    local ped = view['0']
+                    local model = GetEntityModel(pedGathered)
+                    local model = model
+                    local bool_unk = view['4']
+
+                    local player = PlayerPedId()
+                    local playergate = player == ped
+
+                    -- Used to get models of animals in F8 Console menu turn on if you want to see what the hash is for animal.
+                    if model and playergate == true then
+                        print('Animal Gathered: ' .. model)
+                    end
+                   
+                    for i = 1, #Config.Animal do 
+                        if model and Config.Animal[i].model ~= nil and playergate and bool_unk == 1 then
+                            local chosenmodel = Config.Animal[i].model
+                            if model == chosenmodel then
+                                local rewarditem2 = Config.Animal[i].rewarditem2 -- MODEL REWARDS
+                                local rewarditem3 = Config.Animal[i].rewarditem3 -- MODEL REWARDS
+                                local rewarditem4 = Config.Animal[i].rewarditem4 -- MODEL REWARDS
+                                local rewarditem5 = Config.Animal[i].rewarditem5 -- MODEL REWARDS
+                                TriggerServerEvent('rsg-trapperplus:server:carcars', rewarditem2, rewarditem3, rewarditem4, rewarditem5)
+                            end
+                        end
                     end
                 end
             end
