@@ -32,7 +32,7 @@ local Translations = {
         menu_grip = 'Agarre',
         menu_cylinder = 'Cilindro',        
         menu_spring = 'Resorte',   
-        menu_stock = 'Agarre',  
+        menu_stock = 'Culata',  
         menu_bolt = 'Tornillo'  
     },
     commands = {
@@ -51,7 +51,7 @@ local Translations = {
         txt_grip = ' Agarre',
         txt_cylinder = ' Cilindro',     
         txt_spring = ' Resorte',   
-        txt_stock = ' Agarre',  
+        txt_stock = ' Culata',  
         txt_bolt = ' Tornillo',      
     }
 }

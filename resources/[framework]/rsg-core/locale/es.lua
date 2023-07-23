@@ -30,7 +30,7 @@ local Translations = {
         items_grip = 'Agarre',
         items_cylinder = 'Cilindro',        
         items_spring = 'Resorte',   
-        items_stock = 'Agarre',  
+        items_stock = 'Culata',  
         items_bolt = 'Tornillo'  
     },
     success = {
