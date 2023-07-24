@@ -62,7 +62,7 @@ Config.VendorShops = {
                 description = "sell copper",
                 price = 0.25,
                 item = "copper",
-            image = "copper.png"
+                image = "copper.png"
             },
             {
                 title = "Aluminum",
@@ -84,6 +84,20 @@ Config.VendorShops = {
                 price = 0.50,
                 item = "steel",
                 image = "steel.png"
+            },
+            {
+                title = "Nitrato",
+                description = "sell nitrato",
+                price = 0.50,
+                item = "nitrato",
+                image = "nitrato.png"
+            },
+            {
+                title = "Azufre",
+                description = "sell zufre",
+                price = 0.50,
+                item = "azufre",
+                image = "azufre.png"
             },
         },
     },
