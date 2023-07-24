@@ -282,7 +282,7 @@ RSGShared.Items = {
     ['steel']    = {['name'] = 'steel',    ['label'] = 'Steel',    ['weight'] = 100, ['type'] = 'item', ['image'] = 'steel.png',    ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Material'},
     ['wood']     = {['name'] = 'wood',     ['label'] = 'Wood',     ['weight'] = 100, ['type'] = 'item', ['image'] = 'wood.png',     ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Material'},
     ['nitrato']  = {['name'] = 'nitrato',  ['label'] = 'Nitrato',  ['weight'] = 100, ['type'] = 'item', ['image'] = 'nitrato.png',   ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Material'},
-    ['azure']    = {['name'] = 'azufre',   ['label'] = 'Azufre',   ['weight'] = 100, ['type'] = 'item', ['image'] = 'nitrato.png',   ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Material'},
+    ['azufre']    = {['name'] = 'azufre',   ['label'] = 'Azufre',   ['weight'] = 100, ['type'] = 'item', ['image'] = 'nitrato.png',   ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Material'},
 
     -- weapon crafting parts
     ['trigger']  = { ['name'] = 'trigger',  ['label'] = Lang:t("items.items_trigger"),  ['weight'] = 100, ['type'] = 'item', ['image'] = 'weaponpart.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'weapon crafting part'},
