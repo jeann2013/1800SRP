@@ -19,8 +19,8 @@ Config.Products = {
     },
     ["weapons"] = {
         -- WEAPONS REVOLVER
-        [1] = { name = "weapon_revolver_cattleman",            price = 28.10,  amount = 50,   info = {}, type = "weapon", slot = 1, },
-        [2] = { name = "weapon_revolver_cattleman_mexican",    price = 43.12, amount = 50,   info = {}, type = "weapon", slot = 2, },
+        [1] = { name = "weapon_revolver_cattleman",            price = 28.00,  amount = 50,   info = {}, type = "weapon", slot = 1, },
+        [2] = { name = "weapon_revolver_cattleman_mexican",    price = 43.00, amount = 50,   info = {}, type = "weapon", slot = 2, },
         -- [3] = { name = "weapon_revolver_doubleaction_gambler", price = 56.86, amount = 50,   info = {}, type = "weapon", slot = 3, },
         [3] = { name = "weapon_revolver_schofield",            price = 38.60, amount = 50,   info = {}, type = "weapon", slot = 3, },
         -- [5] = { name = "weapon_revolver_navy",                 price = 48.99, amount = 50,   info = {}, type = "weapon", slot = 5, },
@@ -46,24 +46,24 @@ Config.Products = {
         -- [21] = { name = "weapon_shotgun_doublebarrel",         price = 60.22, amount = 50,   info = {}, type = "weapon", slot = 21, },
         -- [22] = { name = "weapon_shotgun_semiauto",             price = 540, amount = 50,   info = {}, type = "weapon", slot = 22, },
         -- -- WEAPONS OTHER
-        [11] = { name = "weapon_melee_knife",                  price = 2.71,  amount = 50,   info = {}, type = "weapon", slot = 11, },
-        [12] = { name = "weapon_lasso",                        price = 1.90,   amount = 50,   info = {}, type = "weapon", slot = 12, },
-        [13] = { name = "weapon_bow",                          price = 2.10,  amount = 50,   info = {}, type = "weapon", slot = 13, },
-        [14] = { name = "weapon_bow_improved",                 price = 3.10,  amount = 50,   info = {}, type = "weapon", slot = 14, },
-        [15] = { name = "weapon_lasso_reinforced",             price = 5.10,  amount = 50,   info = {}, type = "weapon", slot = 15, },
-        [16] = { name = "weapon_melee_machete",                price = 8.30,  amount = 50,   info = {}, type = "weapon", slot = 16, },
-        [17] = { name = "weapon_melee_hatchet",                price = 1.50,  amount = 50,   info = {}, type = "weapon", slot = 17, },
+        [11] = { name = "weapon_melee_knife",                  price = 2.50,  amount = 50,   info = {}, type = "weapon", slot = 11, },
+        [12] = { name = "weapon_lasso",                        price = 1.50,   amount = 50,   info = {}, type = "weapon", slot = 12, },
+        [13] = { name = "weapon_bow",                          price = 2.00,  amount = 50,   info = {}, type = "weapon", slot = 13, },
+        [14] = { name = "weapon_bow_improved",                 price = 3.00,  amount = 50,   info = {}, type = "weapon", slot = 14, },
+        [15] = { name = "weapon_lasso_reinforced",             price = 5.00,  amount = 50,   info = {}, type = "weapon", slot = 15, },
+        [16] = { name = "weapon_melee_machete",                price = 8.00,  amount = 50,   info = {}, type = "weapon", slot = 16, },
+        [17] = { name = "weapon_melee_hatchet",                price = 1.00,  amount = 50,   info = {}, type = "weapon", slot = 17, },
         
         
         
         -- AMMO
-        [4] = { name = "ammo_revolver",                       price = 0.92, amount = 500, info = {}, type = "item",   slot = 4, },
+        [4] = { name = "ammo_revolver",                       price = 0.00, amount = 500, info = {}, type = "item",   slot = 4, },
         [5] = { name = "ammo_pistol",                         price = 0.50, amount = 500, info = {}, type = "item",   slot = 5, },
-        [6] = { name = "ammo_rifle",                          price = 1.92, amount = 500, info = {}, type = "item",   slot = 6, },
-        [7] = { name = "ammo_varmint",                        price = 1.10, amount = 500, info = {}, type = "item",   slot = 7, },
+        [6] = { name = "ammo_rifle",                          price = 1.00, amount = 500, info = {}, type = "item",   slot = 6, },
+        [7] = { name = "ammo_varmint",                        price = 1.00, amount = 500, info = {}, type = "item",   slot = 7, },
         -- [31] = { name = "ammo_rifle_elephant",                 price = 9.30, amount = 500, info = {}, type = "item",   slot = 31, },
-        [8] = { name = "ammo_repeater",                       price = 1.58, amount = 500, info = {}, type = "item",   slot = 8, },
-        [9] = { name = "ammo_shotgun",                        price = 1.61, amount = 500, info = {}, type = "item",   slot = 9, },
+        [8] = { name = "ammo_repeater",                       price = 1.00, amount = 500, info = {}, type = "item",   slot = 8, },
+        [9] = { name = "ammo_shotgun",                        price = 1.00, amount = 500, info = {}, type = "item",   slot = 9, },
         [10] = { name = "ammo_arrow",                          price = 0.10, amount = 500, info = {}, type = "item",   slot = 10, },
     },
 }
