@@ -267,7 +267,7 @@ Config.Animal = {
     {
         name        = 'Berkshire Pig',
         model       = 1007418994,
-        rewardmoney = 12,
+        rewardmoney = 1,
         rewarditem  = 'raw_meat'
     },
     {
